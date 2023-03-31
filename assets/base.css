@@ -2532,12 +2532,6 @@ product-info .loading-overlay:not(.hidden) ~ *,
   margin-right: -1.2rem;
 }
 
-@media screen and (max-width: 989px) {
-  menu-drawer ~ .header__icons .header__icon--account {
-    display: none;
-  }
-}
-
 .header__icon--menu[aria-expanded='true']::before {
   content: '';
   top: 100%;
