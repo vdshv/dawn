@@ -345,8 +345,12 @@ class MenuDrawer extends HTMLElement {
   }
 
   bindEvents() {
-    this.querySelectorAll('summary').forEach(summary => summary.addEventListener('click', this.onSummaryClick.bind(this)));
-    this.querySelectorAll('button:not(.localization-selector)').forEach(button => button.addEventListener('click', this.onCloseButtonClick.bind(this)));
+    this.querySelectorAll('summary').forEach((summary) =>
+      summary.addEventListener('click', this.onSummaryClick.bind(this))
+    );
+    this.querySelectorAll('button:not(.localization-selector)').forEach((button) =>
+      button.addEventListener('click', this.onCloseButtonClick.bind(this))
+    );
   }
 
   onKeyUp(event) {
@@ -496,7 +500,11 @@ class HeaderDrawer extends MenuDrawer {
   }
 
   onResize = () => {
-    this.header && document.documentElement.style.setProperty('--header-bottom-position', `${parseInt(this.header.getBoundingClientRect().bottom - this.borderOffset)}px`);
+    this.header &&
+      document.documentElement.style.setProperty(
+        '--header-bottom-position',
+        `${parseInt(this.header.getBoundingClientRect().bottom - this.borderOffset)}px`
+      );
     document.documentElement.style.setProperty('--viewport-height', `${window.innerHeight}px`);
   };
 }
