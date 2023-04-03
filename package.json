@@ -1,0 +1,26 @@
+{
+	"name": "constructify_cli",
+	"version": "1.0.0",
+	"description": "Shopify CLI + Gulp setup for Constructify theme advanced customisations. Enjoy",
+	"main": "index.js",
+	"scripts": {
+		"dev": "npm-run-all --parallel gulp shopify_dev",
+		"pull": "shopify theme pull --nodelete --store vadym-dev-store.myshopify.com",
+		"shopify_dev": "shopify theme dev --store vadym-dev-store.myshopify.com",
+		"gulp": "gulp"
+	},
+	"author": "Constructify",
+	"license": "ISC",
+	"devDependencies": {
+		"npm-run-all": "^4.1.5",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^8.0.0",
+		"gulp-clean-css": "^4.3.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-notify": "^4.0.0",
+		"gulp-rename": "^2.0.0",
+		"gulp-sass": "^5.1.0",
+		"gulp-uglify-es": "^3.0.0",
+		"sass": "^1.55.0"
+	}
+}

@@ -1,0 +1,196 @@
+.prod {
+    &__gallery {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 19px 12px;
+        // grid-auto-rows: minmax(100px, auto);
+        
+        >div {
+            grid-column: span 3;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        >div:nth-child(n+5) {
+            grid-column: span 2;
+        }
+        
+        &--single {
+           display: block; 
+        }
+    }
+
+    &__price {
+        font-size: 5rem;
+
+        &-text {
+            font-size: 20px;
+        }
+
+        &-badge {
+            background: #ED9374;
+            margin-top: 5px;
+            padding: 2px 12px;
+            color: #fff;
+        }
+    }
+
+    &__benefits {
+        margin-bottom: 20px;
+        gap: 14px;
+
+        >div {
+            gap: 12px;
+        }
+        span {
+            font-size: 12px;
+            line-height: 1;
+        }
+    }
+
+    &__img-badge {
+        background: #70446D;
+        color: #fff;
+        padding: 2px 15px;
+
+        &s {
+            padding: 20px;
+        }
+    }
+
+    &__option {
+        &-label {
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+    }
+
+    &__sizes {
+        button {
+            box-shadow: var(--color__bg-body-light) 0px 0px 0px 1px,
+            var(--color__border-selected-light-1) 0px 0px 0px 2px;
+        }
+        button.prod-disabled {
+            box-shadow: var(--color__bg-body-light) 0px 0px 0px 1px;
+            opacity: .4;
+        }
+
+        button.border--focus {
+            box-shadow: var(--color__bg-body-light) 0px 0px 0px 1px,
+            #C62D5C 0px 0px 0px 2px;
+        }
+
+        &-trigger {
+            line-height: 1.4;
+            font-size: 13px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding-left: 18px;
+            background: no-repeat url('sizes-icon.svg') left center / 12px auto;
+        }
+    }
+    
+
+    &__swatch {
+        border-radius: 50%;
+        border-width: 1px;
+    }
+
+    &__buttons {
+        button.btn {
+            text-transform: uppercase;
+            border-radius: 5px;
+            padding-top: 14px;
+            padding-bottom: 14px;
+        }
+        .btn__content {
+            font-size: 15px;
+            font-weight: 700;
+        }
+    }
+
+    &__tab {
+        &-label {
+            text-transform: uppercase;
+        }
+        &-trigger {
+            border-top: 1px solid #000;
+        }
+        &-content {
+            font-size: 15px;
+            * {
+                font-size: inherit;
+            }
+        }
+    }
+
+    &__features {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 20px 0;
+
+        >div {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            min-width: calc(100% / 3);
+            justify-content: center;
+
+            &:first-child {
+                justify-content: flex-start;
+            }
+            &:last-child {
+                justify-content: flex-end;
+            }
+        }
+
+        &.evenly {
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+            >div {
+                min-width: auto;
+                justify-content: center;
+            }
+        }
+
+
+        img {
+            width: 18px;
+            position: relative;
+            top: 0px;
+        }
+        span {
+            font-size: 12px;
+            color: #121212;
+            line-height: 1.5;
+        }
+    }
+
+    &__upsell {
+        .color__bg-body {
+            background: #fff !important;
+        }
+        
+        &-title {
+            margin-bottom: 8px;
+        }
+
+        &-btn {
+            background: #13100E !important;
+            padding-left: 28px;
+            padding-right: 28px;
+
+            .btn__content {
+                color: #fff !important;
+            }
+        }
+    }
+}
+
+// *:focus {
+//     outline: none !important;
+//     box-shadow: none !important;
+// }

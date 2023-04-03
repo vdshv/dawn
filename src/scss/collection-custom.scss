@@ -1,0 +1,237 @@
+.prod {
+ 
+    &__img-badge {
+        background: #70446D;
+        color: #fff;
+        padding: 2px 15px;
+
+        // &s {
+        //     padding: 20px;
+        // }
+    }
+
+    &__swatch {
+        border-radius: 50%;
+        border-width: 1px;
+        width: 28px;
+        height: 28px;
+
+        &es {
+            margin-top: 14px;
+            margin-bottom: 14px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 8px;
+    }
+
+    &__prices {
+        * {
+            font-size: 15px; 
+        }   
+    }
+}
+
+.col {
+
+    &__title {
+        padding: 20px 0 40px;
+
+        h1 {
+            font-size: 30px;
+            margin: 0;
+        }
+    }
+    &__bread {
+
+    }
+
+    &__flex {
+        gap: 30px;
+    }
+
+    &__sticky {
+        overflow-y: auto;
+        min-width: 270px;
+        width: 270px;
+    }
+
+    &__dropdown {
+        border-top: 1px solid #13100E;
+
+        &-trigger {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 16px 0;
+            cursor: pointer;
+            transition: .3s;
+            user-select: none;
+
+            span {
+                font-size: 15px;
+                font-weight: 700;
+            }
+
+
+            &.active {
+                & + .col__dropdown-content {
+                    visibility: visible;
+                    opacity: 1;
+                    transform: scaleY(1);
+                }
+            }
+        }
+
+        &-content {
+            height: 0;
+            position: relative;
+            opacity: 0;
+            visibility: hidden;
+            transform: scaleY(.1);
+            transform-origin: center top;
+            transition: .3s;
+            > div {
+                padding: 5px 8px 20px;
+            }
+        }
+    }
+
+    &__filter {
+        &-list {
+            label.disabled {
+                opacity: .4;
+                cursor: not-allowed;
+
+                input {
+                    cursor: not-allowed;
+                }
+            }
+        }
+        
+        &-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            span {
+                font-size: 13px;
+            }
+            input {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                appearance: none;
+                z-index: 2;
+                opacity: 0;
+            }
+        }
+        &-size {
+            gap: 8px 10px;
+            // grid-template-columns: 1fr 1fr 1fr;
+
+            label {
+                border: 1px solid #13100E;
+                border-radius: 3px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #fff;
+                &.checked {
+                    border-color: #C62D5C;
+                }
+            }
+
+            input {
+               
+            }
+
+            span {
+                line-height: 1.4;
+                white-space: initial;
+                font-size: 12px;
+                margin: 0;
+            }
+        }
+
+        &-color {
+            gap: 12px;
+            grid-template-columns: 1fr 1fr;
+
+            label {
+                padding: 0;
+            }
+
+            .checked .prod__swatch {
+                box-shadow: 0 0 0 1px #fff, 0 0 0 2px #000;
+            }
+        }
+
+        &-regular {
+            span {
+                font-size: 15px;
+            }
+            input[type="checkbox"] {
+                width: 18px;
+                height: 18px;
+                background-color: #000!important;
+                background-size: 14px;
+                border: 2px solid #fff!important;
+                filter: invert(1);
+                box-shadow: none;
+            }
+        }
+    }
+
+    &__price {
+        &-bar {
+            background: #fff;
+            border: 1px solid #000;
+            &--filled {
+                background: #000;
+            }
+        }
+        
+        &-thumb {
+            border: 1px solid #000;
+        }
+
+        &-input {
+            input {
+                background: #fff !important;
+                text-align: center;
+                font-size: 13px;
+                border: 1px solid #000;
+            }
+        }
+    }
+
+    &__main {
+        
+    }
+
+    &__active-filters {
+        padding: 12px 0;
+        gap: 10px;
+        white-space: nowrap;
+        overflow-x: auto;
+
+        &-wrap {
+            position: sticky;
+            z-index: 31;
+        }
+
+        a {
+            display: inline-block;
+            margin-right: 10px;
+            background: #fff;
+            padding: 8px 20px;
+            font-size: 13px;
+            border-radius: 3px;
+            text-decoration: none;
+        }
+    }
+}
