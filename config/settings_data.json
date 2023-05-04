@@ -264,15 +264,15 @@
           "ba35d02b-0d64-4bfb-91ae-91d4185845ba": {
             "type": "btn--regular",
             "settings": {
-              "background_color": "linear-gradient(180deg, rgba(26, 15, 15, 1) 23%, rgba(0, 0, 0, 1) 100%)",
+              
               "text_color": "#ff3131",
               "border_radius": 14,
               "border_width": 2,
               "border_color": "#21a14b",
-              "hover_background_color": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
+              
               "hover_text_color": "#fff",
               "hover_border_color": "#000",
-              "active_background_color": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
+              
               "active_text_color": "#fff",
               "active_border_color": "#000"
             }
@@ -280,15 +280,15 @@
           "4f5534f8-fc97-4d85-9cac-143f367e9893": {
             "type": "btn--alt",
             "settings": {
-              "background_color": "linear-gradient(180deg, rgba(184, 11, 11, 1), rgba(0, 0, 0, 1) 100%)",
+              
               "text_color": "#fff",
               "border_radius": 7,
               "border_width": 2,
               "border_color": "#13c7e4",
-              "hover_background_color": "linear-gradient(180deg, rgba(255, 100, 100, 1), rgba(0, 0, 0, 1) 100%)",
+              
               "hover_text_color": "#f866fa",
               "hover_border_color": "#000",
-              "active_background_color": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
+              
               "active_text_color": "#fff",
               "active_border_color": "#000"
             }

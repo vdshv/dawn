@@ -25,8 +25,7 @@
             background-color: var(--{{block.type}}_background_color);
             color: var(--{{block.type}}_text_color);
             border-radius: var(--{{block.type}}_border_radius);
-            border-width: var(--{{block.type}}_border_width);
-            border-color: var(--{{block.type}}_border_color);
+            border: var(--{{block.type}}_border_width) solid var(--{{block.type}}_border_color);
             transition: all 0.25s ease;
         }
         .{{block.type}}:hover {
@@ -53,10 +52,10 @@
       "limit": 1,
       "settings": [
         {
-            "type": "color_background",
+            "type": "color",
             "id": "background_color",
             "label": "Background color",
-            "default": "linear-gradient(#000, #000)"
+            "default": "#000"
         },
         {
             "type": "color",
@@ -97,10 +96,10 @@
             "info": "Button state when the user hovers over a button with the cursor."
         },
         {
-            "type": "color_background",
+            "type": "color",
             "id": "hover_background_color",
             "label": "Hover Background color",
-            "default": "linear-gradient(#000, #000)"
+            "default": "#000"
         },
         {
             "type": "color",
@@ -121,10 +120,10 @@
             "info": "Button state when the user clicks an element with the cursor."
         },
         {
-            "type": "color_background",
+            "type": "color",
             "id": "active_background_color",
             "label": "Active Background color",
-            "default": "linear-gradient(#000, #000)"
+            "default": "#000"
         },
         {
             "type": "color",
@@ -147,10 +146,10 @@
       "limit": 1,
       "settings": [
         {
-            "type": "color_background",
+            "type": "color",
             "id": "background_color",
             "label": "Background color",
-            "default": "linear-gradient(#000, #000)"
+            "default": "#000"
         },
         {
             "type": "color",
@@ -191,10 +190,10 @@
             "info": "Button state when the user hovers over a button with the cursor."
         },
         {
-            "type": "color_background",
+            "type": "color",
             "id": "hover_background_color",
             "label": "Hover Background color",
-            "default": "linear-gradient(#000, #000)"
+            "default": "#000"
         },
         {
             "type": "color",
@@ -215,10 +214,10 @@
             "info": "Button state when the user clicks an element with the cursor."
         },
         {
-            "type": "color_background",
+            "type": "color",
             "id": "active_background_color",
             "label": "Active Background color",
-            "default": "linear-gradient(#000, #000)"
+            "default": "#000"
         },
         {
             "type": "color",
