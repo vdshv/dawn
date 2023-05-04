@@ -144,7 +144,7 @@
             "settings": {
               "font_size": 60,
               "line_height": 120,
-              "letter_spacing": 10,
+              "letter_spacing": 0,
               "font_weight": "700",
               "text_transform": "none",
               "tablet_font_size": 48,
@@ -166,49 +166,76 @@
           "2e4e4b3e-5961-43b7-9b3c-249cd4917a2c": {
             "type": "h3",
             "settings": {
-              "font_size": 50,
+              "font_size": 38,
               "line_height": 115,
               "letter_spacing": 0,
               "font_weight": "700",
               "text_transform": "none",
-              "tablet_font_size": 35,
-              "mobile_font_size": 35
+              "tablet_font_size": 30,
+              "mobile_font_size": 26
             }
           },
           "6bb79336-8393-4562-8679-828b6a9e7410": {
             "type": "h4",
-            "settings": {
-              "font_size": 50,
-              "line_height": 115,
-              "letter_spacing": 0,
-              "font_weight": "700",
-              "text_transform": "none",
-              "tablet_font_size": 35,
-              "mobile_font_size": 35
-            }
-          },
-          "666aa828-4c83-42d9-b67c-fc462b963d59": {
-            "type": "h5",
-            "settings": {
-              "font_size": 50,
-              "line_height": 115,
-              "letter_spacing": 0,
-              "font_weight": "700",
-              "text_transform": "none",
-              "tablet_font_size": 35,
-              "mobile_font_size": 35
-            }
-          },
-          "488d4cec-9247-451d-9930-c1910973bec1": {
-            "type": "h6",
             "settings": {
               "font_size": 34,
               "line_height": 115,
               "letter_spacing": 0,
               "font_weight": "700",
               "text_transform": "none",
-              "tablet_font_size": 35,
-              "mobile_font_size": 35
+              "tablet_font_size": 26,
+              "mobile_font_size": 22
+            }
+          },
+          "666aa828-4c83-42d9-b67c-fc462b963d59": {
+            "type": "h5",
+            "settings": {
+              "font_size": 28,
+              "line_height": 115,
+              "letter_spacing": 0,
+              "font_weight": "700",
+              "text_transform": "none",
+              "tablet_font_size": 22,
+              "mobile_font_size": 20
+            }
+          },
+          "488d4cec-9247-451d-9930-c1910973bec1": {
+            "type": "h6",
+            "settings": {
+              "font_size": 22,
+              "line_height": 115,
+              "letter_spacing": 6,
+              "font_weight": "700",
+              "text_transform": "uppercase",
+              "tablet_font_size": 20,
+              "mobile_font_size": 20
+            }
+          },
+          "1a7199a6-4f20-41fc-bf4e-cdfd6c0a898f": {
+            "type": "body",
+            "settings": {
+              "font_size": 18,
+              "line_height": 140,
+              "tablet_font_size": 18,
+              "mobile_font_size": 16
+            }
+          },
+          "e54d8ae8-13aa-42bf-bd3c-20fc62672b07": {
+            "type": "text--lg",
+            "settings": {
+              "font_size": 24,
+              "line_height": 135,
+              "tablet_font_size": 22,
+              "mobile_font_size": 20
+            }
+          },
+          "7e1c4463-89ae-4455-8a9d-a8fa3229b86e": {
+            "type": "text--sm",
+            "settings": {
+              "font_size": 15,
+              "line_height": 135,
+              "tablet_font_size": 15,
+              "mobile_font_size": 13
             }
           }
         },
@@ -218,7 +245,10 @@
           "2e4e4b3e-5961-43b7-9b3c-249cd4917a2c",
           "6bb79336-8393-4562-8679-828b6a9e7410",
           "666aa828-4c83-42d9-b67c-fc462b963d59",
-          "488d4cec-9247-451d-9930-c1910973bec1"
+          "488d4cec-9247-451d-9930-c1910973bec1",
+          "1a7199a6-4f20-41fc-bf4e-cdfd6c0a898f",
+          "e54d8ae8-13aa-42bf-bd3c-20fc62672b07",
+          "7e1c4463-89ae-4455-8a9d-a8fa3229b86e"
         ],
         "settings": {
         }
