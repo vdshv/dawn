@@ -257,6 +257,32 @@
         "type": "0-styleguide",
         "settings": {
         }
+      },
+      "0-style-button-styles": {
+        "type": "0-style-button-styles",
+        "blocks": {
+          "ba35d02b-0d64-4bfb-91ae-91d4185845ba": {
+            "type": "btn--regular",
+            "settings": {
+              "background_color": "linear-gradient(180deg, rgba(26, 15, 15, 1) 23%, rgba(0, 0, 0, 1) 100%)",
+              "text_color": "#ff3131",
+              "border_radius": 14,
+              "border_width": 2,
+              "border_color": "#21a14b",
+              "hover_background_color": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
+              "hover_text_color": "#fff",
+              "hover_border_color": "#000",
+              "active_background_color": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
+              "active_text_color": "#fff",
+              "active_border_color": "#000"
+            }
+          }
+        },
+        "block_order": [
+          "ba35d02b-0d64-4bfb-91ae-91d4185845ba"
+        ],
+        "settings": {
+        }
       }
     },
     "content_for_index": [
