@@ -142,15 +142,31 @@
           "bf70a0e1-4df8-4e39-a2e0-a4bc84dd851e": {
             "type": "h1",
             "settings": {
-              "font_size": 50,
+              "font_size": 60,
+              "line_height": 115,
+              "letter_spacing": 5,
+              "font_weight": "700",
+              "text_transform": "none",
+              "tablet_font_size": 48,
+              "mobile_font_size": 38
+            }
+          },
+          "d83e389c-dde4-4210-a5b9-66a248613c22": {
+            "type": "h2",
+            "settings": {
+              "font_size": 45,
               "line_height": 115,
               "letter_spacing": 0,
-              "font_weight": "700"
+              "font_weight": "700",
+              "text_transform": "none",
+              "tablet_font_size": 36,
+              "mobile_font_size": 30
             }
           }
         },
         "block_order": [
-          "bf70a0e1-4df8-4e39-a2e0-a4bc84dd851e"
+          "bf70a0e1-4df8-4e39-a2e0-a4bc84dd851e",
+          "d83e389c-dde4-4210-a5b9-66a248613c22"
         ],
         "settings": {
         }
