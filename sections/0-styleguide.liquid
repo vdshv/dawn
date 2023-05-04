@@ -1,5 +1,7 @@
 <div class="cont flex col aifs gap-1">
     {% comment %} TYPOGRAPHY {% endcomment %}
+    <h1 class="h1">TYPOGRAPHY</h1>
+
     <h1 class="h1">Title H1</h1>
 
     <h2 class="h2">Title H2</h2>
@@ -18,6 +20,17 @@
         <span>Link + Icon</span>
         <img class="" src="{{'meganav-arrow.svg' | asset_url}}" alt="">
     </a> {% endcomment %}
+    <button href="" class="btn btn--lg">
+        Larger  button
+    </button>
+
+    <button href="" class="btn">
+        Regular button
+    </button>
+    
+    <a href="" class="btn btn--sm">
+        Smaller button
+    </a>
 
     <div class="text--lg">
         <p>Larger text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aperiam reprehenderit earum ratione molestiae atque perspiciatis magnam provident omnis, veniam voluptates praesentium deleniti similique labore, laboriosam, consequuntur assumenda a ullam.</p>
@@ -30,10 +43,12 @@
     <div class="text--sm">
         <p>Smaller text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aperiam reprehenderit earum ratione molestiae atque perspiciatis magnam provident omnis, veniam voluptates praesentium deleniti similique labore, laboriosam, consequuntur assumenda a ullam.</p>
     </div>
-
+    <br>
 
 
     {% comment %} BUTTON STYLES {% endcomment %}
+    <h1 class="h1">BUTTON STYLES</h1>
+
     <button class="btn btn--regular">
         Regular button
     </button>
@@ -42,24 +57,6 @@
         Alternative button
     </a>
 
-    <p class="text--lg">
-        Larger text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aperiam reprehenderit earum ratione molestiae atque perspiciatis magnam provident omnis, veniam voluptates praesentium deleniti similique labore, laboriosam, consequuntur assumenda a ullam.
-    </p>
-    <p class="text">
-        Default text: Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque ratione fugit amet repudiandae vero nulla nesciunt illo quibusdam eos? Earum quidem nesciunt exercitationem! Non id qui ea corporis doloremque sapiente.
-    </p>
-    <p class="text--sm">
-        Smaller text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aperiam reprehenderit earum ratione molestiae atque perspiciatis magnam provident omnis, veniam voluptates praesentium deleniti similique labore, laboriosam, consequuntur assumenda a ullam.
-    </p>
-    <div class="cont cont--lg">
-      <p>This container has a large maximum width.</p>
-    </div>
-    <div class="cont cont--md">
-      <p>This container has a medium maximum width.</p>
-    </div>
-    <div class="cont cont--sm">
-      <p>This container has a small maximum width.</p>
-    </div>
     <button href="" class="btn btn--alt-2">
         Alternative button 2
     </button>
@@ -76,20 +73,22 @@
         <span>Button + Icon</span>
         <img class="" src="{{'meganav-arrow.svg' | asset_url}}" alt="">
     </a>
+    <br>
 
+    {% comment %} CONTAINERS {% endcomment %}
+    <h1 class="h1">CONTAINERS</h1>
 
-    {% comment %} BUTTON SIZES {% endcomment %}
-    <button href="" class="btn btn--lg btn--alt-2">
-        Larger button
-    </button>
-    
-    <a href="" class="btn btn--md btn--alt-3">
-        Medium button
-    </a>
-    
-    <a href="" class="btn btn--sm btn--disabled">
-        Smaller button
-    </a>
+    <div class="cont cont--lg">
+      <p>This container has a large maximum width.</p>
+    </div>
+
+    <div class="cont cont--md">
+      <p>This container has a medium maximum width.</p>
+    </div>
+
+    <div class="cont cont--sm">
+      <p>This container has a small maximum width.</p>
+    </div>
    
 </div>
 

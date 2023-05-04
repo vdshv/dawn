@@ -10,6 +10,12 @@
             --{{block.type}}_text_transform: {{block.settings.text_transform}};
             --{{block.type}}_tablet_font_size: {{block.settings.tablet_font_size}}px;
             --{{block.type}}_mobile_font_size: {{block.settings.mobile_font_size}}px;
+            {% if block.type contains 'btn' %}
+                --{{block.type}}_padding_x: {{block.settings.padding_x}}px;
+                --{{block.type}}_padding_y: {{block.settings.padding_y}}px;
+                --{{block.type}}_mobile_padding_x: {{block.settings.mobile_padding_x}}px;
+                --{{block.type}}_mobile_padding_y: {{block.settings.mobile_padding_y}}px;
+            {% endif %}
         {% endfor %}
     }
     
@@ -20,6 +26,10 @@
             letter-spacing: var(--{{block.type}}_letter_spacing);
             font-weight: var(--{{block.type}}_font_weight);
             text-transform: var(--{{block.type}}_text_transform);
+
+            {% if block.type contains 'btn' %}
+                padding: var(--{{block.type}}_padding_y) var(--{{block.type}}_padding_x);
+            {% endif %}
         }
         @media screen and (max-width: 1180px) {
             .{{block.type}} {
@@ -29,6 +39,10 @@
         @media screen and (max-width: 767px) {
             .{{block.type}} {
                 font-size: var(--{{block.type}}_mobile_font_size);
+                
+                {% if block.type contains 'btn' %}
+                    padding: var(--{{block.type}}_mobile_padding_y) var(--{{block.type}}_mobile_padding_x);
+                {% endif %}
             }
         }
     {% endfor %}
@@ -799,6 +813,312 @@
             "unit": "px",
             "label": "Font size",
             "default": 13
+        }
+      ]
+    },
+    {
+      "type": "btn--sm",
+      "name": "Smaller button text",
+      "limit": 1,
+      "settings": [
+        {
+            "type": "header",
+            "content": "Desktop settings",
+            "info": "Screen width more than 1180px"
+        },
+        {
+            "type": "range",
+            "id": "padding_x",
+            "min": 10,
+            "max": 50,
+            "step": 1,
+            "unit": "px",
+            "label": "Inner horizontal spacing",
+            "default": 16
+        },
+        {
+            "type": "range",
+            "id": "padding_y",
+            "min": 4,
+            "max": 30,
+            "step": 1,
+            "unit": "px",
+            "label": "Inner vertical spacing",
+            "default": 8
+        },
+        {
+            "type": "range",
+            "id": "font_size",
+            "min": 12,
+            "max": 25,
+            "step": 1,
+            "unit": "px",
+            "label": "Font size",
+            "default": 14
+        },
+        {
+            "type": "range",
+            "id": "line_height",
+            "min": 100,
+            "max": 200,
+            "step": 5,
+            "unit": "%",
+            "label": "Line height",
+            "default": 135
+        },
+        {
+            "type": "header",
+            "content": "Tablet settings",
+            "info": "Screen width 768px - 1180px"
+        },
+        {
+            "type": "range",
+            "id": "tablet_font_size",
+            "min": 12,
+            "max": 25,
+            "step": 1,
+            "unit": "px",
+            "label": "Font size",
+            "default": 14
+        },
+        {
+            "type": "header",
+            "content": "Mobile settings",
+            "info": "Screen width less than 768px"
+        },
+        {
+            "type": "range",
+            "id": "mobile_padding_x",
+            "min": 8,
+            "max": 40,
+            "step": 1,
+            "unit": "px",
+            "label": "Inner horizontal spacing",
+            "default": 12
+        },
+        {
+            "type": "range",
+            "id": "mobile_padding_y",
+            "min": 4,
+            "max": 20,
+            "step": 1,
+            "unit": "px",
+            "label": "Inner vertical spacing",
+            "default": 4
+        },
+        {
+            "type": "range",
+            "id": "mobile_font_size",
+            "min": 12,
+            "max": 25,
+            "step": 1,
+            "unit": "px",
+            "label": "Font size",
+            "default": 12
+        }
+      ]
+    },
+    {
+      "type": "btn",
+      "name": "Regular button text",
+      "limit": 1,
+      "settings": [
+        {
+            "type": "header",
+            "content": "Desktop settings",
+            "info": "Screen width more than 1180px"
+        },
+        {
+            "type": "range",
+            "id": "padding_x",
+            "min": 10,
+            "max": 50,
+            "step": 1,
+            "unit": "px",
+            "label": "Inner horizontal spacing",
+            "default": 25
+        },
+        {
+            "type": "range",
+            "id": "padding_y",
+            "min": 5,
+            "max": 30,
+            "step": 1,
+            "unit": "px",
+            "label": "Inner vertical spacing",
+            "default": 12
+        },
+        {
+            "type": "range",
+            "id": "font_size",
+            "min": 12,
+            "max": 25,
+            "step": 1,
+            "unit": "px",
+            "label": "Font size",
+            "default": 16
+        },
+        {
+            "type": "range",
+            "id": "line_height",
+            "min": 100,
+            "max": 200,
+            "step": 5,
+            "unit": "%",
+            "label": "Line height",
+            "default": 135
+        },
+        {
+            "type": "header",
+            "content": "Tablet settings",
+            "info": "Screen width 768px - 1180px"
+        },
+        {
+            "type": "range",
+            "id": "tablet_font_size",
+            "min": 12,
+            "max": 25,
+            "step": 1,
+            "unit": "px",
+            "label": "Font size",
+            "default": 16
+        },
+        {
+            "type": "header",
+            "content": "Mobile settings",
+            "info": "Screen width less than 768px"
+        },
+        {
+            "type": "range",
+            "id": "mobile_padding_x",
+            "min": 10,
+            "max": 40,
+            "step": 1,
+            "unit": "px",
+            "label": "Inner horizontal spacing",
+            "default": 20
+        },
+        {
+            "type": "range",
+            "id": "mobile_padding_y",
+            "min": 5,
+            "max": 20,
+            "step": 1,
+            "unit": "px",
+            "label": "Inner vertical spacing",
+            "default": 8
+        },
+        {
+            "type": "range",
+            "id": "mobile_font_size",
+            "min": 12,
+            "max": 25,
+            "step": 1,
+            "unit": "px",
+            "label": "Font size",
+            "default": 14
+        }
+      ]
+    },
+    {
+      "type": "btn--lg",
+      "name": "Larger button text",
+      "limit": 1,
+      "settings": [
+        {
+            "type": "header",
+            "content": "Desktop settings",
+            "info": "Screen width more than 1180px"
+        },
+        {
+            "type": "range",
+            "id": "padding_x",
+            "min": 10,
+            "max": 50,
+            "step": 1,
+            "unit": "px",
+            "label": "Inner horizontal spacing",
+            "default": 40
+        },
+        {
+            "type": "range",
+            "id": "padding_y",
+            "min": 5,
+            "max": 30,
+            "step": 1,
+            "unit": "px",
+            "label": "Inner vertical spacing",
+            "default": 14
+        },
+        {
+            "type": "range",
+            "id": "font_size",
+            "min": 12,
+            "max": 25,
+            "step": 1,
+            "unit": "px",
+            "label": "Font size",
+            "default": 18
+        },
+        {
+            "type": "range",
+            "id": "line_height",
+            "min": 100,
+            "max": 200,
+            "step": 5,
+            "unit": "%",
+            "label": "Line height",
+            "default": 135
+        },
+        {
+            "type": "header",
+            "content": "Tablet settings",
+            "info": "Screen width 768px - 1180px"
+        },
+        {
+            "type": "range",
+            "id": "tablet_font_size",
+            "min": 12,
+            "max": 25,
+            "step": 1,
+            "unit": "px",
+            "label": "Font size",
+            "default": 18
+        },
+        {
+            "type": "header",
+            "content": "Mobile settings",
+            "info": "Screen width less than 768px"
+        },
+        {
+            "type": "range",
+            "id": "mobile_padding_x",
+            "min": 10,
+            "max": 40,
+            "step": 1,
+            "unit": "px",
+            "label": "Inner horizontal spacing",
+            "default": 25
+        },
+        {
+            "type": "range",
+            "id": "mobile_padding_y",
+            "min": 5,
+            "max": 20,
+            "step": 1,
+            "unit": "px",
+            "label": "Inner vertical spacing",
+            "default": 12
+        },
+        {
+            "type": "range",
+            "id": "mobile_font_size",
+            "min": 12,
+            "max": 25,
+            "step": 1,
+            "unit": "px",
+            "label": "Font size",
+            "default": 16
         }
       ]
     },
