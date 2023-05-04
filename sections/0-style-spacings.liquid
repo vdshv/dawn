@@ -1,0 +1,109 @@
+<style>
+    {% comment %} These CSS variables are used in /src/scss/common.scss {% endcomment %}
+        :root {
+            {% for setting in section.settings %}
+                --{{ setting[0] }}_desktop_padding: {{ setting[1].desktop }}px;
+                --{{ setting[0] }}_tablet_padding: {{ setting[1].tablet }}px;
+                --{{ setting[0] }}_mobile_padding: {{ setting[1].mobile }}px;
+            {% endfor %}
+        }
+        
+        {% for setting in section.settings %}
+            .{{ setting[0] }} {
+                padding: var(--{{setting[0]}}_desktop_padding) 0;
+            }
+            @media screen and (max-width: 1180px) {
+                .{{ setting[0] }} {
+                    padding: var(--{{ setting[0] }}_tablet_padding) 0;
+                }
+            }
+            @media screen and (max-width: 767px) {
+                .{{setting[0]}} {
+                    padding: var(--{{ setting[0] }}_mobile_padding) 0;
+                }
+            }
+        {% endfor %}
+</style>
+
+
+    {% schema %}
+    {
+    "name": "Styles -> Spacings",
+    "settings": [
+        {
+        "type": "header",
+        "content": "Desktop"
+        },
+        {
+        "type": "range",
+        "id": "padding_vertical_desktop",
+        "label": "Vertical Padding",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 20,
+        "unit": "px"
+        },
+        {
+        "type": "range",
+        "id": "padding_horizontal_desktop",
+        "label": "Horizontal Padding",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 20,
+        "unit": "px"
+        },
+        {
+        "type": "header",
+        "content": "Tablet"
+        },
+        {
+        "type": "range",
+        "id": "padding_vertical_tablet",
+        "label": "Vertical Padding",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 20,
+        "unit": "px"
+        },
+        {
+        "type": "range",
+        "id": "padding_horizontal_tablet",
+        "label": "Horizontal Padding",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 20,
+        "unit": "px"
+        },
+        {
+        "type": "header",
+        "content": "Mobile"
+        },
+        {
+        "type": "range",
+        "id": "padding_vertical_mobile",
+        "label": "Vertical Padding",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 20,
+        "unit": "px"
+        },
+        {
+        "type": "range",
+        "id": "padding_horizontal_mobile",
+        "label": "Horizontal Padding",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 20,
+        "unit": "px"
+        }
+    ]
+    }
+    {% endschema %}
+
+
