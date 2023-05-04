@@ -3,42 +3,49 @@
 
     :root {
         {% for block in section.blocks %}
-            --{{block.type}}_background_color: {{block.settings.background_color}};
-            --{{block.type}}_text_color: {{block.settings.text_color}};
-            --{{block.type}}_border_radius: {{block.settings.border_radius}}px;
-            --{{block.type}}_border_width: {{block.settings.border_width}}px;
-            --{{block.type}}_border_color: {{block.settings.border_color}};
-            --{{block.type}}_hover_background_color: {{block.settings.hover_background_color}};
-            --{{block.type}}_hover_text_color: {{block.settings.hover_text_color}};
-            --{{block.type}}_hover_border_color: {{block.settings.hover_border_color}};
-            --{{block.type}}_active_background_color: {{block.settings.active_background_color}};
-            --{{block.type}}_active_text_color: {{block.settings.active_text_color}};
-            --{{block.type}}_active_border_color: {{block.settings.active_border_color}};
+            {% if block.type == 'btn' %}
+                --{{block.type}}_border_radius: {{block.settings.border_radius}}px;
+                --{{block.type}}_border_width: {{block.settings.border_width}}px;
+            {% else %}
+                --{{block.type}}_background_color: {{block.settings.background_color}};
+                --{{block.type}}_text_color: {{block.settings.text_color}};
+                --{{block.type}}_border_color: {{block.settings.border_color}};
+                --{{block.type}}_hover_background_color: {{block.settings.hover_background_color}};
+                --{{block.type}}_hover_text_color: {{block.settings.hover_text_color}};
+                --{{block.type}}_hover_border_color: {{block.settings.hover_border_color}};
+                --{{block.type}}_active_background_color: {{block.settings.active_background_color}};
+                --{{block.type}}_active_text_color: {{block.settings.active_text_color}};
+                --{{block.type}}_active_border_color: {{block.settings.active_border_color}};
+            {% endif %}
         {% endfor %}
     }
 
-    .btn {
-        display: inline-block;
-    }
     {% for block in section.blocks %}
-        .{{block.type}} {
-            background-color: var(--{{block.type}}_background_color);
-            color: var(--{{block.type}}_text_color);
-            border-radius: var(--{{block.type}}_border_radius);
-            border: var(--{{block.type}}_border_width) solid var(--{{block.type}}_border_color);
-            transition: all 0.25s ease;
-        }
-        .{{block.type}}:hover {
-            background-color: var(--{{block.type}}_hover_background_color);
-            color: var(--{{block.type}}_hover_text_color);
-            border-color: var(--{{block.type}}_hover_border_color);
-        }
-        .{{block.type}}:active {
-            background-color: var(--{{block.type}}_active_background_color);
-            color: var(--{{block.type}}_active_text_color);
-            border-color: var(--{{block.type}}_active_border_color);
-            transition: all 0.15s ease;
-        }
+        {% if block.type == 'btn' %}
+            .btn {
+                border-radius: var(--{{block.type}}_border_radius);
+                border-width: var(--{{block.type}}_border_width);
+                border-style: solid;
+                transition: all 0.25s ease;
+            }
+        {% else %}
+            .{{block.type}} {
+                background-color: var(--{{block.type}}_background_color);
+                color: var(--{{block.type}}_text_color);
+                border-color: var(--{{block.type}}_border_color);
+            }
+            .{{block.type}}:hover {
+                background-color: var(--{{block.type}}_hover_background_color);
+                color: var(--{{block.type}}_hover_text_color);
+                border-color: var(--{{block.type}}_hover_border_color);
+            }
+            .{{block.type}}:active {
+                background-color: var(--{{block.type}}_active_background_color);
+                color: var(--{{block.type}}_active_text_color);
+                border-color: var(--{{block.type}}_active_border_color);
+                transition: all 0.15s ease;
+            }
+        {% endif %}
     {% endfor %}
 </style>
 
@@ -46,6 +53,33 @@
 {
   "name": "Styles -> Button styles",    
   "blocks": [
+    {
+      "type": "btn",
+      "name": "Global button styling",
+      "limit": 1,
+      "settings": [
+        {
+            "type": "range",
+            "id": "border_radius",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "unit": "px",
+            "label": "Border radius",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "border_width",
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "unit": "px",
+            "label": "Border width",
+            "default": 1
+        }
+      ]
+    },
     {
       "type": "btn--regular",
       "name": "Regular button",
@@ -63,26 +97,6 @@
             "label": "Text color",
             "default": "#fff",
             "info": "Make sure to provide sufficient background color - text color contrast."
-        },
-        {
-            "type": "range",
-            "id": "border_radius",
-            "min": 0,
-            "max": 40,
-            "step": 1,
-            "unit": "%",
-            "label": "Border radius",
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "border_width",
-            "min": 0,
-            "max": 10,
-            "step": 1,
-            "unit": "px",
-            "label": "Border width",
-            "default": 1
         },
         {
             "type": "color",
@@ -157,26 +171,6 @@
             "label": "Text color",
             "default": "#fff",
             "info": "Make sure to provide sufficient background color - text color contrast."
-        },
-        {
-            "type": "range",
-            "id": "border_radius",
-            "min": 0,
-            "max": 40,
-            "step": 1,
-            "unit": "%",
-            "label": "Border radius",
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "border_width",
-            "min": 0,
-            "max": 10,
-            "step": 1,
-            "unit": "px",
-            "label": "Border width",
-            "default": 1
         },
         {
             "type": "color",
