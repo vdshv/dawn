@@ -264,39 +264,69 @@
           "ba35d02b-0d64-4bfb-91ae-91d4185845ba": {
             "type": "btn--regular",
             "settings": {
-              
+              "background_color": "#411111",
               "text_color": "#ff3131",
               "border_radius": 14,
               "border_width": 2,
               "border_color": "#21a14b",
-              
-              "hover_text_color": "#fff",
-              "hover_border_color": "#000",
-              
-              "active_text_color": "#fff",
-              "active_border_color": "#000"
+              "hover_background_color": "#000000",
+              "hover_text_color": "#ffffff",
+              "hover_border_color": "#000000",
+              "active_background_color": "#000000",
+              "active_text_color": "#ffffff",
+              "active_border_color": "#000000"
             }
           },
           "4f5534f8-fc97-4d85-9cac-143f367e9893": {
             "type": "btn--alt",
             "settings": {
-              
-              "text_color": "#fff",
+              "background_color": "#156327",
+              "text_color": "#ffffff",
               "border_radius": 7,
               "border_width": 2,
               "border_color": "#13c7e4",
-              
+              "hover_background_color": "#000000",
               "hover_text_color": "#f866fa",
-              "hover_border_color": "#000",
-              
-              "active_text_color": "#fff",
-              "active_border_color": "#000"
+              "hover_border_color": "#000000",
+              "active_background_color": "#000000",
+              "active_text_color": "#ffffff",
+              "active_border_color": "#000000"
             }
           }
         },
         "block_order": [
           "ba35d02b-0d64-4bfb-91ae-91d4185845ba",
           "4f5534f8-fc97-4d85-9cac-143f367e9893"
+        ],
+        "settings": {
+        }
+      },
+      "0-style-containers": {
+        "type": "0-style-containers",
+        "blocks": {
+          "89cc841b-cd0e-4aab-b8cb-cdfdd2788160": {
+            "type": "cont--lg",
+            "settings": {
+              "max_width": 1400
+            }
+          },
+          "b99b30e1-126d-474e-9d5d-a541947c444f": {
+            "type": "cont--md",
+            "settings": {
+              "max_width": 1000
+            }
+          },
+          "0ec0438f-fbd5-4342-acf6-4f7b17314434": {
+            "type": "cont--sm",
+            "settings": {
+              "max_width": 600
+            }
+          }
+        },
+        "block_order": [
+          "89cc841b-cd0e-4aab-b8cb-cdfdd2788160",
+          "b99b30e1-126d-474e-9d5d-a541947c444f",
+          "0ec0438f-fbd5-4342-acf6-4f7b17314434"
         ],
         "settings": {
         }
