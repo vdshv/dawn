@@ -1,0 +1,59 @@
+<style>
+{% comment %} These CSS variables are used in /src/scss/common.scss {% endcomment %}
+
+    :root {
+        {% for block in section.blocks %}
+            --{{block.type}}_max_width: {{block.settings.max_width}}px;
+        {% endfor %}
+    }
+    
+
+    .cont {
+        width: 100%;
+        margin: 0 auto;
+    }
+    {% for block in section.blocks %}
+        .{{block.type}} {
+            max-width: var(--{{block.type}}_max_width);
+        }
+    {% endfor %}
+</style>
+
+
+
+{% schema %}
+{
+  "name": "Styles -> Containers",    
+  "blocks": [
+    {
+      "type": "cont--lg",
+      "limit": 1,
+      "name": "Large",
+      "settings": [
+        {
+            "type": "range",
+            "id": "max_width",
+            "min": 800,
+            "max": 1600,
+            "step": 10,
+            "unit": "px",
+            "label": "Max width",
+            "default": 1400
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Styles -> Containers",
+      "settings": {
+      },
+      "blocks": [
+        {
+            "type": "cont--lg"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
