@@ -332,11 +332,56 @@
               "active_text_color": "#156327",
               "active_border_color": "#156327"
             }
+          },
+          "cc388a53-c2c4-4c96-a67d-0130e7ed3211": {
+            "type": "btn--alt-2",
+            "settings": {
+              "background_color": "#000",
+              "text_color": "#fff",
+              "border_color": "#000",
+              "hover_background_color": "#ffffff",
+              "hover_text_color": "#000000",
+              "hover_border_color": "#000",
+              "active_background_color": "#c8c7c7",
+              "active_text_color": "#000000",
+              "active_border_color": "#000"
+            }
+          },
+          "f45942da-a096-4c21-841b-a629ee706191": {
+            "type": "btn--alt-3",
+            "settings": {
+              "background_color": "#ffffff",
+              "text_color": "#156327",
+              "border_color": "#156327",
+              "hover_background_color": "#156327",
+              "hover_text_color": "#fff",
+              "hover_border_color": "#156327",
+              "active_background_color": "#3b864c",
+              "active_text_color": "#fff",
+              "active_border_color": "#000"
+            }
+          },
+          "adbce70a-0cd9-4195-b266-54146907990c": {
+            "type": "btn--disabled",
+            "settings": {
+              "background_color": "#e4e4e4",
+              "text_color": "#000000",
+              "border_color": "#e4e4e4",
+              "hover_background_color": "#000",
+              "hover_text_color": "#fff",
+              "hover_border_color": "#000",
+              "active_background_color": "#000",
+              "active_text_color": "#fff",
+              "active_border_color": "#000"
+            }
           }
         },
         "block_order": [
           "7a764604-2c43-46f3-80a1-2233c75973ba",
-          "4f5534f8-fc97-4d85-9cac-143f367e9893"
+          "4f5534f8-fc97-4d85-9cac-143f367e9893",
+          "cc388a53-c2c4-4c96-a67d-0130e7ed3211",
+          "f45942da-a096-4c21-841b-a629ee706191",
+          "adbce70a-0cd9-4195-b266-54146907990c"
         ],
         "settings": {
         }
