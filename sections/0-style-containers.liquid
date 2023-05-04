@@ -3,7 +3,7 @@
 
     :root {
         {% for block in section.blocks %}
-            --{{block.type}}_max_width: {{block.settings.max_width}}px;
+            --{{ block.type }}_max_width: {{ block.settings.max_width }}px;
         {% endfor %}
     }
     
@@ -13,10 +13,18 @@
         margin: 0 auto;
     }
     {% for block in section.blocks %}
-        .{{block.type}} {
-            max-width: var(--{{block.type}}_max_width);
+        .{{ block.type }} {
+            max-width: var(--{{ block.type }}_max_width);
         }
     {% endfor %}
+    
+    .cont--sm {
+        max-width: var(--cont--sm_max_width);
+    }
+    
+    .cont--md {
+        max-width: var(--cont--md_max_width);
+    }
 </style>
 
 
@@ -39,7 +47,41 @@
             "unit": "px",
             "label": "Max width",
             "default": 1400
+        },
+        {
+      "type": "cont--md",
+      "limit": 1,
+      "name": "Medium",
+      "settings": [
+        {
+          "type": "range",
+          "id": "max_width",
+          "min": 600,
+          "max": 1200,
+          "step": 10,
+          "unit": "px",
+          "label": "Max width",
+          "default": 1000
         }
+      ]
+    },
+    {
+      "type": "cont--sm",
+      "limit": 1,
+      "name": "Small",
+      "settings": [
+        {
+          "type": "range",
+          "id": "max_width",
+          "min": 400,
+          "max": 800,
+          "step": 10,
+          "unit": "px",
+          "label": "Max width",
+          "default": 600
+        }
+      ]
+    }
       ]
     }
   ],
@@ -51,6 +93,12 @@
       "blocks": [
         {
             "type": "cont--lg"
+        },
+        {
+          "type": "cont--md"
+        },
+        {
+          "type": "cont--sm"
         }
       ]
     }
