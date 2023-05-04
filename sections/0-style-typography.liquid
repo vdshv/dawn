@@ -1,4 +1,6 @@
 <style>
+{% comment %} These CSS variables are used in /src/scss/common.scss {% endcomment %}
+
     :root {
         {% for block in section.blocks %}
             --{{block.type}}_font_size: {{block.settings.font_size}}px;
@@ -146,7 +148,7 @@
             "step": 1,
             "unit": "px",
             "label": "Font size",
-            "default": 35
+            "default": 42
         },
         {
             "type": "header",
@@ -161,7 +163,7 @@
             "step": 1,
             "unit": "px",
             "label": "Font size",
-            "default": 25
+            "default": 34
         }
       ]
     },
@@ -178,12 +180,12 @@
         {
             "type": "range",
             "id": "font_size",
-            "min": 20,
-            "max": 120,
+            "min": 22,
+            "max": 90,
             "step": 1,
             "unit": "px",
             "label": "Font size",
-            "default": 50
+            "default": 40
         },
         {
             "type": "range",
@@ -268,12 +270,12 @@
         {
             "type": "range",
             "id": "tablet_font_size",
-            "min": 20,
-            "max": 120,
+            "min": 22,
+            "max": 90,
             "step": 1,
             "unit": "px",
             "label": "Font size",
-            "default": 35
+            "default": 36
         },
         {
             "type": "header",
@@ -283,17 +285,18 @@
         {
             "type": "range",
             "id": "mobile_font_size",
-            "min": 20,
-            "max": 120,
+            "min": 22,
+            "max": 90,
             "step": 1,
             "unit": "px",
             "label": "Font size",
-            "default": 35
+            "default": 28
         }
       ]
     },
     {
       "type": "h3",
+      "limit": 1,
       "name": "Heading - level 3",
       "settings": [
         {
@@ -305,11 +308,11 @@
             "type": "range",
             "id": "font_size",
             "min": 20,
-            "max": 120,
+            "max": 60,
             "step": 1,
             "unit": "px",
             "label": "Font size",
-            "default": 50
+            "default": 32
         },
         {
             "type": "range",
@@ -395,11 +398,11 @@
             "type": "range",
             "id": "tablet_font_size",
             "min": 20,
-            "max": 120,
+            "max": 60,
             "step": 1,
             "unit": "px",
             "label": "Font size",
-            "default": 35
+            "default": 28
         },
         {
             "type": "header",
@@ -410,16 +413,17 @@
             "type": "range",
             "id": "mobile_font_size",
             "min": 20,
-            "max": 120,
+            "max": 60,
             "step": 1,
             "unit": "px",
             "label": "Font size",
-            "default": 35
+            "default": 24
         }
       ]
     },
     {
       "type": "h4",
+      "limit": 1,
       "name": "Heading - level 4",
       "settings": [
         {
@@ -430,12 +434,12 @@
         {
             "type": "range",
             "id": "font_size",
-            "min": 20,
-            "max": 120,
+            "min": 18,
+            "max": 50,
             "step": 1,
             "unit": "px",
             "label": "Font size",
-            "default": 50
+            "default": 24
         },
         {
             "type": "range",
@@ -520,12 +524,12 @@
         {
             "type": "range",
             "id": "tablet_font_size",
-            "min": 20,
-            "max": 120,
+            "min": 18,
+            "max": 50,
             "step": 1,
             "unit": "px",
             "label": "Font size",
-            "default": 35
+            "default": 22
         },
         {
             "type": "header",
@@ -535,17 +539,18 @@
         {
             "type": "range",
             "id": "mobile_font_size",
-            "min": 20,
-            "max": 120,
+            "min": 18,
+            "max": 50,
             "step": 1,
             "unit": "px",
             "label": "Font size",
-            "default": 35
+            "default": 20
         }
       ]
     },
     {
       "type": "h5",
+      "limit": 1,
       "name": "Heading - level 5",
       "settings": [
         {
@@ -556,12 +561,12 @@
         {
             "type": "range",
             "id": "font_size",
-            "min": 20,
-            "max": 120,
+            "min": 16,
+            "max": 40,
             "step": 1,
             "unit": "px",
             "label": "Font size",
-            "default": 50
+            "default": 20
         },
         {
             "type": "range",
@@ -646,12 +651,12 @@
         {
             "type": "range",
             "id": "tablet_font_size",
-            "min": 20,
-            "max": 120,
+            "min": 16,
+            "max": 40,
             "step": 1,
             "unit": "px",
             "label": "Font size",
-            "default": 35
+            "default": 18
         },
         {
             "type": "header",
@@ -661,17 +666,18 @@
         {
             "type": "range",
             "id": "mobile_font_size",
-            "min": 20,
-            "max": 120,
+            "min": 16,
+            "max": 40,
             "step": 1,
             "unit": "px",
             "label": "Font size",
-            "default": 35
+            "default": 16
         }
       ]
     },
     {
       "type": "h6",
+      "limit": 1,
       "name": "Heading - level 6",
       "settings": [
         {
@@ -682,12 +688,12 @@
         {
             "type": "range",
             "id": "font_size",
-            "min": 20,
-            "max": 120,
+            "min": 12,
+            "max": 30,
             "step": 1,
             "unit": "px",
             "label": "Font size",
-            "default": 50
+            "default": 16
         },
         {
             "type": "range",
@@ -772,12 +778,12 @@
         {
             "type": "range",
             "id": "tablet_font_size",
-            "min": 20,
-            "max": 120,
+            "min": 12,
+            "max": 30,
             "step": 1,
             "unit": "px",
             "label": "Font size",
-            "default": 35
+            "default": 13
         },
         {
             "type": "header",
@@ -787,12 +793,12 @@
         {
             "type": "range",
             "id": "mobile_font_size",
-            "min": 20,
-            "max": 120,
+            "min": 12,
+            "max": 30,
             "step": 1,
             "unit": "px",
             "label": "Font size",
-            "default": 35
+            "default": 13
         }
       ]
     },
@@ -871,8 +877,8 @@
         {
             "type": "range",
             "id": "font_size",
-            "min": 14,
-            "max": 40,
+            "min": 16,
+            "max": 35,
             "step": 1,
             "unit": "px",
             "label": "Font size",

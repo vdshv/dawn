@@ -190,6 +190,17 @@ img,svg {
 	&__half {
         width: 50%;
 	}
+
+    &.gap-1 {
+        gap: 30px;
+    }
+}
+.link--icon {
+    gap: 15px;
+    
+    img {
+        width: 20px;
+    }
 }
 
 .overlay-text {
