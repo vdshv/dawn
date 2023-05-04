@@ -264,33 +264,33 @@
           "ba35d02b-0d64-4bfb-91ae-91d4185845ba": {
             "type": "btn--regular",
             "settings": {
-              
+              "background_color": "#411111",
               "text_color": "#ff3131",
               "border_radius": 14,
               "border_width": 2,
               "border_color": "#21a14b",
-              
-              "hover_text_color": "#fff",
-              "hover_border_color": "#000",
-              
-              "active_text_color": "#fff",
-              "active_border_color": "#000"
+              "hover_background_color": "#000",
+              "hover_text_color": "#ffffff",
+              "hover_border_color": "#000000",
+              "active_background_color": "#000",
+              "active_text_color": "#ffffff",
+              "active_border_color": "#000000"
             }
           },
           "4f5534f8-fc97-4d85-9cac-143f367e9893": {
             "type": "btn--alt",
             "settings": {
-              
-              "text_color": "#fff",
+              "background_color": "#156327",
+              "text_color": "#ffffff",
               "border_radius": 7,
               "border_width": 2,
               "border_color": "#13c7e4",
-              
+              "hover_background_color": "#000",
               "hover_text_color": "#f866fa",
-              "hover_border_color": "#000",
-              
-              "active_text_color": "#fff",
-              "active_border_color": "#000"
+              "hover_border_color": "#000000",
+              "active_background_color": "#000",
+              "active_text_color": "#ffffff",
+              "active_border_color": "#000000"
             }
           }
         },
