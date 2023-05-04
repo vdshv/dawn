@@ -1,20 +1,32 @@
 <style>
     :root {
-        {%- for block in section.blocks -%}
-            --{{block.type}}_font_size: {{block.settings.font_size}};
-            --{{block.type}}_line_height: {{block.settings.line_height}};
-            --{{block.type}}_letter_spacing: {{block.settings.letter_spacing}};
+        {% for block in section.blocks %}
+            --{{block.type}}_font_size: {{block.settings.font_size}}px;
+            --{{block.type}}_line_height: {{block.settings.line_height}}%;
+            --{{block.type}}_letter_spacing: {{block.settings.letter_spacing | divided_by: 100}}em;
             --{{block.type}}_font_weight: {{block.settings.font_weight}};
-        {%- endfor -%}
+            --{{block.type}}_text_transform: {{block.settings.text_transform}};
+        {% endfor %}
     }
-    {%- for block in section.blocks -%}
-        {{block.type}} {
+    {% for block in section.blocks %}
+        .{{block.type}} {
             font-size: var(--{{block.type}}_font_size);
             line-height: var(--{{block.type}}_line_height);
             letter-spacing: var(--{{block.type}}_letter_spacing);
             font-weight: var(--{{block.type}}_font_weight);
+            text-transform: var(--{{block.type}}_text_transform);
         }
-    {%- endfor -%}
+        @media screen and (max-width: 1180px) {
+            .{{block.type}} {
+                font-size: {{block.settings.tablet_font_size}}px;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            .{{block.type}} {
+                font-size: {{block.settings.mobile_font_size}}px;
+            }
+        }
+    {% endfor %}
 </style>
 
 
@@ -27,6 +39,11 @@
       "type": "h1",
       "name": "Heading - level 1",
       "settings": [
+        {
+            "type": "header",
+            "content": "Desktop settings",
+            "info": "Screen width more than 1180px"
+        },
         {
             "type": "range",
             "id": "font_size",
@@ -51,11 +68,12 @@
             "type": "range",
             "id": "letter_spacing",
             "min": 0,
-            "max": 100,
+            "max": 10,
             "step": 1,
             "unit": "%",
             "label": "Letter spacing",
-            "default": 0
+            "default": 0,
+            "info": "Gap between letters (% relative to font-size value)"
         },
         {
             "type": "select",
@@ -84,14 +102,205 @@
                 }
             ],
             "default": "700",
-            "info": "additional info"
+            "info": "Bold / regular / light / etc."
+        },
+        {
+            "type": "select",
+            "id": "text_transform",
+            "label": "Text Transform",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "None"
+                },
+                {
+                    "value": "capitalize",
+                    "label": "Capitalize"
+                },
+                {
+                    "value": "uppercase",
+                    "label": "Uppercase"
+                },
+                {
+                    "value": "lowercase",
+                    "label": "Lowercase"
+                }
+            ],
+            "default": "none",
+            "info": "Uppercase / lowercase / capitalize"
+        },
+        {
+            "type": "header",
+            "content": "Tablet settings",
+            "info": "Screen width 768px - 1180px"
+        },
+        {
+            "type": "range",
+            "id": "tablet_font_size",
+            "min": 20,
+            "max": 120,
+            "step": 1,
+            "unit": "px",
+            "label": "Font size",
+            "default": 35
+        },
+        {
+            "type": "header",
+            "content": "Mobile settings",
+            "info": "Screen width less than 768px"
+        },
+        {
+            "type": "range",
+            "id": "mobile_font_size",
+            "min": 20,
+            "max": 120,
+            "step": 1,
+            "unit": "px",
+            "label": "Font size",
+            "default": 25
+        }
+      ]
+    },
+    {
+      "type": "h2",
+      "name": "Heading - level 2",
+      "settings": [
+        {
+            "type": "header",
+            "content": "Desktop settings",
+            "info": "Screen width more than 1180px"
+        },
+        {
+            "type": "range",
+            "id": "font_size",
+            "min": 20,
+            "max": 120,
+            "step": 1,
+            "unit": "px",
+            "label": "Font size",
+            "default": 50
+        },
+        {
+            "type": "range",
+            "id": "line_height",
+            "min": 100,
+            "max": 200,
+            "step": 5,
+            "unit": "%",
+            "label": "Line height",
+            "default": 115
+        },
+        {
+            "type": "range",
+            "id": "letter_spacing",
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "unit": "%",
+            "label": "Letter spacing",
+            "default": 0,
+            "info": "Gap between letters (% relative to font-size value)"
+        },
+        {
+            "type": "select",
+            "id": "font_weight",
+            "label": "Font weight",
+            "options": [
+                {
+                    "value": "300",
+                    "label": "Light - 300"
+                },
+                {
+                    "value": "400",
+                    "label": "Regular - 400"
+                },
+                {
+                    "value": "500",
+                    "label": "Medium - 500"
+                },
+                {
+                    "value": "600",
+                    "label": "Semi Bold - 600"
+                },
+                {
+                    "value": "700",
+                    "label": "Bold - 700"
+                }
+            ],
+            "default": "700",
+            "info": "Bold / regular / light / etc."
+        },
+        {
+            "type": "select",
+            "id": "text_transform",
+            "label": "Text Transform",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "None"
+                },
+                {
+                    "value": "capitalize",
+                    "label": "Capitalize"
+                },
+                {
+                    "value": "uppercase",
+                    "label": "Uppercase"
+                },
+                {
+                    "value": "lowercase",
+                    "label": "Lowercase"
+                }
+            ],
+            "default": "none",
+            "info": "Uppercase / lowercase / capitalize"
+        },
+        {
+            "type": "header",
+            "content": "Tablet settings",
+            "info": "Screen width 768px - 1180px"
+        },
+        {
+            "type": "range",
+            "id": "tablet_font_size",
+            "min": 20,
+            "max": 120,
+            "step": 1,
+            "unit": "px",
+            "label": "Font size",
+            "default": 35
+        },
+        {
+            "type": "header",
+            "content": "Mobile settings",
+            "info": "Screen width less than 768px"
+        },
+        {
+            "type": "range",
+            "id": "mobile_font_size",
+            "min": 20,
+            "max": 120,
+            "step": 1,
+            "unit": "px",
+            "label": "Font size",
+            "default": 35
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Styles - Typography"
+      "name": "Styles - Typography",
+      "settings": {
+      },
+      "blocks": [
+        {
+            "type": "h1"
+        },
+        {
+            "type": "h2"
+        }
+      ]
     }
   ]
 }
