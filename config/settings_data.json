@@ -211,6 +211,45 @@
               "mobile_font_size": 20
             }
           },
+          "731e891d-e67e-40e7-b3f2-6ff5e1a3e2ef": {
+            "type": "btn",
+            "settings": {
+              "padding_x": 25,
+              "padding_y": 12,
+              "font_size": 16,
+              "line_height": 135,
+              "tablet_font_size": 16,
+              "mobile_padding_x": 20,
+              "mobile_padding_y": 8,
+              "mobile_font_size": 14
+            }
+          },
+          "92c01830-78fb-4e39-aac2-f711def79ca5": {
+            "type": "btn--lg",
+            "settings": {
+              "padding_x": 40,
+              "padding_y": 14,
+              "font_size": 18,
+              "line_height": 135,
+              "tablet_font_size": 18,
+              "mobile_padding_x": 25,
+              "mobile_padding_y": 12,
+              "mobile_font_size": 16
+            }
+          },
+          "babad725-f282-4b5e-8c92-8d5195c5140f": {
+            "type": "btn--sm",
+            "settings": {
+              "padding_x": 16,
+              "padding_y": 8,
+              "font_size": 14,
+              "line_height": 135,
+              "tablet_font_size": 14,
+              "mobile_padding_x": 12,
+              "mobile_padding_y": 4,
+              "mobile_font_size": 12
+            }
+          },
           "1a7199a6-4f20-41fc-bf4e-cdfd6c0a898f": {
             "type": "body",
             "settings": {
@@ -246,6 +285,9 @@
           "6bb79336-8393-4562-8679-828b6a9e7410",
           "666aa828-4c83-42d9-b67c-fc462b963d59",
           "488d4cec-9247-451d-9930-c1910973bec1",
+          "731e891d-e67e-40e7-b3f2-6ff5e1a3e2ef",
+          "92c01830-78fb-4e39-aac2-f711def79ca5",
+          "babad725-f282-4b5e-8c92-8d5195c5140f",
           "1a7199a6-4f20-41fc-bf4e-cdfd6c0a898f",
           "e54d8ae8-13aa-42bf-bd3c-20fc62672b07",
           "7e1c4463-89ae-4455-8a9d-a8fa3229b86e"
@@ -261,20 +303,20 @@
       "0-style-button-styles": {
         "type": "0-style-button-styles",
         "blocks": {
-          "ba35d02b-0d64-4bfb-91ae-91d4185845ba": {
-            "type": "btn--regular",
+          "7a764604-2c43-46f3-80a1-2233c75973ba": {
+            "type": "btn",
             "settings": {
-              "background_color": "#411111",
-              "text_color": "#ff3131",
-              "border_radius": 14,
+              "border_radius": 9,
               "border_width": 2,
-              "border_color": "#21a14b",
-              "hover_background_color": "#000000",
-              "hover_text_color": "#ffffff",
-              "hover_border_color": "#000000",
-              "active_background_color": "#000000",
-              "active_text_color": "#ffffff",
-              "active_border_color": "#000000"
+              "background_color": "#ffffff",
+              "text_color": "#000000",
+              "border_color": "#000000",
+              "hover_background_color": "#000",
+              "hover_text_color": "#fff",
+              "hover_border_color": "#000",
+              "active_background_color": "#525252",
+              "active_text_color": "#fff",
+              "active_border_color": "#525252"
             }
           },
           "4f5534f8-fc97-4d85-9cac-143f367e9893": {
@@ -282,20 +324,18 @@
             "settings": {
               "background_color": "#156327",
               "text_color": "#ffffff",
-              "border_radius": 7,
-              "border_width": 2,
-              "border_color": "#13c7e4",
-              "hover_background_color": "#000000",
-              "hover_text_color": "#f866fa",
-              "hover_border_color": "#000000",
-              "active_background_color": "#000000",
-              "active_text_color": "#ffffff",
-              "active_border_color": "#000000"
+              "border_color": "#156327",
+              "hover_background_color": "#ffffff",
+              "hover_text_color": "#156327",
+              "hover_border_color": "#156327",
+              "active_background_color": "#cecece",
+              "active_text_color": "#156327",
+              "active_border_color": "#156327"
             }
           }
         },
         "block_order": [
-          "ba35d02b-0d64-4bfb-91ae-91d4185845ba",
+          "7a764604-2c43-46f3-80a1-2233c75973ba",
           "4f5534f8-fc97-4d85-9cac-143f367e9893"
         ],
         "settings": {
@@ -303,32 +343,18 @@
       },
       "0-style-containers": {
         "type": "0-style-containers",
-        "blocks": {
-          "89cc841b-cd0e-4aab-b8cb-cdfdd2788160": {
-            "type": "cont--lg",
-            "settings": {
-              "max_width": 1400
-            }
-          },
-          "b99b30e1-126d-474e-9d5d-a541947c444f": {
-            "type": "cont--md",
-            "settings": {
-              "max_width": 1000
-            }
-          },
-          "0ec0438f-fbd5-4342-acf6-4f7b17314434": {
-            "type": "cont--sm",
-            "settings": {
-              "max_width": 600
-            }
-          }
-        },
-        "block_order": [
-          "89cc841b-cd0e-4aab-b8cb-cdfdd2788160",
-          "b99b30e1-126d-474e-9d5d-a541947c444f",
-          "0ec0438f-fbd5-4342-acf6-4f7b17314434"
-        ],
         "settings": {
+        }
+      },
+      "0-style-spacings": {
+        "type": "0-style-spacings",
+        "settings": {
+          "padding_vertical_desktop": 20,
+          "padding_horizontal_desktop": 20,
+          "padding_vertical_tablet": 20,
+          "padding_horizontal_tablet": 20,
+          "padding_vertical_mobile": 20,
+          "padding_horizontal_mobile": 20
         }
       }
     },
