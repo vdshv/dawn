@@ -1,0 +1,254 @@
+<style>
+{% comment %} These CSS variables are used in /src/scss/common.scss {% endcomment %}
+
+    :root {
+        {% for block in section.blocks %}
+            --{{block.type}}_background_color: {{block.settings.background_color}};
+            --{{block.type}}_text_color: {{block.settings.text_color}};
+            --{{block.type}}_border_radius: {{block.settings.border_radius}}px;
+            --{{block.type}}_border_width: {{block.settings.border_width}}px;
+            --{{block.type}}_border_color: {{block.settings.border_color}};
+            --{{block.type}}_hover_background_color: {{block.settings.hover_background_color}};
+            --{{block.type}}_hover_text_color: {{block.settings.hover_text_color}};
+            --{{block.type}}_hover_border_color: {{block.settings.hover_border_color}};
+            --{{block.type}}_active_background_color: {{block.settings.active_background_color}};
+            --{{block.type}}_active_text_color: {{block.settings.active_text_color}};
+            --{{block.type}}_active_border_color: {{block.settings.active_border_color}};
+        {% endfor %}
+    }
+
+    .btn {
+        display: inline-block;
+    }
+    {% for block in section.blocks %}
+        .{{block.type}} {
+            background-color: var(--{{block.type}}_background_color);
+            color: var(--{{block.type}}_text_color);
+            border-radius: var(--{{block.type}}_border_radius);
+            border: var(--{{block.type}}_border_width) solid var(--{{block.type}}_border_color);
+            transition: all 0.25s ease;
+        }
+        .{{block.type}}:hover {
+            background-color: var(--{{block.type}}_hover_background_color);
+            color: var(--{{block.type}}_hover_text_color);
+            border-color: var(--{{block.type}}_hover_border_color);
+        }
+        .{{block.type}}:active {
+            background-color: var(--{{block.type}}_active_background_color);
+            color: var(--{{block.type}}_active_text_color);
+            border-color: var(--{{block.type}}_active_border_color);
+            transition: all 0.15s ease;
+        }
+    {% endfor %}
+</style>
+
+{% schema %}
+{
+  "name": "Styles -> Button styles",    
+  "blocks": [
+    {
+      "type": "btn--regular",
+      "name": "Regular button",
+      "limit": 1,
+      "settings": [
+        {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background color",
+            "default": "#000"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text color",
+            "default": "#fff",
+            "info": "Make sure to provide sufficient background color - text color contrast."
+        },
+        {
+            "type": "range",
+            "id": "border_radius",
+            "min": 0,
+            "max": 40,
+            "step": 1,
+            "unit": "%",
+            "label": "Border radius",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "border_width",
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "unit": "px",
+            "label": "Border width",
+            "default": 1
+        },
+        {
+            "type": "color",
+            "id": "border_color",
+            "label": "Border color",
+            "default": "#000"
+        },
+        {
+            "type": "header",
+            "content": "Hover state",
+            "info": "Button state when the user hovers over a button with the cursor."
+        },
+        {
+            "type": "color",
+            "id": "hover_background_color",
+            "label": "Hover Background color",
+            "default": "#000"
+        },
+        {
+            "type": "color",
+            "id": "hover_text_color",
+            "label": "Hover Text color",
+            "default": "#fff",
+            "info": "Make sure to provide sufficient background color - text color contrast."
+        },
+        {
+            "type": "color",
+            "id": "hover_border_color",
+            "label": "Hover Border color",
+            "default": "#000"
+        },
+        {
+            "type": "header",
+            "content": "Active state",
+            "info": "Button state when the user clicks an element with the cursor."
+        },
+        {
+            "type": "color",
+            "id": "active_background_color",
+            "label": "Active Background color",
+            "default": "#000"
+        },
+        {
+            "type": "color",
+            "id": "active_text_color",
+            "label": "Active Text color",
+            "default": "#fff",
+            "info": "Make sure to provide sufficient background color - text color contrast."
+        },
+        {
+            "type": "color",
+            "id": "active_border_color",
+            "label": "Active Border color",
+            "default": "#000"
+        }
+      ]
+    },
+    {
+      "type": "btn--alt",
+      "name": "Alternative button",
+      "limit": 1,
+      "settings": [
+        {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background color",
+            "default": "#000"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text color",
+            "default": "#fff",
+            "info": "Make sure to provide sufficient background color - text color contrast."
+        },
+        {
+            "type": "range",
+            "id": "border_radius",
+            "min": 0,
+            "max": 40,
+            "step": 1,
+            "unit": "%",
+            "label": "Border radius",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "border_width",
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "unit": "px",
+            "label": "Border width",
+            "default": 1
+        },
+        {
+            "type": "color",
+            "id": "border_color",
+            "label": "Border color",
+            "default": "#000"
+        },
+        {
+            "type": "header",
+            "content": "Hover state",
+            "info": "Button state when the user hovers over a button with the cursor."
+        },
+        {
+            "type": "color",
+            "id": "hover_background_color",
+            "label": "Hover Background color",
+            "default": "#000"
+        },
+        {
+            "type": "color",
+            "id": "hover_text_color",
+            "label": "Hover Text color",
+            "default": "#fff",
+            "info": "Make sure to provide sufficient background color - text color contrast."
+        },
+        {
+            "type": "color",
+            "id": "hover_border_color",
+            "label": "Hover Border color",
+            "default": "#000"
+        },
+        {
+            "type": "header",
+            "content": "Active state",
+            "info": "Button state when the user clicks an element with the cursor."
+        },
+        {
+            "type": "color",
+            "id": "active_background_color",
+            "label": "Active Background color",
+            "default": "#000"
+        },
+        {
+            "type": "color",
+            "id": "active_text_color",
+            "label": "Active Text color",
+            "default": "#fff",
+            "info": "Make sure to provide sufficient background color - text color contrast."
+        },
+        {
+            "type": "color",
+            "id": "active_border_color",
+            "label": "Active Border color",
+            "default": "#000"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Styles -> Button styles",
+      "settings": {
+      },
+      "blocks": [
+        {
+            "type": "btn--regular"
+        },
+        {
+            "type": "btn--alt"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

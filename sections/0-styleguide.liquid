@@ -1,19 +1,52 @@
+<<<<<<< HEAD
 < class="cont flex col gap-1">
+=======
+<div class="cont flex col aifs gap-1">
+    {% comment %} TYPOGRAPHY {% endcomment %}
+>>>>>>> 7ead25bbb1be93b258a177fdc6da2977f6294f69
     <h1 class="h1">Title H1</h1>
-    <h2 class="h2">Title H2</h2>
-    <h3 class="h3">Title H3</h3>
-    <h4 class="h4">Title H4</h4>
-    <h5 class="h5">Title H5</h5>
-    <h6 class="h6">Title H6</h6>
-    
 
-    <a class="link" href="#">Default link</a>
+    <h2 class="h2">Title H2</h2>
+
+    <h3 class="h3">Title H3</h3>
+
+    <h4 class="h4">Title H4</h4>
+
+    <h5 class="h5">Title H5</h5>
+
+    <h6 class="h6">Title H6</h6>
+
+    {% comment %} <a class="link" href="#">Default link</a>
 
     <a href="{{ section.settings.button_url }}" class="link--icon flex aic">
         <span>Link + Icon</span>
-        <img class="w-4" src="{{'meganav-arrow.svg' | asset_url}}" alt="">
+        <img class="" src="{{'meganav-arrow.svg' | asset_url}}" alt="">
+    </a> {% endcomment %}
+
+    <div class="text--lg">
+        <p>Larger text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aperiam reprehenderit earum ratione molestiae atque perspiciatis magnam provident omnis, veniam voluptates praesentium deleniti similique labore, laboriosam, consequuntur assumenda a ullam.</p>
+    </div>
+
+    <div class="text">
+        <p>Default text: Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque ratione fugit amet repudiandae vero nulla nesciunt illo quibusdam eos? Earum quidem nesciunt exercitationem! Non id qui ea corporis doloremque sapiente.</p>
+    </div>
+
+    <div class="text--sm">
+        <p>Smaller text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aperiam reprehenderit earum ratione molestiae atque perspiciatis magnam provident omnis, veniam voluptates praesentium deleniti similique labore, laboriosam, consequuntur assumenda a ullam.</p>
+    </div>
+
+
+
+    {% comment %} BUTTON STYLES {% endcomment %}
+    <button class="btn btn--regular">
+        Regular button
+    </button>
+
+    <a href="" class="btn btn--alt">
+        Alternative button
     </a>
 
+<<<<<<< HEAD
     <p class="text--lg">
         Larger text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aperiam reprehenderit earum ratione molestiae atque perspiciatis magnam provident omnis, veniam voluptates praesentium deleniti similique labore, laboriosam, consequuntur assumenda a ullam.
     </p>
@@ -32,6 +65,41 @@
     <div class="cont cont--sm">
       <p>This container has a small maximum width.</p>
     </div>
+=======
+    <button href="" class="btn btn--alt-2">
+        Alternative button 2
+    </button>
+    
+    <a href="" class="btn btn--alt-3">
+        Alternative button 3
+    </a>
+    
+    <a href="" class="btn btn--disabled">
+        Disabled button
+    </a>
+
+    <a href="{{ section.settings.button_url }}" class="btn--icon flex aic">
+        <span>Button + Icon</span>
+        <img class="" src="{{'meganav-arrow.svg' | asset_url}}" alt="">
+    </a>
+
+
+    {% comment %} BUTTON SIZES {% endcomment %}
+    <button href="" class="btn btn--lg btn--alt-2">
+        Larger button
+    </button>
+    
+    <a href="" class="btn btn--md btn--alt-3">
+        Medium button
+    </a>
+    
+    <a href="" class="btn btn--sm btn--disabled">
+        Smaller button
+    </a>
+   
+</div>
+
+>>>>>>> 7ead25bbb1be93b258a177fdc6da2977f6294f69
 
 
 

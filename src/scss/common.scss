@@ -113,7 +113,7 @@ textarea {
 }
 
 button {
-    font-weight: 700;
+    // font-weight: 700;
 }
 
 ::placeholder {
@@ -197,7 +197,7 @@ img,svg {
 }
 .link--icon {
     gap: 15px;
-    
+
     img {
         width: 20px;
     }
@@ -376,120 +376,6 @@ img.abs-full {
     border: 1px solid #E9E8E8;
     display: inline-block;
     border-radius: 30px;
-}
-
-.btn {
-    position: relative;
-    display: inline-block;
-    min-width: 200px;
-    border: 1px solid transparent;
-    border-radius: 35px;
-    font-weight: 700;
-    font-size: 13px;
-    background-color: $accent;
-    text-align: center;
-    cursor: pointer;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    padding: 11px 20px;
-    transition: color ease-in-out 0.2s, background-color ease-in-out 0.2s, border-color ease-in-out 0.2s;
-
-    &::after{
-        content: '';
-        display: block;
-        position: absolute;
-        left: 2px;
-        right: 2px;
-        top: 2px;
-        bottom: 2px;
-        border: solid 1px rgba(255, 255, 255, 0.4);
-        border-radius: 50px;
-    }
-
-    &:hover,
-    &:active {
-        background-color: #fff;
-        color: $accent;
-        border-color: $accent;
-
-        &.loading::before {
-            border-color: $accent transparent $accent transparent;
-        }
-    }
-
-    &.loading {
-        color: transparent;
-
-        &::before {
-            content: " ";
-            display: block;
-            width: 16px;
-            height: 16px;
-            position: absolute;
-            left: calc(50% - 8px);
-            top: calc(50% - 8px);
-            border-radius: 50%;
-            border: 2px solid #fff;
-            transition: border-color ease-in-out 0.2s;
-            animation: lds-dual-ring 1.2s linear infinite;
-            border-color: #fff transparent #fff transparent;
-        }
-
-        @keyframes lds-dual-ring {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-    }
-
-    &.btn-alt {
-        color: #000;
-        background-color: $grey;
-        &::after {
-            display: none;
-        }
-        &:hover,
-        &:active {
-            background-color: #fff;
-            color: #000;
-            border-color: #000;
-        }
-    }
-
-    &.btn-white {
-        color: #000;
-        background-color: #fff;
-
-        &:hover,
-        &:active {
-            color: $accent;
-        }
-    }
-
-    &.btn-sm {
-        font-size: 11px;
-        padding: 6px 10px;
-        font-weight: 700;
-        background: #fff;
-        color: $accent;
-
-        &::after {
-            display: none;
-        }
-        &:hover,
-        &:active {
-            background: #fff;
-            color: $accent;
-        }
-    }
-
-    &:disabled {
-        pointer-events: none;
-        opacity: .7;
-    }
 }
 
 
