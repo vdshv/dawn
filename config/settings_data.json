@@ -343,6 +343,31 @@
       },
       "0-style-containers": {
         "type": "0-style-containers",
+        "blocks": {
+          "af17986f-ac85-48ea-b1df-2d294378a62a": {
+            "type": "cont--lg",
+            "settings": {
+              "max_width": 1400
+            }
+          },
+          "f55dce83-b25a-4a4a-9609-e0c4f5e367c3": {
+            "type": "cont--md",
+            "settings": {
+              "max_width": 1000
+            }
+          },
+          "3e2d45aa-1203-44ca-b3f4-3508f85bd279": {
+            "type": "cont--sm",
+            "settings": {
+              "max_width": 600
+            }
+          }
+        },
+        "block_order": [
+          "af17986f-ac85-48ea-b1df-2d294378a62a",
+          "f55dce83-b25a-4a4a-9609-e0c4f5e367c3",
+          "3e2d45aa-1203-44ca-b3f4-3508f85bd279"
+        ],
         "settings": {
         }
       },
