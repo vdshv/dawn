@@ -6,7 +6,6 @@
             --{{ block.type }}_max_width: {{ block.settings.max_width }}px;
         {% endfor %}
     }
-    
 
     .cont {
         width: 100%;
@@ -17,14 +16,6 @@
             max-width: var(--{{ block.type }}_max_width);
         }
     {% endfor %}
-    
-    .cont--sm {
-        max-width: var(--cont--sm_max_width);
-    }
-    
-    .cont--md {
-        max-width: var(--cont--md_max_width);
-    }
 </style>
 
 

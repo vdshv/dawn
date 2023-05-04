@@ -1,109 +1,290 @@
 <style>
     {% comment %} These CSS variables are used in /src/scss/common.scss {% endcomment %}
         :root {
-            {% for setting in section.settings %}
-                --{{ setting[0] }}_desktop_padding: {{ setting[1].desktop }}px;
-                --{{ setting[0] }}_tablet_padding: {{ setting[1].tablet }}px;
-                --{{ setting[0] }}_mobile_padding: {{ setting[1].mobile }}px;
+            {% for block in section.blocks %}
+                --{{ block.type }}-padding-y: {{ block.settings.padding_y }}px;
+                --{{ block.type }}-padding-x: {{ block.settings.padding_x }}px;
+                --{{ block.type }}-tablet-padding-y: {{ block.settings.tablet_padding_y }}px;
+                --{{ block.type }}-tablet-padding-x: {{ block.settings.tablet_padding_x }}px;
+                --{{ block.type }}-mob-padding-y: {{ block.settings.mob_padding_y }}px;
+                --{{ block.type }}-mob-padding-x: {{ block.settings.mob_padding_x }}px;
             {% endfor %}
         }
         
-        {% for setting in section.settings %}
-            .{{ setting[0] }} {
-                padding: var(--{{setting[0]}}_desktop_padding) 0;
+        {% for block in section.blocks %}
+            .{{block.type}} {
+                padding: var(--{{ block.type }}-padding-y) var(--{{ block.type }}-padding-x);
             }
             @media screen and (max-width: 1180px) {
-                .{{ setting[0] }} {
-                    padding: var(--{{ setting[0] }}_tablet_padding) 0;
+                .{{block.type}} {
+                    padding: var(--{{ block.type }}-tablet-padding-y) var(--{{ block.type }}-tablet-padding-x);
                 }
             }
             @media screen and (max-width: 767px) {
-                .{{setting[0]}} {
-                    padding: var(--{{ setting[0] }}_mobile_padding) 0;
+                .{{block.type}} {
+                    padding: var(--{{ block.type }}-mob-padding-y) var(--{{ block.type }}-mob-padding-x);
                 }
             }
         {% endfor %}
 </style>
 
 
-    {% schema %}
+{% schema %}
     {
-    "name": "Styles -> Spacings",
-    "settings": [
-        {
-        "type": "header",
-        "content": "Desktop"
-        },
-        {
-        "type": "range",
-        "id": "padding_vertical_desktop",
-        "label": "Vertical Padding",
-        "min": 0,
-        "max": 100,
-        "step": 1,
-        "default": 20,
-        "unit": "px"
-        },
-        {
-        "type": "range",
-        "id": "padding_horizontal_desktop",
-        "label": "Horizontal Padding",
-        "min": 0,
-        "max": 100,
-        "step": 1,
-        "default": 20,
-        "unit": "px"
-        },
-        {
-        "type": "header",
-        "content": "Tablet"
-        },
-        {
-        "type": "range",
-        "id": "padding_vertical_tablet",
-        "label": "Vertical Padding",
-        "min": 0,
-        "max": 100,
-        "step": 1,
-        "default": 20,
-        "unit": "px"
-        },
-        {
-        "type": "range",
-        "id": "padding_horizontal_tablet",
-        "label": "Horizontal Padding",
-        "min": 0,
-        "max": 100,
-        "step": 1,
-        "default": 20,
-        "unit": "px"
-        },
-        {
-        "type": "header",
-        "content": "Mobile"
-        },
-        {
-        "type": "range",
-        "id": "padding_vertical_mobile",
-        "label": "Vertical Padding",
-        "min": 0,
-        "max": 100,
-        "step": 1,
-        "default": 20,
-        "unit": "px"
-        },
-        {
-        "type": "range",
-        "id": "padding_horizontal_mobile",
-        "label": "Horizontal Padding",
-        "min": 0,
-        "max": 100,
-        "step": 1,
-        "default": 20,
-        "unit": "px"
-        }
-    ]
+        "name": "Styles -> Section Spacing",
+        "blocks": [
+            {
+                "type": "space--lg",
+                "name": "Large spacing",
+                "settings": [
+                    {
+                        "type": "header",
+                        "content": "Desktop"
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_y",
+                        "label": "Vertical spacing",
+                        "min": 50,
+                        "max": 150,
+                        "step": 1,
+                        "default": 120,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_x",
+                        "label": "Horizontal spacing",
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "default": 40,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Tablet"
+                    },
+                    {
+                        "type": "range",
+                        "id": "tablet_padding_y",
+                        "label": "Vertical spacing",
+                        "min": 30,
+                        "max": 130,
+                        "step": 1,
+                        "default": 100,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "range",
+                        "id": "tablet_padding_x",
+                        "label": "Horizontal spacing",
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "default": 35,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Mobile"
+                    },
+                    {
+                        "type": "range",
+                        "id": "mob_padding_y",
+                        "label": "Vertical spacing",
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "default": 80,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "range",
+                        "id": "mob_padding_x",
+                        "label": "Horizontal spacing",
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "default": 30,
+                        "unit": "px"
+                    }
+                ]
+            },
+            {
+                "type": "space--md",
+                "name": "Medium spacing",
+                "settings": [
+                    {
+                        "type": "header",
+                        "content": "Desktop"
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_y",
+                        "label": "Vertical spacing",
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "default": 80,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_x",
+                        "label": "Horizontal spacing",
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "default": 30,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Tablet"
+                    },
+                    {
+                        "type": "range",
+                        "id": "tablet_padding_y",
+                        "label": "Vertical spacing",
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "default": 60,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "range",
+                        "id": "tablet_padding_x",
+                        "label": "Horizontal spacing",
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "default": 25,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Mobile"
+                    },
+                    {
+                        "type": "range",
+                        "id": "mob_padding_y",
+                        "label": "Vertical spacing",
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "default": 40,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "range",
+                        "id": "mob_padding_x",
+                        "label": "Horizontal spacing",
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "default": 20,
+                        "unit": "px"
+                    }
+                ]
+            },
+            {
+                "type": "space--sm",
+                "name": "Small spacing",
+                "settings": [
+                    {
+                        "type": "header",
+                        "content": "Desktop"
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_y",
+                        "label": "Vertical spacing",
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "default": 60,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_x",
+                        "label": "Horizontal spacing",
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "default": 20,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Tablet"
+                    },
+                    {
+                        "type": "range",
+                        "id": "tablet_padding_y",
+                        "label": "Vertical spacing",
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "default": 40,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "range",
+                        "id": "tablet_padding_x",
+                        "label": "Horizontal spacing",
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "default": 15,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Mobile"
+                    },
+                    {
+                        "type": "range",
+                        "id": "mob_padding_y",
+                        "label": "Vertical spacing",
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "default": 20,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "range",
+                        "id": "mob_padding_x",
+                        "label": "Horizontal spacing",
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "default": 10,
+                        "unit": "px"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Styles -> Section Spacing",
+                "blocks": [
+                    {
+                        "type": "space--lg"
+                    },
+                    {
+                        "type": "space--md"
+                    },
+                    {
+                        "type": "space--sm"
+                    }
+                ]
+            }
+        ]
     }
-    {% endschema %}
+{% endschema %}
 
 
