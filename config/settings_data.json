@@ -311,11 +311,11 @@
               "background_color": "#ffffff",
               "text_color": "#000000",
               "border_color": "#000000",
-              "hover_background_color": "#000",
-              "hover_text_color": "#fff",
-              "hover_border_color": "#000",
+              "hover_background_color": "#000000",
+              "hover_text_color": "#ffffff",
+              "hover_border_color": "#000000",
               "active_background_color": "#525252",
-              "active_text_color": "#fff",
+              "active_text_color": "#ffffff",
               "active_border_color": "#525252"
             }
           },
@@ -373,13 +373,47 @@
       },
       "0-style-spacings": {
         "type": "0-style-spacings",
+        "blocks": {
+          "9a3039f9-58c6-4352-88d9-d6ccbb689bdc": {
+            "type": "space--lg",
+            "settings": {
+              "padding_y": 120,
+              "padding_x": 40,
+              "tablet_padding_y": 100,
+              "tablet_padding_x": 35,
+              "mob_padding_y": 80,
+              "mob_padding_x": 30
+            }
+          },
+          "9dff5f90-4499-4b01-bfd1-e910b2b46096": {
+            "type": "space--md",
+            "settings": {
+              "padding_y": 80,
+              "padding_x": 30,
+              "tablet_padding_y": 60,
+              "tablet_padding_x": 25,
+              "mob_padding_y": 40,
+              "mob_padding_x": 20
+            }
+          },
+          "e80b4fe0-d775-4275-b32f-eb0ad031c641": {
+            "type": "space--sm",
+            "settings": {
+              "padding_y": 60,
+              "padding_x": 20,
+              "tablet_padding_y": 40,
+              "tablet_padding_x": 15,
+              "mob_padding_y": 20,
+              "mob_padding_x": 10
+            }
+          }
+        },
+        "block_order": [
+          "9a3039f9-58c6-4352-88d9-d6ccbb689bdc",
+          "9dff5f90-4499-4b01-bfd1-e910b2b46096",
+          "e80b4fe0-d775-4275-b32f-eb0ad031c641"
+        ],
         "settings": {
-          "padding_vertical_desktop": 20,
-          "padding_horizontal_desktop": 20,
-          "padding_vertical_tablet": 20,
-          "padding_horizontal_tablet": 20,
-          "padding_vertical_mobile": 20,
-          "padding_horizontal_mobile": 20
         }
       }
     },
