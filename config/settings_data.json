@@ -202,13 +202,13 @@
           "488d4cec-9247-451d-9930-c1910973bec1": {
             "type": "h6",
             "settings": {
-              "font_size": 22,
+              "font_size": 16,
               "line_height": 115,
               "letter_spacing": 6,
               "font_weight": "700",
               "text_transform": "uppercase",
-              "tablet_font_size": 20,
-              "mobile_font_size": 20
+              "tablet_font_size": 16,
+              "mobile_font_size": 14
             }
           },
           "731e891d-e67e-40e7-b3f2-6ff5e1a3e2ef": {
