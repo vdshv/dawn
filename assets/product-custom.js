@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(function(t){})),window.onload=()=>{const t=qs(".prod__sticky");t.style.top=function(t){let o=t.offsetTop,n=t.offsetParent;for(;null!==n;)o+=n.offsetTop,n=n.offsetParent;return o}(t)+"px"};

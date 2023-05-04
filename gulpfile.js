@@ -18,7 +18,7 @@ gulp.task('styles', function() {
 	.pipe(autoprefixer(['last 15 versions']))
 	.pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
 	.pipe(gulp.dest('src/css'))
-	.pipe(gulp.dest('../assets'))
+	.pipe(gulp.dest('assets'))
 });
 
 // JS
@@ -30,7 +30,7 @@ gulp.task('scripts', function() {
 	// .pipe(concat('scripts.js'))
 	.pipe(uglify({ output: { comments: false } }))
 	// .pipe(gulp.dest('src/js'))
-	.pipe(gulp.dest('../assets'))
+	.pipe(gulp.dest('assets'))
 });
 
 gulp.task('watch', function() {

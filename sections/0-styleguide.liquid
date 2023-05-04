@@ -1,0 +1,51 @@
+<div class="cont">
+    <h1>Title H1</h1>
+    <h2>Title H2</h2>
+    <h3>Title H3</h3>
+    <h4>Title H4</h4>
+    <h5>Title H5</h5>
+    <h6>Title H6</h6>
+
+    <a href="#">Default link</a>
+    <a class="link--icon" href="#">
+        Default link + icon
+    </a>
+
+    <p>
+        Default text: Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque ratione fugit amet repudiandae vero nulla nesciunt illo quibusdam eos? Earum quidem nesciunt exercitationem! Non id qui ea corporis doloremque sapiente.
+    </p>
+    <p class="text--sm">
+        Smaller text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aperiam reprehenderit earum ratione molestiae atque perspiciatis magnam provident omnis, veniam voluptates praesentium deleniti similique labore, laboriosam, consequuntur assumenda a ullam.
+    </p>
+    <p class="text--lg">
+        Larger text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aperiam reprehenderit earum ratione molestiae atque perspiciatis magnam provident omnis, veniam voluptates praesentium deleniti similique labore, laboriosam, consequuntur assumenda a ullam.
+    </p>
+</div>
+
+
+
+
+{% schema %}
+{
+  "name": "Style guide",    
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "t:sections.announcement-bar.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Welcome to our store",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Style guide"
+    }
+  ]
+}
+{% endschema %}
