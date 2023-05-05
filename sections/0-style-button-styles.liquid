@@ -10,8 +10,6 @@
             --{{block.type}}_hover_text_color: {{block.settings.hover_text_color}};
             --{{block.type}}_hover_border_color: {{block.settings.hover_border_color}};
             --{{block.type}}_active_background_color: {{block.settings.active_background_color}};
-            --{{block.type}}_active_text_color: {{block.settings.active_text_color}};
-            --{{block.type}}_active_border_color: {{block.settings.active_border_color}};
             {% if block.type == 'btn' %}
                 --{{block.type}}_border_radius: {{block.settings.border_radius}}px;
                 --{{block.type}}_border_width: {{block.settings.border_width}}px;
@@ -29,7 +27,12 @@
                 border-radius: var(--{{block.type}}_border_radius);
                 border-width: var(--{{block.type}}_border_width);
                 border-style: solid;
+                cursor: pointer;
                 transition: all 0.25s ease;
+            {% endif %}
+
+            {% if block.type == 'btn--disabled' %}
+                pointer-events: none;
             {% endif %}
         }
         .{{block.type}}:hover {
@@ -39,8 +42,6 @@
         }
         .{{block.type}}:active {
             background-color: var(--{{block.type}}_active_background_color);
-            color: var(--{{block.type}}_active_text_color);
-            border-color: var(--{{block.type}}_active_border_color);
             transition: all 0.15s ease;
         }
     {% endfor %}
@@ -128,19 +129,6 @@
             "id": "active_background_color",
             "label": "Active Background color",
             "default": "#000"
-        },
-        {
-            "type": "color",
-            "id": "active_text_color",
-            "label": "Active Text color",
-            "default": "#fff",
-            "info": "Make sure to provide sufficient background color - text color contrast."
-        },
-        {
-            "type": "color",
-            "id": "active_border_color",
-            "label": "Active Border color",
-            "default": "#000"
         }
       ]
     },
@@ -201,19 +189,6 @@
             "type": "color",
             "id": "active_background_color",
             "label": "Active Background color",
-            "default": "#000"
-        },
-        {
-            "type": "color",
-            "id": "active_text_color",
-            "label": "Active Text color",
-            "default": "#fff",
-            "info": "Make sure to provide sufficient background color - text color contrast."
-        },
-        {
-            "type": "color",
-            "id": "active_border_color",
-            "label": "Active Border color",
             "default": "#000"
         }
       ]
@@ -276,19 +251,6 @@
             "id": "active_background_color",
             "label": "Active Background color",
             "default": "#000"
-        },
-        {
-            "type": "color",
-            "id": "active_text_color",
-            "label": "Active Text color",
-            "default": "#fff",
-            "info": "Make sure to provide sufficient background color - text color contrast."
-        },
-        {
-            "type": "color",
-            "id": "active_border_color",
-            "label": "Active Border color",
-            "default": "#000"
         }
       ]
     },
@@ -350,19 +312,6 @@
             "id": "active_background_color",
             "label": "Active Background color",
             "default": "#000"
-        },
-        {
-            "type": "color",
-            "id": "active_text_color",
-            "label": "Active Text color",
-            "default": "#fff",
-            "info": "Make sure to provide sufficient background color - text color contrast."
-        },
-        {
-            "type": "color",
-            "id": "active_border_color",
-            "label": "Active Border color",
-            "default": "#000"
         }
       ]
     },
@@ -388,54 +337,6 @@
             "type": "color",
             "id": "border_color",
             "label": "Border color",
-            "default": "#000"
-        },
-        {
-            "type": "header",
-            "content": "Hover state",
-            "info": "Button state when the user hovers over a button with the cursor."
-        },
-        {
-            "type": "color",
-            "id": "hover_background_color",
-            "label": "Hover Background color",
-            "default": "#000"
-        },
-        {
-            "type": "color",
-            "id": "hover_text_color",
-            "label": "Hover Text color",
-            "default": "#fff",
-            "info": "Make sure to provide sufficient background color - text color contrast."
-        },
-        {
-            "type": "color",
-            "id": "hover_border_color",
-            "label": "Hover Border color",
-            "default": "#000"
-        },
-        {
-            "type": "header",
-            "content": "Active state",
-            "info": "Button state when the user clicks an element with the cursor."
-        },
-        {
-            "type": "color",
-            "id": "active_background_color",
-            "label": "Active Background color",
-            "default": "#000"
-        },
-        {
-            "type": "color",
-            "id": "active_text_color",
-            "label": "Active Text color",
-            "default": "#fff",
-            "info": "Make sure to provide sufficient background color - text color contrast."
-        },
-        {
-            "type": "color",
-            "id": "active_border_color",
-            "label": "Active Border color",
             "default": "#000"
         }
       ]
