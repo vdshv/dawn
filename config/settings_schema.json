@@ -117,24 +117,14 @@
     "settings": [
       {
         "type": "header",
+        "info": "t:settings_schema.typography.settings.type_header_font.info",
         "content": "t:settings_schema.typography.settings.header__1.content"
       },
       {
         "type": "font_picker",
         "id": "type_header_font",
         "default": "assistant_n4",
-        "label": "t:settings_schema.typography.settings.type_header_font.label",
-        "info": "t:settings_schema.typography.settings.type_header_font.info"
-      },
-      {
-        "type": "range",
-        "id": "heading_scale",
-        "min": 100,
-        "max": 150,
-        "step": 5,
-        "unit": "%",
-        "label": "t:settings_schema.typography.settings.heading_scale.label",
-        "default": 100
+        "label": "t:settings_schema.typography.settings.type_header_font.label"
       },
       {
         "type": "header",
@@ -142,20 +132,15 @@
       },
       {
         "type": "font_picker",
-        "id": "type_body_font",
+        "id": "type_body_font_1",
         "default": "assistant_n4",
-        "label": "t:settings_schema.typography.settings.type_body_font.label",
-        "info": "t:settings_schema.typography.settings.type_body_font.info"
+        "label": "t:settings_schema.typography.settings.type_body_font.label"
       },
       {
-        "type": "range",
-        "id": "body_scale",
-        "min": 100,
-        "max": 130,
-        "step": 5,
-        "unit": "%",
-        "label": "t:settings_schema.typography.settings.body_scale.label",
-        "default": 100
+        "type": "text",
+        "id": "self_hosted_font_name",
+        "default": "",
+        "label": "t:settings_schema.typography.settings.self_hosted_font_name.label"
       }
     ]
   },

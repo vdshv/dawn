@@ -195,31 +195,28 @@
         }
       }
     },
-    "typography": {
-      "name": "Typography",
-      "settings": {
-        "type_header_font": {
-          "label": "Font",
-          "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https://help.shopify.com/manual/online-store/os/store-speed/improving-speed#fonts)"
-        },
-        "heading_scale": {
-          "label": "Font size scale"
-        },
-        "header__1": {
-          "content": "Headings"
-        },
-        "header__2": {
-          "content": "Body"
-        },
-        "type_body_font": {
-          "label": "Font",
-          "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https://help.shopify.com/manual/online-store/os/store-speed/improving-speed#fonts)"
-        },
-        "body_scale": {
-          "label": "Font size scale"
-        }
+  "typography": {
+    "name": "Fonts",
+    "settings": {
+      "type_header_font": {
+        "label": "Font",
+        "info": "For optimal speed and performance, it's best to keep the number of font families used in your store to a maximum of two. [Read More](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+      },
+      "header__1": {
+        "content": "Google"
+      },
+      "header__2": {
+        "content": "Self Hosted"
+      },
+      "type_body_font": {
+        "label": "Font",
+        "info": "It is generally recommended to limit the number of custom fonts used in your store to 2-3, as selecting a different font can have an impact on the loading speed of your store. [Read More](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+      },
+      "body_scale": {
+        "label": "Font size scale"
       }
-    },
+    }
+  },
     "buttons": {
       "name": "Buttons"
     },
