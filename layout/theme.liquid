@@ -225,11 +225,55 @@
     {% comment %} {{ 'base.css' | asset_url | stylesheet_tag }} {% endcomment %}
     {{ 'common.css' | asset_url | stylesheet_tag }}
 
+
+
+    
+    {%- assign h_font_source = settings.heading_font_source  -%}
+
+  {% comment %} {{h_font_source}} {% endcomment %}
+    {%- case h_font_source -%}
+      {%- when 'google' -%}
+
+        
+      {%- when 'self_hosted' -%}
+          {%- assign heading_font = settings.font_1_self_hosted | append: '.woff2' -%}
+
+          <link rel="preload" as="font" href="{{ heading_font | file_url }}" type="font/woff2" crossorigin>
+
+          <style>
+            @font-face {
+              font-family: "heading_font";
+              src: url("{{ heading_font | file_url }}") format("woff2"),
+                  url("{{ heading_font | replace: '.woff2', '.woff' | file_url }}") format("woff");
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+              font-family: "heading_font";
+            }
+          </style>
+
+      {%- when 'shopify' -%}
+
+        
+    {%- endcase -%}
+  
+
+{% comment %} 
+
+
+    body_font
+    body_font_source
+    buttons_font
+    buttons_font_source {% endcomment %}
+
+
+
+
     {%- unless settings.type_body_font.system? -%}
-      <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
+      {% comment %} <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin> {% endcomment %}
     {%- endunless -%}
     {%- unless settings.type_header_font.system? -%}
-      <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
+      {% comment %} <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin> {% endcomment %}
     {%- endunless -%}
 
     {%- if settings.predictive_search_enabled -%}
