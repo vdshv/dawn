@@ -16,6 +16,8 @@
     "font_1_google": "Braah One",
     "font_1_self_hosted": "muli-bold",
     "heading_font": "font_1",
+    "heading_font_source": "self_hosted",
+    "body_font_source": "google",
     "page_width": 1200,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 8,
