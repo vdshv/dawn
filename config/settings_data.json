@@ -12,10 +12,10 @@
     "gradient_background_1": "",
     "colors_background_2": "#f3f3f3",
     "gradient_background_2": "",
-    "type_header_font": "assistant_n4",
-    "heading_scale": 100,
-    "type_body_font": "assistant_n4",
-    "body_scale": 100,
+    "font_1_shopify": "abril_fatface_n4",
+    "font_1_google": "Braah One",
+    "font_1_self_hosted": "muli-bold",
+    "heading_font": "font_1",
     "page_width": 1200,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 8,
@@ -123,6 +123,10 @@
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "",
+    "type_header_font": "assistant_n4",
+    "heading_scale": 100,
+    "type_body_font": "assistant_n4",
+    "body_scale": 100,
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
@@ -314,9 +318,7 @@
               "hover_background_color": "#000000",
               "hover_text_color": "#ffffff",
               "hover_border_color": "#000000",
-              "active_background_color": "#525252",
-              "active_text_color": "#ffffff",
-              "active_border_color": "#525252"
+              "active_background_color": "#525252"
             }
           },
           "4f5534f8-fc97-4d85-9cac-143f367e9893": {
@@ -328,23 +330,19 @@
               "hover_background_color": "#ffffff",
               "hover_text_color": "#156327",
               "hover_border_color": "#156327",
-              "active_background_color": "#cecece",
-              "active_text_color": "#156327",
-              "active_border_color": "#156327"
+              "active_background_color": "#cecece"
             }
           },
           "cc388a53-c2c4-4c96-a67d-0130e7ed3211": {
             "type": "btn--alt-2",
             "settings": {
-              "background_color": "#000",
-              "text_color": "#fff",
-              "border_color": "#000",
+              "background_color": "#000000",
+              "text_color": "#ffffff",
+              "border_color": "#000000",
               "hover_background_color": "#ffffff",
               "hover_text_color": "#000000",
-              "hover_border_color": "#000",
-              "active_background_color": "#c8c7c7",
-              "active_text_color": "#000000",
-              "active_border_color": "#000"
+              "hover_border_color": "#000000",
+              "active_background_color": "#c8c7c7"
             }
           },
           "f45942da-a096-4c21-841b-a629ee706191": {
@@ -354,11 +352,9 @@
               "text_color": "#156327",
               "border_color": "#156327",
               "hover_background_color": "#156327",
-              "hover_text_color": "#fff",
+              "hover_text_color": "#ffffff",
               "hover_border_color": "#156327",
-              "active_background_color": "#3b864c",
-              "active_text_color": "#fff",
-              "active_border_color": "#000"
+              "active_background_color": "#3b864c"
             }
           },
           "adbce70a-0cd9-4195-b266-54146907990c": {
@@ -366,13 +362,7 @@
             "settings": {
               "background_color": "#e4e4e4",
               "text_color": "#000000",
-              "border_color": "#e4e4e4",
-              "hover_background_color": "#000",
-              "hover_text_color": "#fff",
-              "hover_border_color": "#000",
-              "active_background_color": "#000",
-              "active_text_color": "#fff",
-              "active_border_color": "#000"
+              "border_color": "#e4e4e4"
             }
           }
         },
