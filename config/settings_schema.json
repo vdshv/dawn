@@ -113,49 +113,118 @@
     ]
   },
   {
+    "name": "Font 1",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_1_shopify",
+        "default": "assistant_n4",
+        "label": "Font 1 - Shopify Font Picker"
+      },
+      {
+        "type": "text",
+        "id": "font_1_google",
+        "label": "Font 1 - Google Fonts Font Picker"
+      },
+      {
+        "type": "text",
+        "id": "font_1_self_hosted",
+        "label": "Font 1 - Self-hosted Font Picker"
+      }
+    ]
+  },
+  {
+    "name": "Font 2",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_2_shopify",
+        "default": "assistant_n4",
+        "label": "Font 2 - Shopify Font Picker"
+      },
+      {
+        "type": "text",
+        "id": "font_2_google",
+        "label": "Font 2 - Google Fonts Font Picker"
+      },
+      {
+        "type": "text",
+        "id": "font_2_self_hosted",
+        "label": "Font 2 - Self-hosted Font Picker"
+      }
+    ]
+  },
+  {
+    "name": "Font 3",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_3_shopify",
+        "default": "assistant_n4",
+        "label": "Font 3 - Shopify Font Picker"
+      },
+      {
+        "type": "text",
+        "id": "font_3_google",
+        "label": "Font 3 - Google Fonts Font Picker"
+      },
+      {
+        "type": "text",
+        "id": "font_3_self_hosted",
+        "label": "Font 3 - Self-hosted Font Picker"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.typography.name",
     "settings": [
       {
         "type": "header",
-        "content": "t:settings_schema.typography.settings.header__1.content"
+        "content": "Headings Font"
       },
       {
-        "type": "font_picker",
-        "id": "type_header_font",
-        "default": "assistant_n4",
-        "label": "t:settings_schema.typography.settings.type_header_font.label",
-        "info": "t:settings_schema.typography.settings.type_header_font.info"
-      },
-      {
-        "type": "range",
-        "id": "heading_scale",
-        "min": 100,
-        "max": 150,
-        "step": 5,
-        "unit": "%",
-        "label": "t:settings_schema.typography.settings.heading_scale.label",
-        "default": 100
+        "type": "select",
+        "id": "heading_font",
+        "label": "Headings font",
+        "options": [
+          {
+            "value": "font_1",
+            "label": "Font 1"
+          },
+          {
+            "value": "font_2",
+            "label": "Font 2"
+          },
+          {
+            "value": "font_3",
+            "label": "Font 3"
+          }
+        ],
+        "default": "font_1"
       },
       {
         "type": "header",
-        "content": "t:settings_schema.typography.settings.header__2.content"
+        "content": "Body Font"
       },
       {
-        "type": "font_picker",
-        "id": "type_body_font",
-        "default": "assistant_n4",
-        "label": "t:settings_schema.typography.settings.type_body_font.label",
-        "info": "t:settings_schema.typography.settings.type_body_font.info"
-      },
-      {
-        "type": "range",
-        "id": "body_scale",
-        "min": 100,
-        "max": 130,
-        "step": 5,
-        "unit": "%",
-        "label": "t:settings_schema.typography.settings.body_scale.label",
-        "default": 100
+        "type": "select",
+        "id": "body_font",
+        "label": "Body font",
+        "options": [
+          {
+            "value": "font_1",
+            "label": "Font 1"
+          },
+          {
+            "value": "font_2",
+            "label": "Font 2"
+          },
+          {
+            "value": "font_3",
+            "label": "Font 3"
+          }
+        ],
+        "default": "font_1"
       }
     ]
   },
