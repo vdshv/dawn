@@ -203,6 +203,26 @@
         "default": "font_1"
       },
       {
+        "type": "select",
+        "id": "heading_font_source",
+        "label": "Headings font source",
+        "options": [
+          {
+            "value": "shopify",
+            "label": "Shopify"
+          },
+          {
+            "value": "google",
+            "label": "Google Fonts"
+          },
+          {
+            "value": "self_hosted",
+            "label": "Self-hosted"
+          }
+        ],
+        "default": "shopify"
+      },
+      {
         "type": "header",
         "content": "Body Font"
       },
@@ -225,6 +245,70 @@
           }
         ],
         "default": "font_1"
+      },
+      {
+        "type": "select",
+        "id": "body_font_source",
+        "label": "Body font source",
+        "options": [
+          {
+            "value": "shopify",
+            "label": "Shopify"
+          },
+          {
+            "value": "google",
+            "label": "Google Fonts"
+          },
+          {
+            "value": "self_hosted",
+            "label": "Self-hosted"
+          }
+        ],
+        "default": "shopify"
+      },
+      {
+        "type": "header",
+        "content": "Buttons Font"
+      },
+      {
+        "type": "select",
+        "id": "buttons_font",
+        "label": "Buttons font",
+        "options": [
+          {
+            "value": "font_1",
+            "label": "Font 1"
+          },
+          {
+            "value": "font_2",
+            "label": "Font 2"
+          },
+          {
+            "value": "font_3",
+            "label": "Font 3"
+          }
+        ],
+        "default": "font_1"
+      },
+      {
+        "type": "select",
+        "id": "buttons_font_source",
+        "label": "Buttons font source",
+        "options": [
+          {
+            "value": "shopify",
+            "label": "Shopify"
+          },
+          {
+            "value": "google",
+            "label": "Google Fonts"
+          },
+          {
+            "value": "self_hosted",
+            "label": "Self-hosted"
+          }
+        ],
+        "default": "shopify"
       }
     ]
   },
