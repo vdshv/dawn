@@ -227,55 +227,7 @@
 
 
 
-    
-    {%- assign h_font_source = settings.heading_font_source -%}
-
-  {% comment %} {{h_font_source}} {% endcomment %}
-    {%- case h_font_source -%}
-      {%- when 'google' -%}
-        {%- assign heading_font = settings.font_1_google | append: ':400,700&display=swap' -%}
-         <link href="https://fonts.googleapis.com/css?family={{ heading_font | url_escape }}" rel="stylesheet">
-
-          <style>
-            h1, h2, h3, h4, h5, h6 {
-              font-family: "heading_font";
-            }
-          </style>
-      {%- when 'self_hosted' -%}
-          {%- assign heading_font = settings.font_1_self_hosted | append: '.woff2' -%}
-
-          <link rel="preload" as="font" href="{{ heading_font | file_url }}" type="font/woff2" crossorigin>
-
-          <style>
-            @font-face {
-              font-family: "heading_font";
-              src: url("{{ heading_font | file_url }}") format("woff2"),
-                  url("{{ heading_font | replace: '.woff2', '.woff' | file_url }}") format("woff");
-            }
-
-            h1, h2, h3, h4, h5, h6 {
-              font-family: "heading_font";
-            }
-          </style>
-
-      {%- when 'shopify' -%}
-        {%- assign heading_font = settings.font_1_shopify -%}
-        <style>
-          h1, h2, h3, h4, h5, h6 {
-            font-family: "heading_font";
-          }
-        </style>
-    {%- endcase -%}
-  
-
-{% comment %} 
-
-
-    body_font
-    body_font_source
-    buttons_font
-    buttons_font_source {% endcomment %}
-
+  {% render 'fonts' %}
 
 
 

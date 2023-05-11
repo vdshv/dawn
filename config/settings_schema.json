@@ -122,9 +122,14 @@
         "label": "Font 1 - Shopify Font Picker"
       },
       {
-        "type": "text",
+        "type": "html",
         "id": "font_1_google",
-        "label": "Font 1 - Google Fonts Font Picker"
+        "label": "Font 1 - Google Fonts HTML <link> Embed"
+      },
+      {
+        "type": "html",
+        "id": "font_1_google_css",
+        "label": "Font 1 - Google Fonts CSS Embed"
       },
       {
         "type": "text",
@@ -143,9 +148,14 @@
         "label": "Font 2 - Shopify Font Picker"
       },
       {
-        "type": "text",
+        "type": "html",
         "id": "font_2_google",
-        "label": "Font 2 - Google Fonts Font Picker"
+        "label": "Font 2 - Google Fonts HTML <link> Embed"
+      },
+      {
+        "type": "html",
+        "id": "font_2_google_css",
+        "label": "Font 2 - Google Fonts CSS Embed"
       },
       {
         "type": "text",
@@ -164,9 +174,14 @@
         "label": "Font 3 - Shopify Font Picker"
       },
       {
-        "type": "text",
+        "type": "html",
         "id": "font_3_google",
-        "label": "Font 3 - Google Fonts Font Picker"
+        "label": "Font 3 - Google Fonts HTML <link> Embed"
+      },
+      {
+        "type": "html",
+        "id": "font_3_google_css",
+        "label": "Font 3 - Google Fonts CSS Embed"
       },
       {
         "type": "text",
