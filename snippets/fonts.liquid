@@ -37,43 +37,56 @@
     </style>
 {%- endcase -%} {% endcomment %}
 
+
+{% comment %} GOOGLE {% endcomment %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto:ital@0;1&display=swap" rel="stylesheet">
 
+font-family: 'Noto Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
 
+{{settings.font_2_google_css}}
 
 <style>
-    h1, h2, h3, h4, h5, h6, p, a {
+    h1, h2,h3,h4 {
         font-family: 'Noto Sans', sans-serif;
     }
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+</style>
 
-    p {
-        font-weight: 600;
-        font-style: italic;
+
+
+{% comment %} SELF HOSTED {% endcomment %}
+<link rel="preload" as="font" href="font_1.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="font_1_bold.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="font_2_light.woff2" type="font/woff2" crossorigin>
+
+<style>
+    @font-face {
+        font-family: "heading_font";
+        src: url("{{ heading_font | file_url }}") format("woff2"),
+            url("{{ heading_font | replace: '.woff2', '.woff' | file_url }}") format("woff");
     }
-    a {
-        font-weight: 700;
-        font-style: italic;
+    @font-face {
+        font-family: "heading_font";
+        src: url("{{ heading_font | file_url }}") format("woff2"),
+            url("{{ heading_font | replace: '.woff2', '.woff' | file_url }}") format("woff");
     }
-    h1 {
-        font-weight: 400;
-        font-style: italic;
+    @font-face {
+        font-family: "heading_font";
+        src: url("{{ heading_font | file_url }}") format("woff2"),
+            url("{{ heading_font | replace: '.woff2', '.woff' | file_url }}") format("woff");
     }
-    h2 {
-        font-weight: 300;
+    @font-face {
+        font-family: "heading_font";
+        src: url("{{ heading_font | file_url }}") format("woff2"),
+            url("{{ heading_font | replace: '.woff2', '.woff' | file_url }}") format("woff");
     }
-    h3 {
-        font-weight: 400;
-    }
-    h4 {
-        font-weight: 600;
-    }
-    h5 {
-        font-weight: 700;
-    }
-    h6 {
-        font-weight: 300;
-        font-style: italic;
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "heading_font";
     }
 </style>
