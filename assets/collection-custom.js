@@ -1,1 +1,24 @@
-document.addEventListener("DOMContentLoaded",(function(t){window.onclick=t=>{if(t.target.closest(".col__dropdown-trigger")){const e=t.target.closest(".col__dropdown-trigger");let i=e.nextElementSibling;e.classList.contains("active")?(e.classList.remove("active"),i.style.height="0px"):(e.classList.add("active"),i.style.height=i.scrollHeight+"px")}}})),window.onload=()=>{const t=qs(".col__sticky"),e=qs("header").clientHeight;t.style.height=`calc(100vh - ${e}px)`};
+document.addEventListener("DOMContentLoaded", function (event) {
+    window.onclick = (e) => {
+        if(e.target.closest('.col__dropdown-trigger')) {
+            const el = e.target.closest('.col__dropdown-trigger');
+        
+            let tabContent = el.nextElementSibling;
+
+            if(el.classList.contains('active')) {
+                el.classList.remove('active');
+                tabContent.style.height = '0px';
+            } else {
+                el.classList.add('active');
+                tabContent.style.height = tabContent.scrollHeight + 'px';
+            }
+        }
+    }
+});
+
+window.onload = () => {
+    const sticky_side = qs('.col__sticky'),
+          headerGroupHeight = qs('header').clientHeight;
+
+    sticky_side.style.height = `calc(100vh - ${headerGroupHeight}px)`;
+}
