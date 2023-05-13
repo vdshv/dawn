@@ -1,5 +1,50 @@
-<link rel="stylesheet" type="text/css" href="{{ '0-grid.css' | asset_url}}"/>
+<style>
+    .grid-{{section.id}} {
+        gap: {{section.settings.gap_mobile}}px;
+    }
 
+    @media screen and (min-width: 768px) {
+        .grid-{{section.id}} {
+            gap: {{section.settings.gap_tablet}}px;
+        }
+    }
+    @media screen and (min-width: 1181px) {
+        .grid-{{section.id}} {
+            gap: {{section.settings.gap_desktop}}px;
+        }
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="{{ '0-grid.css' | asset_url}}"/>
+{%- assign s = section.settings -%}
+<div class="grid grid-{{section.id}}
+    lg-{{s.column_amount_desktop}}
+    md-{{s.column_amount_tablet}}
+    sm-{{s.column_amount_mobile}}
+    {%- if s.slider_desktop -%}slider-desktop{%- endif -%}
+    {%- if s.slider_tablet -%}slider-tablet{%- endif -%}
+    {%- if s.slider_mobile -%}slider-mobile{%- endif -%}
+">
+    {%- for block in section.blocks -%}
+        {% case block.type %}
+            {% when 'product_list' %}
+                {%- for item in block.settings.collection -%}
+                    {% render 'card-product', card_product: item %}
+                {%- endfor -%}
+
+
+
+
+
+            {% when 'collection_list' %}
+                
+            {% when 'articles_list' %}
+                
+            {% when 'custom_content' %}
+                
+        {% endcase %}
+    {%- endfor -%}
+</div>
 
 {% comment %} {
     "type": "testimonial",
@@ -19,7 +64,6 @@
 {
   "name": "Versatile grid",
   "tag": "section",
-  "class": "section",
   "settings": [
     {
         "type": "header",
