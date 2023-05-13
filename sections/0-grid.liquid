@@ -1,0 +1,181 @@
+
+
+
+
+{% comment %} {
+    "type": "testimonial",
+    "name": "Testimonial",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+        }
+    ]
+}, {% endcomment %}
+
+{% comment %} if slider - align scroll snap? (left/center) {% endcomment %}
+{% comment %} section title + richtext + button {% endcomment %}
+{% schema %}
+{
+  "name": "Versatile grid",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+        "type": "header",
+        "content": "DESKTOP - Layout"
+    },
+    {
+        "type": "range",
+        "id": "column_amount_desktop",
+        "min": 2,
+        "max": 10,
+        "step": 1,
+        "label": "Columns amount",
+        "default": 4
+    },
+    {
+        "type": "checkbox",
+        "id": "slider_desktop",
+        "label": "Enable slider",
+        "default": false
+    },
+    {
+        "type": "range",
+        "id": "gap_desktop",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "label": "Gap between columns",
+        "default": 20
+    },
+    {
+        "type": "header",
+        "content": "TABLET - Layout"
+    },
+    {
+        "type": "range",
+        "id": "column_amount_tablet",
+        "min": 2,
+        "max": 10,
+        "step": 1,
+        "label": "Columns amount",
+        "default": 3
+    },
+    {
+        "type": "checkbox",
+        "id": "slider_tablet",
+        "label": "Enable slider",
+        "default": false
+    },
+    {
+        "type": "range",
+        "id": "gap_tablet",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "label": "Gap between columns",
+        "default": 20
+    },
+    {
+        "type": "header",
+        "content": "MOBILE - Layout"
+    },
+    {
+        "type": "range",
+        "id": "column_amount_mobile",
+        "min": 2,
+        "max": 10,
+        "step": 1,
+        "label": "Columns amount",
+        "default": 2
+    },
+    {
+        "type": "checkbox",
+        "id": "slider_mobile",
+        "label": "Enable slider",
+        "default": false
+    },
+    {
+        "type": "range",
+        "id": "gap_mobile",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "label": "Gap between columns",
+        "default": 20
+    },
+    {
+        "type": "header",
+        "content": "General"
+    }
+  ],
+  "blocks": [
+    {
+        "type": "product_list",
+        "name": "Product list",
+        "settings": [
+            {
+                "type": "collection",
+                "id": "collection",
+                "label": "Collection to display"
+            }
+        ]
+    },
+    {
+        "type": "collection_list",
+        "name": "Collection list",
+        "settings": [
+            {
+                "type": "collection_list",
+                "id": "collection_list",
+                "label": "Collections"
+            }
+        ]
+    },
+    {
+        "type": "articles_list",
+        "name": "Articles list",
+        "settings": [
+            {
+                "type": "blog",
+                "id": "blog",
+                "label": "Blog"
+            }
+        ]
+    },
+    {
+        "type": "custom_content",
+        "name": "Custom content",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            },
+            {
+                "type": "richtext",
+                "id": "richtext",
+                "label": "Content"
+            },
+            {
+                "type": "text",
+                "id": "button_text",
+                "label": "Text"
+            },
+            {
+                "type": "url",
+                "id": "url",
+                "label": "Card URL"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Versatile grid"
+    }
+  ]
+}
+{% endschema %}
