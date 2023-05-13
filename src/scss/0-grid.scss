@@ -1,13 +1,85 @@
 .grid {
+    background: #eee;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
     grid-gap: 1rem;
     align-items: center;
 }
 
-.flex {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    grid-gap: 1rem;
+@media screen and (max-width: 767px) {
+    .grid {
+        &.sm-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &.sm-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        &.sm-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        &.sm-5 {
+            grid-template-columns: repeat(5, 1fr);
+        }
+        &.sm-6 {
+            grid-template-columns: repeat(6, 1fr);
+        }
+        &.sm-7 {
+            grid-template-columns: repeat(7, 1fr);
+        }
+        &.sm-8 {
+            grid-template-columns: repeat(8, 1fr);
+        }
+    }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1180px) {
+    .grid {
+        &.md-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &.md-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        &.md-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        &.md-5 {
+            grid-template-columns: repeat(5, 1fr);
+        }
+        &.md-6 {
+            grid-template-columns: repeat(6, 1fr);
+        }
+        &.md-7 {
+            grid-template-columns: repeat(7, 1fr);
+        }
+        &.md-8 {
+            grid-template-columns: repeat(8, 1fr);
+        }
+    }
+}
+
+@media screen and (min-width: 1181px) {
+    .grid {
+        &.lg-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &.lg-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        &.lg-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        &.lg-5 {
+            grid-template-columns: repeat(5, 1fr);
+        }
+        &.lg-6 {
+            grid-template-columns: repeat(6, 1fr);
+        }
+        &.lg-7 {
+            grid-template-columns: repeat(7, 1fr);
+        }
+        &.lg-8 {
+            grid-template-columns: repeat(8, 1fr);
+        }
+    }
+}
+

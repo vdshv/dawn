@@ -16,8 +16,13 @@
 </style>
 
 <link rel="stylesheet" type="text/css" href="{{ '0-grid.css' | asset_url}}"/>
+<link rel="stylesheet" type="text/css" href="{{ 'component-card.css' | asset_url}}"/>
+
 {%- assign s = section.settings -%}
-<div class="grid grid-{{section.id}}
+<div class="grid grid-{{section.id}} 
+    cont {{s.container}}
+    {{s.spacing}}
+    
     lg-{{s.column_amount_desktop}}
     md-{{s.column_amount_tablet}}
     sm-{{s.column_amount_mobile}}
@@ -28,7 +33,7 @@
     {%- for block in section.blocks -%}
         {% case block.type %}
             {% when 'product_list' %}
-                {%- for item in block.settings.collection -%}
+                {%- for item in block.settings.collection.products -%}
                     {% render 'card-product', card_product: item %}
                 {%- endfor -%}
 
@@ -65,6 +70,50 @@
   "name": "Versatile grid",
   "tag": "section",
   "settings": [
+    {
+        "type": "header",
+        "content": "GLOBAL - Layout"
+    },
+    {
+        "type": "select",
+        "id": "container",
+        "label": "Styles -> Containers TYPE",
+        "options": [
+            {
+                "value": "cont--sm",
+                "label": "Small"
+            },
+            {
+                "value": "cont--md",
+                "label": "Medium"
+            },
+            {
+                "value": "cont--lg",
+                "label": "Large"
+            }
+        ],
+        "default": "cont--lg"
+    },
+    {
+        "type": "select",
+        "id": "spacing",
+        "label": "Styles -> Section Spacing TYPE",
+        "options": [
+            {
+                "value": "space--sm",
+                "label": "Small"
+            },
+            {
+                "value": "space--md",
+                "label": "Medium"
+            },
+            {
+                "value": "space--lg",
+                "label": "Large"
+            }
+        ],
+        "default": "space--lg"
+    },
     {
         "type": "header",
         "content": "DESKTOP - Layout"
