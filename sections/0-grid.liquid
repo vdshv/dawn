@@ -1,16 +1,19 @@
 <style>
     .grid-{{section.id}} {
-        gap: {{section.settings.gap_mobile}}px;
+        row-gap: {{section.settings.y_gap_mobile}}px;
+        column-gap: {{section.settings.x_gap_mobile}}px;
     }
 
     @media screen and (min-width: 768px) {
         .grid-{{section.id}} {
-            gap: {{section.settings.gap_tablet}}px;
+            row-gap: {{section.settings.y_gap_tablet}}px;
+            column-gap: {{section.settings.x_gap_tablet}}px;
         }
     }
     @media screen and (min-width: 1181px) {
         .grid-{{section.id}} {
-            gap: {{section.settings.gap_desktop}}px;
+            row-gap: {{section.settings.y_gap_desktop}}px;
+            column-gap: {{section.settings.x_gap_desktop}}px;
         }
     }
 </style>
@@ -65,6 +68,7 @@
 
 {% comment %} if slider - align scroll snap? (left/center) {% endcomment %}
 {% comment %} section title + richtext + button {% endcomment %}
+
 {% schema %}
 {
   "name": "Versatile grid",
@@ -135,11 +139,20 @@
     },
     {
         "type": "range",
-        "id": "gap_desktop",
+        "id": "x_gap_desktop",
         "min": 0,
         "max": 60,
         "step": 1,
         "label": "Gap between columns",
+        "default": 20
+    },
+    {
+        "type": "range",
+        "id": "y_gap_desktop",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "label": "Gap between rows",
         "default": 20
     },
     {
@@ -163,11 +176,20 @@
     },
     {
         "type": "range",
-        "id": "gap_tablet",
+        "id": "x_gap_tablet",
         "min": 0,
         "max": 60,
         "step": 1,
         "label": "Gap between columns",
+        "default": 20
+    },
+    {
+        "type": "range",
+        "id": "y_gap_tablet",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "label": "Gap between rows",
         "default": 20
     },
     {
@@ -191,11 +213,20 @@
     },
     {
         "type": "range",
-        "id": "gap_mobile",
+        "id": "x_gap_mobile",
         "min": 0,
         "max": 60,
         "step": 1,
         "label": "Gap between columns",
+        "default": 20
+    },
+    {
+        "type": "range",
+        "id": "y_gap_mobile",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "label": "Gap between rows",
         "default": 20
     },
     {
