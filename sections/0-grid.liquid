@@ -1,19 +1,33 @@
+{%- assign s = section.settings -%}
+
 <style>
-    .grid-{{section.id}} {
-        row-gap: {{section.settings.y_gap_mobile}}px;
-        column-gap: {{section.settings.x_gap_mobile}}px;
+    @media screen and (max-width: 767px) {
+        .grid-{{section.id}} {
+            row-gap: {{s.y_gap_mobile}}px;
+            column-gap: {{s.x_gap_mobile}}px;
+        }
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 768px) and (max-width: 1180px) {
         .grid-{{section.id}} {
-            row-gap: {{section.settings.y_gap_tablet}}px;
-            column-gap: {{section.settings.x_gap_tablet}}px;
+            row-gap: {{s.y_gap_tablet}}px;
+            column-gap: {{s.x_gap_tablet}}px;
         }
     }
     @media screen and (min-width: 1181px) {
         .grid-{{section.id}} {
-            row-gap: {{section.settings.y_gap_desktop}}px;
-            column-gap: {{section.settings.x_gap_desktop}}px;
+            row-gap: {{s.y_gap_desktop}}px;
+            column-gap: {{s.x_gap_desktop}}px;
+        }
+
+        .grid-{{section.id}}.slider-desktop {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .grid-{{section.id}}.slider-desktop.lg-6 .slider__item {
+            width: calc((100% - {{s.x_gap_desktop}}px * 5) / 6);
+            min-width: calc((100% - {{s.x_gap_desktop}}px * 5) / 6);
         }
     }
 </style>
@@ -24,32 +38,30 @@
 {% liquid 
     assign slidersEnabled = false
 
-    if section.settings.slider_desktop or section.settings.slider_tablet or section.settings.slider_mobile
+    if s.slider_desktop or s.slider_tablet or s.slider_mobile
         assign slidersEnabled = true
     endif
 %}
 
 
-{%- assign s = section.settings -%}
 
-<slider class="slider 
-    cont {{s.container}}
-    {{s.spacing}}
-    
-">
+
+<slider class="cont {{s.container}} {{s.spacing}}">
     <div class="grid grid-{{section.id}} 
                 lg-{{s.column_amount_desktop}}
                 md-{{s.column_amount_tablet}}
                 sm-{{s.column_amount_mobile}}
-                {%- if s.slider_desktop -%}slider-desktop{%- endif -%}
-                {%- if s.slider_tablet -%}slider-tablet{%- endif -%}
+
+                {%- if slidersEnabled == true -%}slider{%- endif %}
+                {%- if s.slider_desktop -%}slider-desktop{%- endif %}
+                {%- if s.slider_tablet -%}slider-tablet{%- endif %}
                 {%- if s.slider_mobile -%}slider-mobile{%- endif -%}
     ">
         {%- for block in section.blocks -%}
             {% case block.type %}
                 {% when 'product_list' %}
                     {%- for item in block.settings.collection.products -%}
-                        {% render 'card-product', card_product: item, index: forloop.index0 %}
+                        {% render 'card-product', card_product: item, index: forloop.index0  %}
                     {%- endfor -%}
                 {% when 'collection_list' %}
                     
