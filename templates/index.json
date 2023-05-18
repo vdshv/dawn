@@ -14,15 +14,20 @@
         "9f9e78df-8ab4-4b6b-9ca9-3bc5b86f737a"
       ],
       "settings": {
-        "column_amount_desktop": 4,
+        "container": "cont--lg",
+        "spacing": "space--lg",
+        "column_amount_desktop": 6,
         "slider_desktop": false,
-        "gap_desktop": 20,
-        "column_amount_tablet": 3,
+        "x_gap_desktop": 40,
+        "y_gap_desktop": 0,
+        "column_amount_tablet": 4,
         "slider_tablet": false,
-        "gap_tablet": 20,
+        "x_gap_tablet": 20,
+        "y_gap_tablet": 20,
         "column_amount_mobile": 2,
         "slider_mobile": false,
-        "gap_mobile": 20
+        "x_gap_mobile": 0,
+        "y_gap_mobile": 40
       }
     },
     "image_banner": {
