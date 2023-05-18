@@ -453,6 +453,42 @@
         ],
         "settings": {
         }
+      },
+      "0-style-icons": {
+        "type": "0-style-icons",
+        "blocks": {
+          "cd795d3c-53fb-4f30-bb71-12ce0678b0e4": {
+            "type": "icon--lg",
+            "settings": {
+              "icon_size_desktop": 80,
+              "icon_size_tablet": 60,
+              "icon_size_mobile": 40
+            }
+          },
+          "bd785efc-a58a-4c41-babf-aca66fc4352d": {
+            "type": "icon--md",
+            "settings": {
+              "icon_size_desktop": 40,
+              "icon_size_tablet": 30,
+              "icon_size_mobile": 20
+            }
+          },
+          "20b95560-7f2a-48c9-8519-db577ae5cb08": {
+            "type": "icon--sm",
+            "settings": {
+              "icon_size_desktop": 20,
+              "icon_size_tablet": 15,
+              "icon_size_mobile": 10
+            }
+          }
+        },
+        "block_order": [
+          "cd795d3c-53fb-4f30-bb71-12ce0678b0e4",
+          "bd785efc-a58a-4c41-babf-aca66fc4352d",
+          "20b95560-7f2a-48c9-8519-db577ae5cb08"
+        ],
+        "settings": {
+        }
       }
     },
     "content_for_index": [
