@@ -1,10 +1,14 @@
 .grid {
-    background: #eee;
     display: grid;
 }
 
+slider {
+    display: block;
+    background: #eee;
+}
+
 @media screen and (max-width: 767px) {
-    .grid {
+    .grid-wrapper {
         &.sm-2 {
             grid-template-columns: repeat(2, 1fr);
         }

@@ -33,7 +33,7 @@
       assign ratio = 1
     endif
   -%}
-  <div class="card-wrapper product-card-wrapper underline-links-hover">
+  <div class="slider__item card-wrapper product-card-wrapper underline-links-hover" data-slideIndex="{{index}}">
     <div
       class="
         card
@@ -336,7 +336,7 @@
     </div>
   </div>
 {%- else -%}
-  <div class="product-card-wrapper card-wrapper underline-links-hover">
+  <div class="slider__item product-card-wrapper card-wrapper underline-links-hover">
     <div
       class="
         card

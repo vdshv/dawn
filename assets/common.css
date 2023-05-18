@@ -1,1 +1,133 @@
-html{font-size:10px}*{-webkit-box-sizing:border-box;box-sizing:border-box;padding:0;margin:0}a{text-decoration:none;color:inherit}li{list-style:none}b,strong{font-weight:700}button,input,select,textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:none;background:0 0;font-family:Mulish}button::-webkit-input-placeholder,input::-webkit-input-placeholder,select::-webkit-input-placeholder,textarea::-webkit-input-placeholder{font-family:Mulish;color:#000;opacity:.5}button::-moz-placeholder,input::-moz-placeholder,select::-moz-placeholder,textarea::-moz-placeholder{font-family:Mulish;color:#000;opacity:.5}button:-ms-input-placeholder,input:-ms-input-placeholder,select:-ms-input-placeholder,textarea:-ms-input-placeholder{font-family:Mulish;color:#000;opacity:.5}button::-ms-input-placeholder,input::-ms-input-placeholder,select::-ms-input-placeholder,textarea::-ms-input-placeholder{font-family:Mulish;color:#000;opacity:.5}button::placeholder,input::placeholder,select::placeholder,textarea::placeholder{font-family:Mulish;color:#000;opacity:.5}button:focus,button:focus-visible,input:focus,input:focus-visible,select:focus,select:focus-visible,textarea:focus,textarea:focus-visible{outline:0;-webkit-box-shadow:none;box-shadow:none}img,svg{display:block;width:100%;height:auto}.flex{display:-webkit-box;display:-ms-flexbox;display:flex}.flex.jcsb{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.flex.jcc{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.flex.jcfe{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}.flex.aic{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.flex.aife{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.flex.aifs{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.flex.col{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.flex__grow{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}.flex__half{width:50%}.flex.gap-1{gap:20px}
+html {
+  font-size: 10px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+input,
+button,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  border: none;
+  background: none;
+  font-family: "Mulish";
+}
+input::-webkit-input-placeholder, button::-webkit-input-placeholder, select::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  font-family: "Mulish";
+  color: #000;
+  opacity: 0.5;
+}
+input::-moz-placeholder, button::-moz-placeholder, select::-moz-placeholder, textarea::-moz-placeholder {
+  font-family: "Mulish";
+  color: #000;
+  opacity: 0.5;
+}
+input:-ms-input-placeholder, button:-ms-input-placeholder, select:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  font-family: "Mulish";
+  color: #000;
+  opacity: 0.5;
+}
+input::-ms-input-placeholder, button::-ms-input-placeholder, select::-ms-input-placeholder, textarea::-ms-input-placeholder {
+  font-family: "Mulish";
+  color: #000;
+  opacity: 0.5;
+}
+input::placeholder,
+button::placeholder,
+select::placeholder,
+textarea::placeholder {
+  font-family: "Mulish";
+  color: #000;
+  opacity: 0.5;
+}
+input:focus, input:focus-visible,
+button:focus,
+button:focus-visible,
+select:focus,
+select:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+img, svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flex.jcsb {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.flex.jcc {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.flex.jcfe {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.flex.aic {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.flex.aife {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.flex.aifs {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.flex.col {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.flex__grow {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.flex__half {
+  width: 50%;
+}
+.flex.gap-1 {
+  gap: 20px;
+}

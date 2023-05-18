@@ -21,38 +21,61 @@
 <link rel="stylesheet" type="text/css" href="{{ '0-grid.css' | asset_url}}"/>
 <link rel="stylesheet" type="text/css" href="{{ 'component-card.css' | asset_url}}"/>
 
+{% liquid 
+    assign slidersEnabled = false
+
+    if section.settings.slider_desktop or section.settings.slider_tablet or section.settings.slider_mobile
+        assign slidersEnabled = true
+    endif
+%}
+
+
 {%- assign s = section.settings -%}
-<div class="grid grid-{{section.id}} 
+
+<slider class="slider 
     cont {{s.container}}
     {{s.spacing}}
     
-    lg-{{s.column_amount_desktop}}
-    md-{{s.column_amount_tablet}}
-    sm-{{s.column_amount_mobile}}
-    {%- if s.slider_desktop -%}slider-desktop{%- endif -%}
-    {%- if s.slider_tablet -%}slider-tablet{%- endif -%}
-    {%- if s.slider_mobile -%}slider-mobile{%- endif -%}
 ">
-    {%- for block in section.blocks -%}
-        {% case block.type %}
-            {% when 'product_list' %}
-                {%- for item in block.settings.collection.products -%}
-                    {% render 'card-product', card_product: item %}
-                {%- endfor -%}
+    <div class="grid grid-{{section.id}} 
+                lg-{{s.column_amount_desktop}}
+                md-{{s.column_amount_tablet}}
+                sm-{{s.column_amount_mobile}}
+                {%- if s.slider_desktop -%}slider-desktop{%- endif -%}
+                {%- if s.slider_tablet -%}slider-tablet{%- endif -%}
+                {%- if s.slider_mobile -%}slider-mobile{%- endif -%}
+    ">
+        {%- for block in section.blocks -%}
+            {% case block.type %}
+                {% when 'product_list' %}
+                    {%- for item in block.settings.collection.products -%}
+                        {% render 'card-product', card_product: item, index: forloop.index0 %}
+                    {%- endfor -%}
+                {% when 'collection_list' %}
+                    
+                {% when 'articles_list' %}
+                    
+                {% when 'custom_content' %}
+                    
+            {% endcase %}
+        {%- endfor -%}
+    </div>
 
+    {%- if slidersEnabled == true -%}
+        <div class="slider__arrow slider__back">←</div>
 
+        <div class="slider__arrow slider__forward">→</div>
 
-
-
-            {% when 'collection_list' %}
-                
-            {% when 'articles_list' %}
-                
-            {% when 'custom_content' %}
-                
-        {% endcase %}
-    {%- endfor -%}
-</div>
+        {% comment %} <div class="slider__dots">
+            <div class="slider__dot active"></div>
+            <div class="slider__dot"></div>
+            <div class="slider__dot"></div>
+            <div class="slider__dot"></div>
+            <div class="slider__dot"></div>
+            <div class="slider__dot"></div>
+        </div> {% endcomment %}
+    {%- endif -%}
+</slider>
 
 {% comment %} {
     "type": "testimonial",
@@ -125,7 +148,7 @@
     {
         "type": "range",
         "id": "column_amount_desktop",
-        "min": 2,
+        "min": 1,
         "max": 10,
         "step": 1,
         "label": "Columns amount",
@@ -162,7 +185,7 @@
     {
         "type": "range",
         "id": "column_amount_tablet",
-        "min": 2,
+        "min": 1,
         "max": 10,
         "step": 1,
         "label": "Columns amount",
@@ -199,7 +222,7 @@
     {
         "type": "range",
         "id": "column_amount_mobile",
-        "min": 2,
+        "min": 1,
         "max": 10,
         "step": 1,
         "label": "Columns amount",
