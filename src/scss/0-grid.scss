@@ -2,7 +2,7 @@
     display: grid;
 }
 
-slider {
+.slider-wrapper {
     display: block;
     background: #eee;
 }
@@ -81,6 +81,21 @@ slider {
         }
         &.lg-8 {
             grid-template-columns: repeat(8, 1fr);
+        }
+
+        &.slider-desktop {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-y: hidden;
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+
+            .slider__item {
+                scroll-snap-align: start;  
+            }
         }
     }
 }

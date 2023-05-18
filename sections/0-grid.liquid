@@ -20,20 +20,18 @@
             column-gap: {{s.x_gap_desktop}}px;
         }
 
-        .grid-{{section.id}}.slider-desktop {
-            display: flex;
-            flex-wrap: nowrap;
-        }
+        {%- assign col = s.column_amount_desktop -%}
 
-        .grid-{{section.id}}.slider-desktop.lg-6 .slider__item {
-            width: calc((100% - {{s.x_gap_desktop}}px * 5) / 6);
-            min-width: calc((100% - {{s.x_gap_desktop}}px * 5) / 6);
+        .grid-{{section.id}}.slider-desktop.lg-{{col}} .slider__item {
+            width: calc((100% - {{s.x_gap_desktop}}px * {{col | minus: 1}}) / {{col}});
+            min-width: calc((100% - {{s.x_gap_desktop}}px * {{col | minus: 1}}) / {{col}});
         }
     }
 </style>
 
 <link rel="stylesheet" type="text/css" href="{{ '0-grid.css' | asset_url}}"/>
 <link rel="stylesheet" type="text/css" href="{{ 'component-card.css' | asset_url}}"/>
+{% comment %} <script src="{{ '0-slider.js' | asset_url }}" defer></script> {% endcomment %}
 
 {% liquid 
     assign slidersEnabled = false
@@ -46,7 +44,7 @@
 
 
 
-<slider class="cont {{s.container}} {{s.spacing}}">
+<slider-component class="slider-wrapper cont {{s.container}} {{s.spacing}}">
     <div class="grid grid-{{section.id}} 
                 lg-{{s.column_amount_desktop}}
                 md-{{s.column_amount_tablet}}
@@ -87,7 +85,7 @@
             <div class="slider__dot"></div>
         </div> {% endcomment %}
     {%- endif -%}
-</slider>
+</slider-component>
 
 {% comment %} {
     "type": "testimonial",

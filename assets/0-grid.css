@@ -2,7 +2,7 @@
   display: grid;
 }
 
-slider {
+.slider-wrapper {
   display: block;
   background: #eee;
 }
@@ -74,5 +74,22 @@ slider {
   }
   .grid.lg-8 {
     grid-template-columns: repeat(8, 1fr);
+  }
+  .grid.slider-desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+  .grid.slider-desktop .slider__item {
+    scroll-snap-align: start;
   }
 }

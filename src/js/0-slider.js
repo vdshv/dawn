@@ -1,4 +1,4 @@
-class Slider extends HTMLElement {
+class SliderComponent extends HTMLElement {
     constructor() {
         super();
 
@@ -86,4 +86,4 @@ class Slider extends HTMLElement {
     }
 }
 
-customElements.define('slider', Slider);
+customElements.define('slider-component', SliderComponent);
