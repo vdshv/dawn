@@ -1,3 +1,81 @@
+class SliderComponent extends HTMLElement {
+  constructor() {
+      super();
+      
+      this.slider_container = this.querySelector('.grid');  
+      this.slider_item = this.querySelector('.slider__item');
+      this.slider_item_width = this.slider_item.offsetWidth;
+
+      // Add click handlers
+      this.querySelector('.slider__back').addEventListener("click", () => this.navigate("backward"));
+      this.querySelector(".slider__forward").addEventListener("click", () => this.navigate("forward"));
+      // this.querySelectorAll(".slide-indicator")
+      //     .forEach((dot, index) => {
+      //         dot.addEventListener("click", () => navigate(index));
+      //         dot.addEventListener("mouseenter", () => clearInterval(autoplay));
+      //     });
+
+      // Add keyboard handlers
+      this.addEventListener('keydown', (e) => {
+          if (e.code === 'ArrowLeft') {
+              // clearInterval(autoplay);
+              this.navigate("backward");
+          } else if (e.code === 'ArrowRight') {
+              // clearInterval(autoplay);
+              this.navigate("forward");
+          }
+      });
+
+      // Add resize handler
+      window.addEventListener('resize', () => {
+          this.slider_item_width = this.slider_item.offsetWidth;
+      });
+
+      // Autoplay
+      // const autoplay = setInterval(() => navigate("forward"), 3000);
+      // slideContainerEl.addEventListener("mouseenter", () => clearInterval(autoplay));
+
+      // this.slideObserver = new IntersectionObserver((entries, observer) => {
+      //     entries.forEach(entry => {
+      //         if (entry.isIntersecting) {
+      //             this.slider_item_index = entry.target.dataset.slideindex;
+
+      //             this.querySelector('.slide-indicator.active').classList.remove('active');
+      //             carouselEl.querySelectorAll('.slide-indicator')[slideIndex].classList.add('active');
+      //         }
+      //     });
+      // }, { root: slideContainerEl, threshold: .1 });
+      // document.querySelectorAll('.slide').forEach((slide) => {
+      //     slideObserver.observe(slide);
+      // });
+  }
+  
+  getNewScrollPosition = (arg) => {
+      const gap = +window.getComputedStyle(this.slider_container).getPropertyValue("column-gap").slice(0,2),
+            scroll_left = Math.round(this.slider_container.scrollLeft),
+            slider_width = Math.round(this.slider_container.clientWidth),
+            slider_scroll_width = Math.round(this.slider_container.scrollWidth),
+            max_scroll_left = slider_scroll_width - slider_width;
+
+      if (arg === "forward") {
+          const x = scroll_left + slider_width;
+          return (x > max_scroll_left) ? (scroll_left == max_scroll_left ? 0 : max_scroll_left) : x; 
+      } else if (arg === "backward") {
+          const x = scroll_left - slider_width;
+          return (x < 0) ? (scroll_left == 0 ? max_scroll_left : 0) : x;
+      } else if (typeof arg === "number") {
+          const x = arg * (this.slider_item_width + gap);
+          return x;
+      }
+  }
+  navigate = (arg) => {
+      this.slider_container.scrollLeft = this.getNewScrollPosition(arg);
+  }
+}
+customElements.define('slider-component', SliderComponent);
+
+
+
 function getFocusableElements(container) {
   return Array.from(
     container.querySelectorAll(
@@ -571,95 +649,6 @@ class DeferredMedia extends HTMLElement {
 
 customElements.define('deferred-media', DeferredMedia);
 
-class SliderComponent extends HTMLElement {
-  constructor() {
-      super();
-
-      // this
-      // const carouselEl = document.getElementById("carousel");
-
-      this.slider_container = this.querySelector('.grid');
-      // const slideContainerEl = carouselEl.querySelector("#slide-container");
-  
-      this.slider_item = this.querySelector('.slider__item');
-      // const slideEl = carouselEl.querySelector(".slide");
-
-      this.slider_item_width = this.slider_item.offsetWidth;
-      // let slideWidth = slideEl.offsetWidth;
-
-
-      // Add click handlers
-      this.querySelector('.slider__back').addEventListener("click", () => this.navigate("backward"));
-      this.querySelector(".slider__forward").addEventListener("click", () => this.navigate("forward"));
-      // this.querySelectorAll(".slide-indicator")
-      //     .forEach((dot, index) => {
-      //         dot.addEventListener("click", () => navigate(index));
-      //         dot.addEventListener("mouseenter", () => clearInterval(autoplay));
-      //     });
-
-      // Add keyboard handlers
-      // document.addEventListener('keydown', (e) => {
-      this.addEventListener('keydown', (e) => {
-          if (e.code === 'ArrowLeft') {
-              // clearInterval(autoplay);
-              this.navigate("backward");
-          } else if (e.code === 'ArrowRight') {
-              // clearInterval(autoplay);
-              this.navigate("forward");
-          }
-      });
-
-      // Add resize handler
-      window.addEventListener('resize', () => {
-          this.slider_item_width = this.slider_item.offsetWidth;
-      });
-
-      // Autoplay
-      // const autoplay = setInterval(() => navigate("forward"), 3000);
-      // slideContainerEl.addEventListener("mouseenter", () => clearInterval(autoplay));
-
-      // this.slideObserver = new IntersectionObserver((entries, observer) => {
-      //     entries.forEach(entry => {
-      //         if (entry.isIntersecting) {
-      //             this.slider_item_index = entry.target.dataset.slideindex;
-
-      //             this.querySelector('.slide-indicator.active').classList.remove('active');
-      //             carouselEl.querySelectorAll('.slide-indicator')[slideIndex].classList.add('active');
-      //         }
-      //     });
-      // }, { root: slideContainerEl, threshold: .1 });
-      // document.querySelectorAll('.slide').forEach((slide) => {
-      //     slideObserver.observe(slide);
-      // });
-  }
-  
-  
-  
-  // Slide transition
-  getNewScrollPosition = (arg) => {
-      // const gap = 10;
-
-      const maxScrollLeft = this.slider_container.scrollWidth - this.slider_item_width;
-      if (arg === "forward") {
-          // const x = this.slider_container.scrollLeft + slideWidth + gap;
-          const x = this.slider_container.scrollLeft + this.slider_item_width;
-          return x <= maxScrollLeft ? x : 0;
-      } else if (arg === "backward") {
-          // const x = this.slider_container.scrollLeft - slideWidth - gap;
-          const x = this.slider_container.scrollLeft - this.slider_item_width;
-          return x >= 0 ? x : maxScrollLeft;
-      } else if (typeof arg === "number") {
-          // const x = arg * (slideWidth + gap);
-          const x = arg * (this.slider_item_width);
-          return x;
-      }
-  }
-  navigate = (arg) => {
-      this.slider_container.scrollLeft = this.getNewScrollPosition(arg);
-  }
-}
-
-customElements.define('slider-component', SliderComponent);
 
 // class SliderComponent extends HTMLElement {
 //   constructor() {

@@ -20,11 +20,11 @@
             column-gap: {{s.x_gap_desktop}}px;
         }
 
-        {%- assign col = s.column_amount_desktop -%}
+        {%- assign cols = s.column_amount_desktop -%}
 
-        .grid-{{section.id}}.slider-desktop.lg-{{col}} .slider__item {
-            width: calc((100% - {{s.x_gap_desktop}}px * {{col | minus: 1}}) / {{col}});
-            min-width: calc((100% - {{s.x_gap_desktop}}px * {{col | minus: 1}}) / {{col}});
+        .grid-{{section.id}}.slider-desktop.lg-{{cols}} .slider__item {
+            width: calc((100% - {{s.x_gap_desktop}}px * {{cols | minus: 1}}) / {{cols}});
+            min-width: calc((100% - {{s.x_gap_desktop}}px * {{cols | minus: 1}}) / {{cols}});
         }
     }
 </style>
@@ -72,9 +72,9 @@
     </div>
 
     {%- if slidersEnabled == true -%}
-        {% comment %} <div class="slider__arrow slider__back">←</div>
+        <div class="slider__arrow slider__back">←</div>
 
-        <div class="slider__arrow slider__forward">→</div> {% endcomment %}
+        <div class="slider__arrow slider__forward">→</div>
 
         {% comment %} <div class="slider__dots">
             <div class="slider__dot active"></div>

@@ -1,0 +1,208 @@
+<style>
+    {% comment %} These CSS variables are used in /src/scss/common.scss {% endcomment %}
+        :root {
+            {% for block in section.blocks %}
+                --{{ block.type }}-size-desktop: {{ block.settings.icon_size_desktop }}px;
+                --{{ block.type }}-size-tablet: {{ block.settings.icon_size_tablet }}px;
+                --{{ block.type }}-size-mobile: {{ block.settings.icon_size_mobile }}px;
+            {% endfor %}
+        }
+        
+
+        .icon {
+            display: inline-block;
+        }
+        {% for block in section.blocks %}
+            @media screen and (min-width: 1181px) {
+                .{{block.type}} {
+                    width: var(--{{block.type}}-size-desktop);
+                    height: var(--{{block.type}}-size-desktop);
+                }
+            }
+            
+            @media screen and (min-width: 768px) and (max-width: 1180px) {
+                .{{block.type}} {
+                    width: var(--{{block.type}}-size-tablet);
+                    height: var(--{{block.type}}-size-tablet);
+                }
+            }
+            @media screen and (max-width: 767px) {
+                .{{block.type}} {
+                    width: var(--{{block.type}}-size-mobile);
+                    height: var(--{{block.type}}-size-mobile);
+                }
+            }
+        {% endfor %}
+</style>
+
+
+{% schema %}
+    {
+        "name": "Styles -> Icons",
+        "blocks": [
+            {
+                "type": "icon--lg",
+                "limit": 1,
+                "name": "Large icon",
+                "settings": [
+                    {
+                        "type": "header",
+                        "content": "Desktop"
+                    },
+                    {
+                        "type": "range",
+                        "id": "icon_size_desktop",
+                        "label": "Icon size (desktop)",
+                        "min": 0,
+                        "max": 200,
+                        "step": 2,
+                        "default": 50,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Tablet"
+                    },
+                    {
+                        "type": "range",
+                        "id": "icon_size_tablet",
+                        "label": "Icon size (tablet)",
+                        "min": 0,
+                        "max": 200,
+                        "step": 2,
+                        "default": 40,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Mobile"
+                    },
+                    {
+                        "type": "range",
+                        "id": "icon_size_mobile",
+                        "label": "Icon size (mobile)",
+                        "min": 0,
+                        "max": 200,
+                        "step": 2,
+                        "default": 30,
+                        "unit": "px"
+                    }
+                ]
+            },
+            {
+                "type": "icon--md",
+                "limit": 1,
+                "name": "Medium icon",
+                "settings": [
+                    {
+                        "type": "header",
+                        "content": "Desktop"
+                    },
+                    {
+                        "type": "range",
+                        "id": "icon_size_desktop",
+                        "label": "Icon size (desktop)",
+                        "min": 0,
+                        "max": 200,
+                        "step": 2,
+                        "default": 50,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Tablet"
+                    },
+                    {
+                        "type": "range",
+                        "id": "icon_size_tablet",
+                        "label": "Icon size (tablet)",
+                        "min": 0,
+                        "max": 200,
+                        "step": 2,
+                        "default": 40,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Mobile"
+                    },
+                    {
+                        "type": "range",
+                        "id": "icon_size_mobile",
+                        "label": "Icon size (mobile)",
+                        "min": 0,
+                        "max": 200,
+                        "step": 2,
+                        "default": 30,
+                        "unit": "px"
+                    }
+                ]
+            },
+            {
+                "type": "icon--sm",
+                "limit": 1,
+                "name": "Small icon",
+                "settings": [
+                    {
+                        "type": "header",
+                        "content": "Desktop"
+                    },
+                    {
+                        "type": "range",
+                        "id": "icon_size_desktop",
+                        "label": "Icon size (desktop)",
+                        "min": 0,
+                        "max": 200,
+                        "step": 2,
+                        "default": 50,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Tablet"
+                    },
+                    {
+                        "type": "range",
+                        "id": "icon_size_tablet",
+                        "label": "Icon size (tablet)",
+                        "min": 0,
+                        "max": 200,
+                        "step": 2,
+                        "default": 40,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Mobile"
+                    },
+                    {
+                        "type": "range",
+                        "id": "icon_size_mobile",
+                        "label": "Icon size (mobile)",
+                        "min": 0,
+                        "max": 200,
+                        "step": 2,
+                        "default": 30,
+                        "unit": "px"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Styles -> Icons",
+                "blocks": [
+                    {
+                        "type": "icon--lg"
+                    },
+                    {
+                        "type": "icon--md"
+                    },
+                    {
+                        "type": "icon--sm"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

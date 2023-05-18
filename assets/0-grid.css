@@ -2,32 +2,58 @@
   display: grid;
 }
 
+.slider {
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+.slider__item {
+  scroll-snap-align: start;
+}
+
 .slider-wrapper {
   display: block;
   background: #eee;
 }
 
 @media screen and (max-width: 767px) {
-  .grid-wrapper.sm-2 {
+  .grid.sm-2 {
     grid-template-columns: repeat(2, 1fr);
   }
-  .grid-wrapper.sm-3 {
+  .grid.sm-3 {
     grid-template-columns: repeat(3, 1fr);
   }
-  .grid-wrapper.sm-4 {
+  .grid.sm-4 {
     grid-template-columns: repeat(4, 1fr);
   }
-  .grid-wrapper.sm-5 {
+  .grid.sm-5 {
     grid-template-columns: repeat(5, 1fr);
   }
-  .grid-wrapper.sm-6 {
+  .grid.sm-6 {
     grid-template-columns: repeat(6, 1fr);
   }
-  .grid-wrapper.sm-7 {
+  .grid.sm-7 {
     grid-template-columns: repeat(7, 1fr);
   }
-  .grid-wrapper.sm-8 {
+  .grid.sm-8 {
     grid-template-columns: repeat(8, 1fr);
+  }
+  .grid.sm-9 {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .grid.sm-10 {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .grid.slider-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    overflow-x: scroll;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1180px) {
@@ -52,6 +78,20 @@
   .grid.md-8 {
     grid-template-columns: repeat(8, 1fr);
   }
+  .grid.md-9 {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .grid.md-10 {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .grid.slider-tablet {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
 }
 @media screen and (min-width: 1181px) {
   .grid.lg-2 {
@@ -75,21 +115,18 @@
   .grid.lg-8 {
     grid-template-columns: repeat(8, 1fr);
   }
+  .grid.lg-9 {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .grid.lg-10 {
+    grid-template-columns: repeat(10, 1fr);
+  }
   .grid.slider-desktop {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
-    overflow-y: hidden;
     overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    -ms-scroll-snap-type: x mandatory;
-        scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-  }
-  .grid.slider-desktop .slider__item {
-    scroll-snap-align: start;
   }
 }
