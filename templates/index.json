@@ -17,7 +17,7 @@
         "container": "cont--lg",
         "spacing": "space--lg",
         "column_amount_desktop": 6,
-        "slider_desktop": false,
+        "slider_desktop": true,
         "x_gap_desktop": 40,
         "y_gap_desktop": 0,
         "column_amount_tablet": 4,
