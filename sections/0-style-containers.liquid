@@ -8,8 +8,12 @@
     }
 
     .cont {
+      background: #eee;
         width: 100%;
-        margin: 0 auto;
+        margin: 20px auto;
+    }
+     .cont .cont {
+      background: #aaa;
     }
     {% for block in section.blocks %}
         .{{ block.type }} {

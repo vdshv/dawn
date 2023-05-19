@@ -83,6 +83,7 @@ img, svg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
 }
 .flex.jcsb {
   -webkit-box-pack: justify;
@@ -130,4 +131,24 @@ img, svg {
 }
 .flex.gap-1 {
   gap: 20px;
+}
+
+.rel {
+  position: relative;
+}
+
+.abs-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0px);
+          transform: translate3d(-50%, -50%, 0px);
+}
+
+.abs-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
