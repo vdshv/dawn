@@ -56,19 +56,19 @@
                 sm-{{s.column_amount_mobile}}
                 {%- if slidersEnabled == true -%}
                     slider
-                    {%- if s.slider_desktop -%}slider-desktop{%- endif %}
-                    {%- if s.slider_tablet -%}slider-tablet{%- endif %}
-                    {%- if s.slider_mobile -%}slider-mobile{%- endif -%}
+                    {%- if s.slider_desktop %} slider-desktop {% endif %}
+                    {%- if s.slider_tablet %} slider-tablet {% endif %}
+                    {%- if s.slider_mobile %} slider-mobile {% endif -%}
                 {%- endif %}
 
                 {%- if arrowsEnabled == true -%}
-                    {%- if s.arrows_desktop -%}
+                    {% if s.arrows_desktop -%}
                         {{s.arrows_position_desktop}}
                     {%- endif %}
-                    {%- if s.arrows_tablet -%}
+                    {% if s.arrows_tablet -%}
                         {{s.arrows_position_tablet}}
                     {%- endif %}
-                    {%- if s.arrows_mobile -%}
+                    {% if s.arrows_mobile -%}
                         {{s.arrows_position_mobile}}
                     {%- endif -%}
                 {%- endif -%}
