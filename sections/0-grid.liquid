@@ -35,9 +35,14 @@
 
 {% liquid 
     assign slidersEnabled = false
+    assign arrowsEnabled = false
 
     if s.slider_desktop or s.slider_tablet or s.slider_mobile
         assign slidersEnabled = true
+    endif
+    
+    if s.arrows_desktop or s.arrows_tablet or s.arrows_mobile
+        assign arrowsEnabled = true
     endif
 %}
 
@@ -49,10 +54,24 @@
                 lg-{{s.column_amount_desktop}}
                 md-{{s.column_amount_tablet}}
                 sm-{{s.column_amount_mobile}}
-                {%- if slidersEnabled == true -%}slider{%- endif %}
-                {%- if s.slider_desktop -%}slider-desktop{%- endif %}
-                {%- if s.slider_tablet -%}slider-tablet{%- endif %}
-                {%- if s.slider_mobile -%}slider-mobile{%- endif -%}
+                {%- if slidersEnabled == true -%}
+                    slider
+                    {%- if s.slider_desktop -%}slider-desktop{%- endif %}
+                    {%- if s.slider_tablet -%}slider-tablet{%- endif %}
+                    {%- if s.slider_mobile -%}slider-mobile{%- endif -%}
+                {%- endif %}
+
+                {%- if arrowsEnabled == true -%}
+                    {%- if s.arrows_desktop -%}
+                        {{s.arrows_position_desktop}}
+                    {%- endif %}
+                    {%- if s.arrows_tablet -%}
+                        {{s.arrows_position_tablet}}
+                    {%- endif %}
+                    {%- if s.arrows_mobile -%}
+                        {{s.arrows_position_mobile}}
+                    {%- endif -%}
+                {%- endif -%}
     ">
         {%- for block in section.blocks -%}
             {% case block.type %}
@@ -71,9 +90,21 @@
     </div>
 
     {%- if slidersEnabled == true -%}
-        <div class="slider__arrow slider__back">←</div>
 
-        <div class="slider__arrow slider__forward">→</div>
+        {%- if arrowsEnabled == true -%}
+            <div class="slider__arrows flex aic jcsb">
+                <div class="slider__arrow slider__back">←</div>
+                <div class="slider__arrow slider__forward">→</div>
+
+                {% comment %} <div class="slider__arrow slider__back">
+                    <img src="{{ settings.slider_arrow_svg | file_url }}" alt="">
+                </div> {% endcomment %}
+                
+                {% comment %} <div class="slider__arrow slider__forward">
+                    <img src="{{ settings.slider_arrow_svg | file_url }}" alt="">
+                </div> {% endcomment %}
+            </div>
+        {%- endif -%}
 
         {% comment %} <div class="slider__dots">
             <div class="slider__dot active"></div>
@@ -170,6 +201,32 @@
         "default": false
     },
     {
+        "type": "checkbox",
+        "id": "arrows_desktop",
+        "label": "Enable slider arrows",
+        "default": false
+    },
+    {
+        "type": "select",
+        "id": "arrows_position_desktop",
+        "label": "Slider arrows position",
+        "options": [
+            {
+                "value": "lg-arrows--under",
+                "label": "Under the slider"
+            },
+            {
+                "value": "lg-arrows--over",
+                "label": "Over the slider - centered vertically"
+            },
+            {
+                "value": "lg-arrows--sides",
+                "label": "On sides of the slider - centered vertically"
+            }
+        ],
+        "default": "lg-arrows--over"
+    },
+    {
         "type": "range",
         "id": "x_gap_desktop",
         "min": 0,
@@ -207,6 +264,32 @@
         "default": false
     },
     {
+        "type": "checkbox",
+        "id": "arrows_tablet",
+        "label": "Enable slider arrows",
+        "default": false
+    },
+    {
+        "type": "select",
+        "id": "arrows_position_tablet",
+        "label": "Slider arrows position",
+        "options": [
+            {
+                "value": "md-arrows--under",
+                "label": "Under the slider"
+            },
+            {
+                "value": "md-arrows--over",
+                "label": "Over the slider - centered vertically"
+            },
+            {
+                "value": "md-arrows--sides",
+                "label": "On sides of the slider - centered vertically"
+            }
+        ],
+        "default": "md-arrows--over"
+    },
+    {
         "type": "range",
         "id": "x_gap_tablet",
         "min": 0,
@@ -242,6 +325,32 @@
         "id": "slider_mobile",
         "label": "Enable slider",
         "default": false
+    },
+    {
+        "type": "checkbox",
+        "id": "arrows_mobile",
+        "label": "Enable slider arrows",
+        "default": false
+    },
+    {
+        "type": "select",
+        "id": "arrows_position_mobile",
+        "label": "Slider arrows position",
+        "options": [
+            {
+                "value": "sm-arrows--under",
+                "label": "Under the slider"
+            },
+            {
+                "value": "sm-arrows--over",
+                "label": "Over the slider - centered vertically"
+            },
+            {
+                "value": "sm-arrows--sides",
+                "label": "On sides of the slider - centered vertically"
+            }
+        ],
+        "default": "sm-arrows--over"
     },
     {
         "type": "range",
