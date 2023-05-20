@@ -96,8 +96,12 @@
 
             {%- if arrowsEnabled == true -%}
                 {% comment %} <div class="slider__arrows flex aic jcsb"> {% endcomment %}
-                    <div class="slider__arrow slider__arrow--back">←</div>
-                    <div class="slider__arrow slider__arrow--forward">←</div>
+                    <div class="slider__arrow slider__arrow--back">
+                        <img src="{{ settings.slider_arrow_svg | file_url }}" alt="">
+                    </div>
+                    <div class="slider__arrow slider__arrow--forward">
+                        <img src="{{ settings.slider_arrow_svg | file_url }}" alt="">
+                    </div>
 
                     {% comment %} <div class="slider__arrow slider__back">
                         <img src="{{ settings.slider_arrow_svg | file_url }}" alt="">
