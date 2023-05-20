@@ -3,18 +3,36 @@
 }
 
 .slider {
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+    &__inner {
+        position: relative;
+        z-index: 1;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+    }
 
     &__item {
         scroll-snap-align: start;  
     }
+
+    &__arrow {
+        cursor: pointer;
+        z-index: 2;
+        padding: 10px;
+        background: #fff;
+
+        width: var(--slider-arrow-size-lg);
+        height: var(--slider-arrow-size-lg);
+        
+        &--forward img {
+            transform: rotate(180deg);
+        }
+    }
 }
 
-.slider-wrapper {
+.slider-component {
     display: block;
 }
 
@@ -118,31 +136,7 @@
     }
 
     .slider {
-        &__arrows {
-            z-index: 10;
-            background: #000;
-            
-            &.md--under {
-                
-            }
-
-            &.md--over,
-            &.md--sides {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate3d(-50%, -50%, 0px);
-            }
-
-            &.md--hidden {
-                display: none;
-            }
-        }
-
-        &__arrow {
-            padding: 10px;
-            background: #fff;
-        }
+        
     }
 }
 
@@ -184,27 +178,34 @@
         }
     }
 
+
     .slider {
-        &__arrows {
-            &.lg--under {
-                
-            }
 
-            &.lg--over,
-            &.lg--sides {
+        &__arrow {
+            
+        }
+
+        &.lg-arrows--over,
+        &.lg-arrows--sides {
+            .slider__arrow {
                 position: absolute;
-                left: 50%;
+                left: 0;
                 top: 50%;
-                transform: translate3d(-50%, -50%, 0px);
+                transform: translate3d(0, -50%, 0);
             }
-
-            &.lg--hidden {
-                display: none;
+            .slider__arrow--forward {
+                right: 0;
+                left: auto;
             }
         }
 
-        &__arrow {
+        &.lg-arrows--sides {
 
+        }
+        &.lg-arrows--hidden {
+            .slider__arrow {
+                display: none;
+            }
         }
     }
 }

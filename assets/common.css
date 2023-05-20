@@ -1,7 +1,3 @@
-html {
-  font-size: 10px;
-}
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -31,25 +27,20 @@ textarea {
        appearance: none;
   border: none;
   background: none;
-  font-family: "Mulish";
 }
 input::-webkit-input-placeholder, button::-webkit-input-placeholder, select::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  font-family: "Mulish";
   color: #000;
   opacity: 0.5;
 }
 input::-moz-placeholder, button::-moz-placeholder, select::-moz-placeholder, textarea::-moz-placeholder {
-  font-family: "Mulish";
   color: #000;
   opacity: 0.5;
 }
 input:-ms-input-placeholder, button:-ms-input-placeholder, select:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  font-family: "Mulish";
   color: #000;
   opacity: 0.5;
 }
 input::-ms-input-placeholder, button::-ms-input-placeholder, select::-ms-input-placeholder, textarea::-ms-input-placeholder {
-  font-family: "Mulish";
   color: #000;
   opacity: 0.5;
 }
@@ -57,7 +48,6 @@ input::placeholder,
 button::placeholder,
 select::placeholder,
 textarea::placeholder {
-  font-family: "Mulish";
   color: #000;
   opacity: 0.5;
 }
@@ -151,4 +141,13 @@ img, svg {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+a.abs-full {
+  display: block;
+}
+
+img.abs-full {
+  -o-object-fit: cover;
+     object-fit: cover;
 }

@@ -60,83 +60,66 @@
     endif
 %}
 
-
-
 <div class="cont {{s.container}} {{s.spacing}}">
-<slider-component class="rel slider-wrapper">
-    <div class="grid grid-{{section.id}} 
-                lg-{{s.column_amount_desktop}}
-                md-{{s.column_amount_tablet}}
-                sm-{{s.column_amount_mobile}}
-                {%- if slidersEnabled == true -%}
-                    slider
-                    {%- if s.slider_desktop %} slider-desktop {% endif %}
-                    {%- if s.slider_tablet %} slider-tablet {% endif %}
-                    {%- if s.slider_mobile %} slider-mobile {% endif -%}
-                {%- endif %}
+
+    <slider-component 
+        class="rel slider
+            {%- if s.arrows_desktop %} {{ s.arrows_position_desktop }} {% else %} lg-arrows--hidden {% endif -%}
+            {%- if s.arrows_tablet %} {{ s.arrows_position_tablet }} {% else %} md-arrows--hidden {% endif -%}
+            {%- if s.arrows_mobile %} {{ s.arrows_position_mobile }} {% else %} sm-arrows--hidden {% endif -%}
     ">
-        {%- for block in section.blocks -%}
-            {% case block.type %}
-                {% when 'product_list' %}
-                    {%- for item in block.settings.collection.products -%}
-                        {% render 'card-product', card_product: item, index: forloop.index0  %}
-                    {%- endfor -%}
-                {% when 'collection_list' %}
+        <div 
+            class="grid grid-{{ section.id }} lg-{{ s.column_amount_desktop }} md-{{ s.column_amount_tablet }} sm-{{ s.column_amount_mobile }}
+                {%- if slidersEnabled == true -%} slider__inner
+                    {%- if s.slider_desktop %} slider-desktop {%- endif -%}
+                    {%- if s.slider_tablet %} slider-tablet {%- endif -%}
+                    {%- if s.slider_mobile %} slider-mobile {%- endif -%}
+                {%- endif %}
+        ">
+            {%- for block in section.blocks -%}
+                {% case block.type %}
+                    {% when 'product_list' %}
+                        {%- for item in block.settings.collection.products -%}
+                            {% render 'card-product', card_product: item, index: forloop.index0  %}
+                        {%- endfor -%}
+                    {% when 'collection_list' %}
+                        
+                    {% when 'articles_list' %}
+                        
+                    {% when 'custom_content' %}
+                        
+                {% endcase %}
+            {%- endfor -%}
+        </div>
+
+        {%- if slidersEnabled == true -%}
+
+            {%- if arrowsEnabled == true -%}
+                {% comment %} <div class="slider__arrows flex aic jcsb"> {% endcomment %}
+                    <div class="slider__arrow slider__arrow--back">←</div>
+                    <div class="slider__arrow slider__arrow--forward">←</div>
+
+                    {% comment %} <div class="slider__arrow slider__back">
+                        <img src="{{ settings.slider_arrow_svg | file_url }}" alt="">
+                    </div> {% endcomment %}
                     
-                {% when 'articles_list' %}
-                    
-                {% when 'custom_content' %}
-                    
-            {% endcase %}
-        {%- endfor -%}
-    </div>
+                    {% comment %} <div class="slider__arrow slider__forward">
+                        <img src="{{ settings.slider_arrow_svg | file_url }}" alt="">
+                    </div> {% endcomment %}
+                {% comment %} </div> {% endcomment %}
+            {%- endif -%}
 
-    {%- if slidersEnabled == true -%}
-
-        {%- if arrowsEnabled == true -%}
-            <div class="slider__arrows flex aic jcsb
-
-                        {% if s.arrows_desktop -%}
-                            {{s.arrows_position_desktop}}
-                        {%- else -%}
-                            lg--hidden
-                        {%- endif %}
-
-                        {% if s.arrows_tablet -%}
-                            {{s.arrows_position_tablet}}
-                        {%- else -%}
-                            md--hidden
-                        {%- endif %}
-
-                        {% if s.arrows_mobile -%}
-                            {{s.arrows_position_mobile}}
-                        {%- else -%}
-                            sm--hidden
-                        {%- endif -%}
-            ">
-                <div class="slider__arrow slider__arrow--back">←</div>
-                <div class="slider__arrow slider__arrow--forward">→</div>
-
-                {% comment %} <div class="slider__arrow slider__back">
-                    <img src="{{ settings.slider_arrow_svg | file_url }}" alt="">
-                </div> {% endcomment %}
-                
-                {% comment %} <div class="slider__arrow slider__forward">
-                    <img src="{{ settings.slider_arrow_svg | file_url }}" alt="">
-                </div> {% endcomment %}
-            </div>
+            {% comment %} <div class="slider__dots">
+                <div class="slider__dot active"></div>
+                <div class="slider__dot"></div>
+                <div class="slider__dot"></div>
+                <div class="slider__dot"></div>
+                <div class="slider__dot"></div>
+                <div class="slider__dot"></div>
+            </div> {% endcomment %}
         {%- endif -%}
+    </slider-component>
 
-        {% comment %} <div class="slider__dots">
-            <div class="slider__dot active"></div>
-            <div class="slider__dot"></div>
-            <div class="slider__dot"></div>
-            <div class="slider__dot"></div>
-            <div class="slider__dot"></div>
-            <div class="slider__dot"></div>
-        </div> {% endcomment %}
-    {%- endif -%}
-</slider-component>
 </div>
 
 
@@ -235,19 +218,19 @@
         "label": "Slider arrows position",
         "options": [
             {
-                "value": "lg--under",
+                "value": "lg-arrows--under",
                 "label": "Under the slider"
             },
             {
-                "value": "lg--over",
+                "value": "lg-arrows--over",
                 "label": "Over the slider - centered vertically"
             },
             {
-                "value": "lg--sides",
+                "value": "lg-arrows--sides",
                 "label": "On sides of the slider - centered vertically"
             }
         ],
-        "default": "lg--over"
+        "default": "lg-arrows--over"
     },
     {
         "type": "range",
@@ -298,19 +281,19 @@
         "label": "Slider arrows position",
         "options": [
             {
-                "value": "md--under",
+                "value": "md-arrows--under",
                 "label": "Under the slider"
             },
             {
-                "value": "md--over",
+                "value": "md-arrows--over",
                 "label": "Over the slider - centered vertically"
             },
             {
-                "value": "md--sides",
+                "value": "md-arrows--sides",
                 "label": "On sides of the slider - centered vertically"
             }
         ],
-        "default": "md--over"
+        "default": "md-arrows--over"
     },
     {
         "type": "range",
@@ -361,19 +344,19 @@
         "label": "Slider arrows position",
         "options": [
             {
-                "value": "sm--under",
+                "value": "sm-arrows--under",
                 "label": "Under the slider"
             },
             {
-                "value": "sm--over",
+                "value": "sm-arrows--over",
                 "label": "Over the slider - centered vertically"
             },
             {
-                "value": "sm--sides",
+                "value": "sm-arrows--sides",
                 "label": "On sides of the slider - centered vertically"
             }
         ],
-        "default": "sm--over"
+        "default": "sm-arrows--over"
     },
     {
         "type": "range",
