@@ -3,7 +3,10 @@
 }
 
 .slider {
+    display: block;
+
     &__inner {
+        background: #fff;
         position: relative;
         z-index: 1;
         overflow-y: hidden;
@@ -38,10 +41,6 @@
     }
 }
 
-
-.slider-component {
-    display: block;
-}
 
 @media screen and (max-width: 767px) {
     .grid {
@@ -201,12 +200,36 @@
     .slider {
         &.lg-arrows--over,
         &.lg-arrows--sides {
-            
+            .slider__arrow {
+                top: 50%;
+                transform: translate3d(0, -50%, 0);
+            }
+        }
+
+        &.lg-arrows--over {
+            .slider__arrow {
+                left: 15px;
+                
+                &--forward {
+                    left: auto;
+                    right: 15px;
+                }
+            }
         }
 
         &.lg-arrows--sides {
-
+            padding-left: calc(var(--slider-arrow-size-lg) + 15px);
+            padding-right: calc(var(--slider-arrow-size-lg) + 15px);
         }
+
+        &.lg-arrows--under {
+            padding-bottom: calc(var(--slider-arrow-size-lg) + 15px);
+
+            .slider__arrow {
+                bottom: 0;
+            }
+        }
+
         &.lg-arrows--hidden {
             .slider__arrow {
                 display: none;
