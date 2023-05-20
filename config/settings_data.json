@@ -1,5 +1,7 @@
 {
   "current": {
+    "slider_arrow_svg": "shopify:\/\/shop_images\/slider-arr.svg",
+    "slider_arrow_svg_size_desktop": 35,
     "logo_width": 90,
     "colors_solid_button_labels": "#ffffff",
     "colors_accent_1": "#121212",
