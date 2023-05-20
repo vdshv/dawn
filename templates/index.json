@@ -15,7 +15,7 @@
       ],
       "settings": {
         "container": "cont--lg",
-        "spacing": "space--lg",
+        "spacing": "space--sm",
         "column_amount_desktop": 6,
         "slider_desktop": true,
         "arrows_desktop": true,
@@ -51,7 +51,7 @@
       ],
       "settings": {
         "container": "cont--lg",
-        "spacing": "space--lg",
+        "spacing": "space--sm",
         "column_amount_desktop": 4,
         "slider_desktop": true,
         "arrows_desktop": true,
