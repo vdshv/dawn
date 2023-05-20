@@ -7,8 +7,8 @@ class SliderComponent extends HTMLElement {
       this.slider_item_width = this.slider_item.offsetWidth;
 
       // Add click handlers
-      this.querySelector('.slider__arrow--back').addEventListener("click", () => this.navigate("backward"));
-      this.querySelector(".slider__arrow--forward").addEventListener("click", () => this.navigate("forward"));
+      this.querySelector('.slider__arrow--back')?.addEventListener("click", () => this.navigate("backward"));
+      this.querySelector(".slider__arrow--forward")?.addEventListener("click", () => this.navigate("forward"));
       // this.querySelectorAll(".slide-indicator")
       //     .forEach((dot, index) => {
       //         dot.addEventListener("click", () => navigate(index));
