@@ -4,7 +4,6 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
-      "disabled": true,
       "blocks": {
         "announcement-bar-0": {
           "type": "announcement",
@@ -14,19 +13,38 @@
             "color_scheme": "background-1",
             "link": ""
           }
+        },
+        "354889e7-c0f4-46c5-83b3-2969523f9c97": {
+          "type": "announcement",
+          "settings": {
+            "text": "Livraison express & retours gratuits",
+            "text_alignment": "center",
+            "color_scheme": "accent-1",
+            "link": ""
+          }
+        },
+        "3b1db76b-3065-4a57-a501-ed79fa15b102": {
+          "type": "announcement",
+          "settings": {
+            "text": "Retours gratuits & Livraison express",
+            "text_alignment": "center",
+            "color_scheme": "accent-1",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "354889e7-c0f4-46c5-83b3-2969523f9c97",
+        "3b1db76b-3065-4a57-a501-ed79fa15b102"
       ],
       "settings": {
       }
     },
     "header": {
       "type": "header",
-      "disabled": true,
       "settings": {
-        "logo_position": "middle-left",
+        "logo_position": "top-left",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
