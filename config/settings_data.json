@@ -315,9 +315,9 @@
           "7a764604-2c43-46f3-80a1-2233c75973ba": {
             "type": "btn",
             "settings": {
-              "border_radius": 9,
-              "border_width": 2,
-              "background_color": "#ffffff",
+              "border_radius": 50,
+              "border_width": 1,
+              "background_color": "rgba(0,0,0,0)",
               "text_color": "#000000",
               "border_color": "#000000",
               "hover_background_color": "#000000",
@@ -329,29 +329,30 @@
           "4f5534f8-fc97-4d85-9cac-143f367e9893": {
             "type": "btn--alt",
             "settings": {
-              "background_color": "#156327",
+              "background_color": "#000000",
               "text_color": "#ffffff",
-              "border_color": "#156327",
-              "hover_background_color": "#ffffff",
-              "hover_text_color": "#156327",
-              "hover_border_color": "#156327",
+              "border_color": "#000000",
+              "hover_background_color": "rgba(0,0,0,0)",
+              "hover_text_color": "#000000",
+              "hover_border_color": "#000000",
               "active_background_color": "#cecece"
             }
           },
           "cc388a53-c2c4-4c96-a67d-0130e7ed3211": {
             "type": "btn--alt-2",
             "settings": {
-              "background_color": "#000000",
+              "background_color": "rgba(0,0,0,0)",
               "text_color": "#ffffff",
-              "border_color": "#000000",
+              "border_color": "#ffffff",
               "hover_background_color": "#ffffff",
               "hover_text_color": "#000000",
-              "hover_border_color": "#000000",
+              "hover_border_color": "#ffffff",
               "active_background_color": "#c8c7c7"
             }
           },
           "f45942da-a096-4c21-841b-a629ee706191": {
             "type": "btn--alt-3",
+            "disabled": true,
             "settings": {
               "background_color": "#ffffff",
               "text_color": "#156327",
@@ -386,18 +387,21 @@
         "blocks": {
           "af17986f-ac85-48ea-b1df-2d294378a62a": {
             "type": "cont--lg",
+            "disabled": true,
             "settings": {
               "max_width": 1400
             }
           },
           "f55dce83-b25a-4a4a-9609-e0c4f5e367c3": {
             "type": "cont--md",
+            "disabled": true,
             "settings": {
               "max_width": 1000
             }
           },
           "3e2d45aa-1203-44ca-b3f4-3508f85bd279": {
             "type": "cont--sm",
+            "disabled": true,
             "settings": {
               "max_width": 600
             }
@@ -416,6 +420,7 @@
         "blocks": {
           "9a3039f9-58c6-4352-88d9-d6ccbb689bdc": {
             "type": "space--lg",
+            "disabled": true,
             "settings": {
               "padding_y": 120,
               "padding_x": 40,
@@ -428,16 +433,17 @@
           "9dff5f90-4499-4b01-bfd1-e910b2b46096": {
             "type": "space--md",
             "settings": {
-              "padding_y": 80,
-              "padding_x": 30,
-              "tablet_padding_y": 60,
-              "tablet_padding_x": 25,
+              "padding_y": 40,
+              "padding_x": 60,
+              "tablet_padding_y": 40,
+              "tablet_padding_x": 30,
               "mob_padding_y": 40,
               "mob_padding_x": 20
             }
           },
           "e80b4fe0-d775-4275-b32f-eb0ad031c641": {
             "type": "space--sm",
+            "disabled": true,
             "settings": {
               "padding_y": 60,
               "padding_x": 20,
@@ -462,25 +468,25 @@
           "cd795d3c-53fb-4f30-bb71-12ce0678b0e4": {
             "type": "icon--lg",
             "settings": {
-              "icon_size_desktop": 80,
-              "icon_size_tablet": 60,
-              "icon_size_mobile": 40
+              "icon_size_desktop": 36,
+              "icon_size_tablet": 30,
+              "icon_size_mobile": 24
             }
           },
           "bd785efc-a58a-4c41-babf-aca66fc4352d": {
             "type": "icon--md",
             "settings": {
-              "icon_size_desktop": 40,
-              "icon_size_tablet": 30,
-              "icon_size_mobile": 20
+              "icon_size_desktop": 30,
+              "icon_size_tablet": 26,
+              "icon_size_mobile": 26
             }
           },
           "20b95560-7f2a-48c9-8519-db577ae5cb08": {
             "type": "icon--sm",
             "settings": {
               "icon_size_desktop": 20,
-              "icon_size_tablet": 15,
-              "icon_size_mobile": 10
+              "icon_size_tablet": 20,
+              "icon_size_mobile": 20
             }
           }
         },
