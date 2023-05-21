@@ -1,8 +1,60 @@
-{% comment %} {%- assign h_font_source = settings.heading_font_source -%}
+{% comment %} {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
+    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+{%- endunless -%}
 
-{%- case h_font_source -%}
+{%- unless settings.type_body_font.system? -%}
+    <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
+{%- endunless -%}
+{%- unless settings.type_header_font.system? -%}
+    <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
+{%- endunless -%} {% endcomment %}
+
+{% comment %} <link href="https://fonts.cdnfonts.com/css/futura-std-4" rel="stylesheet"> {% endcomment %}
+
+
+{%- assign font_source = settings.body_font_source -%}
+{%- assign font_type = settings.body_font -%}
+
+{%- case font_source -%}
+
+    {%- when 'shopify' -%}
+        {% comment %} {%- assign body_font = settings['font_1_shopify'] -%} {% endcomment %}
+        {%- assign font = settings.font_1_shopify -%}
+
+        {%- liquid
+            assign font_bold = body_font | font_modify: 'weight', 'bold'
+            assign font_italic = body_font | font_modify: 'style', 'italic'
+        %}
+        {% comment %} assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic' {% endcomment %}
+
+        {% style %}
+            {{ font | font_face: font_display: 'swap' }}
+            {{ font_bold | font_face: font_display: 'swap' }}
+            {{ font_italic | font_face: font_display: 'swap' }}
+            {% comment %} {{ body_font_bold_italic | font_face: font_display: 'swap' }} {% endcomment %}
+            {% comment %} {{ settings.type_header_font | font_face: font_display: 'swap' }} {% endcomment %}
+
+
+            :root {
+            --font-family: {{ font.family }}, {{ font.fallback_families }};
+            --font-style: {{ font.style }};
+            --font-weight: {{ font.weight }};
+            {% comment %} --font-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }}; {% endcomment %}
+
+            {% comment %} --font-h-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+            --font-h: {{ settings.type_header_font.style }};
+            --font-h-weight: {{ settings.type_header_font.weight }}; {% endcomment %}
+            }
+
+            body {
+                font-family: var(--font-family);
+                font-style: var(--font-style);
+                font-weight: var(--font-weight);
+            } 
+        {% endstyle %}
+
     {%- when 'google' -%}
-        {%- assign heading_font = settings.font_1_google | append: ':400,700&display=swap' -%}
+        {% comment %} {%- assign heading_font = settings.font_1_google | append: ':400,700&display=swap' -%}
 
         <link href="https://fonts.googleapis.com/css?family={{ heading_font | url_escape }}" rel="stylesheet">
 
@@ -10,9 +62,9 @@
         h1, h2, h3, h4, h5, h6 {
             font-family: "heading_font";
         }
-        </style>
+        </style> {% endcomment %}
     {%- when 'self_hosted' -%}
-        {%- assign heading_font = settings.font_1_self_hosted | append: '.woff2' -%}
+        {% comment %} {%- assign heading_font = settings.font_1_self_hosted | append: '.woff2' -%}
 
         <link rel="preload" as="font" href="{{ heading_font | file_url }}" type="font/woff2" crossorigin>
 
@@ -26,27 +78,15 @@
         h1, h2, h3, h4, h5, h6 {
             font-family: "heading_font";
         }
-        </style>
-
-    {%- when 'shopify' -%}
-    {%- assign heading_font = settings.font_1_shopify -%}
-    <style>
-        h1, h2, h3, h4, h5, h6 {
-        font-family: "heading_font";
-        }
-    </style>
-{%- endcase -%} {% endcomment %}
+        </style> {% endcomment %}
+    
+{%- endcase -%}
 
 
 {% comment %} GOOGLE {% endcomment %}
-<link rel="preconnect" href="https://fonts.googleapis.com">
+{% comment %} <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto:ital@0;1&display=swap" rel="stylesheet">
-
-font-family: 'Noto Sans', sans-serif;
-font-family: 'Roboto', sans-serif;
-
-{{settings.font_2_google_css}}
 
 <style>
     h1, h2,h3,h4 {
@@ -55,12 +95,12 @@ font-family: 'Roboto', sans-serif;
     body {
         font-family: 'Roboto', sans-serif;
     }
-</style>
+</style> {% endcomment %}
 
 
 
 {% comment %} SELF HOSTED {% endcomment %}
-<link rel="preload" as="font" href="font_1.woff2" type="font/woff2" crossorigin>
+{% comment %} <link rel="preload" as="font" href="font_1.woff2" type="font/woff2" crossorigin>
 <link rel="preload" as="font" href="font_1_bold.woff2" type="font/woff2" crossorigin>
 <link rel="preload" as="font" href="font_2_light.woff2" type="font/woff2" crossorigin>
 
@@ -89,4 +129,4 @@ font-family: 'Roboto', sans-serif;
     h1, h2, h3, h4, h5, h6 {
         font-family: "heading_font";
     }
-</style>
+</style> {% endcomment %}

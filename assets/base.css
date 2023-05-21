@@ -3154,7 +3154,7 @@ details-disclosure > details {
 
 /* Image mask global styles */
 
-.shape--mask {
+/* .shape--mask {
   display: block;
   height: 0;
   width: 0;
@@ -3190,7 +3190,7 @@ details-disclosure > details {
 
 .shape--round {
   clip-path: ellipse(45% 45% at 50% 50%);
-}
+} */
 
 /* Animations */
 
