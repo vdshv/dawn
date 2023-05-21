@@ -39,28 +39,10 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
-    },
-    "54092ece-c284-4308-871a-c73efee13af4": {
-      "type": "0-styleguide",
-      "blocks": {
-        "a0a88f90-64a3-4d99-be69-a7b84b1f2e70": {
-          "type": "announcement",
-          "disabled": true,
-          "settings": {
-            "text": "Welcome to our store"
-          }
-        }
-      },
-      "block_order": [
-        "a0a88f90-64a3-4d99-be69-a7b84b1f2e70"
-      ],
-      "settings": {
-      }
     }
   },
   "order": [
     "announcement-bar",
-    "header",
-    "54092ece-c284-4308-871a-c73efee13af4"
+    "header"
   ]
 }
