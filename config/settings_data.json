@@ -1,7 +1,8 @@
 {
   "current": {
-    "slider_arrow_svg": "shopify:\/\/shop_images\/slider-arr.svg",
-    "slider_arrow_svg_size_desktop": 35,
+    "slider_arrow_svg": "shopify:\/\/shop_images\/arrow-slider.svg",
+    "slider_arrow_svg_size_desktop": 30,
+    "slider_arrow_svg_size_mobile": 28,
     "logo_width": 90,
     "colors_solid_button_labels": "#ffffff",
     "colors_accent_1": "#121212",
@@ -484,9 +485,9 @@
           "20b95560-7f2a-48c9-8519-db577ae5cb08": {
             "type": "icon--sm",
             "settings": {
-              "icon_size_desktop": 20,
-              "icon_size_tablet": 20,
-              "icon_size_mobile": 20
+              "icon_size_desktop": 24,
+              "icon_size_tablet": 24,
+              "icon_size_mobile": 24
             }
           }
         },
