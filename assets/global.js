@@ -9,6 +9,7 @@ class SliderComponent extends HTMLElement {
       // Add click handlers
       this.querySelector('.slider__arrow--back')?.addEventListener("click", () => this.navigate("backward"));
       this.querySelector(".slider__arrow--forward")?.addEventListener("click", () => this.navigate("forward"));
+
       // this.querySelectorAll(".slide-indicator")
       //     .forEach((dot, index) => {
       //         dot.addEventListener("click", () => navigate(index));
@@ -59,7 +60,7 @@ class SliderComponent extends HTMLElement {
 
       if (arg === "forward") {
           const x = scroll_left + slider_width;
-          return (x > max_scroll_left) ? (scroll_left == max_scroll_left ? 0 : max_scroll_left) : x; 
+          return (x > max_scroll_left) ? (max_scroll_left - scroll_left < 5 ? 0 : max_scroll_left) : x; 
       } else if (arg === "backward") {
           const x = scroll_left - slider_width;
           return (x < 0) ? (scroll_left == 0 ? max_scroll_left : 0) : x;
