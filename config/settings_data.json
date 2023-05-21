@@ -238,6 +238,7 @@
           },
           "92c01830-78fb-4e39-aac2-f711def79ca5": {
             "type": "btn--lg",
+            "disabled": true,
             "settings": {
               "padding_x": 30,
               "padding_y": 6,
@@ -282,6 +283,7 @@
           },
           "7e1c4463-89ae-4455-8a9d-a8fa3229b86e": {
             "type": "text--sm",
+            "disabled": true,
             "settings": {
               "font_size": 15,
               "line_height": 135,
