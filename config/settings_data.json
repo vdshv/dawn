@@ -228,8 +228,10 @@
             "settings": {
               "padding_x": 35,
               "padding_y": 6,
+              "min_width": 180,
               "font_size": 20,
               "line_height": 135,
+              "letter_spacing": 0,
               "tablet_font_size": 20,
               "mobile_padding_x": 30,
               "mobile_padding_y": 6,
@@ -242,8 +244,10 @@
             "settings": {
               "padding_x": 30,
               "padding_y": 6,
+              "min_width": 180,
               "font_size": 16,
               "line_height": 135,
+              "letter_spacing": 0,
               "tablet_font_size": 16,
               "mobile_padding_x": 25,
               "mobile_padding_y": 6,
@@ -255,11 +259,14 @@
             "settings": {
               "padding_x": 18,
               "padding_y": 8,
+              "min_width": 180,
               "font_size": 13,
               "line_height": 120,
+              "letter_spacing": 0,
               "tablet_font_size": 13,
               "mobile_padding_x": 20,
               "mobile_padding_y": 6,
+              "mobile_min_width": 160,
               "mobile_font_size": 13
             }
           },
@@ -290,6 +297,18 @@
               "tablet_font_size": 15,
               "mobile_font_size": 13
             }
+          },
+          "3f49b48d-042b-4055-976f-7bc34e6598e4": {
+            "type": "blockquote",
+            "settings": {
+              "font_size": 64,
+              "line_height": 115,
+              "letter_spacing": -1,
+              "font_weight": "400",
+              "text_transform": "uppercase",
+              "tablet_font_size": 30,
+              "mobile_font_size": 30
+            }
           }
         },
         "block_order": [
@@ -304,7 +323,8 @@
           "babad725-f282-4b5e-8c92-8d5195c5140f",
           "1a7199a6-4f20-41fc-bf4e-cdfd6c0a898f",
           "e54d8ae8-13aa-42bf-bd3c-20fc62672b07",
-          "7e1c4463-89ae-4455-8a9d-a8fa3229b86e"
+          "7e1c4463-89ae-4455-8a9d-a8fa3229b86e",
+          "3f49b48d-042b-4055-976f-7bc34e6598e4"
         ],
         "settings": {
         }
