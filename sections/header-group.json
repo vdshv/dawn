@@ -4,6 +4,7 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
+      "disabled": true,
       "blocks": {
         "announcement-bar-0": {
           "type": "announcement",
@@ -43,6 +44,7 @@
     },
     "header": {
       "type": "header",
+      "disabled": true,
       "settings": {
         "logo_position": "top-left",
         "menu": "main-menu",
