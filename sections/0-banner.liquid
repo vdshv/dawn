@@ -37,13 +37,12 @@
         {%- endfor -%}
     </div>
 
-    <div class="banner__media">
+    <div class="banner__media ar-1">
         {%- for block in section.blocks -%}
             {%- assign b = block.settings -%}
 
             {%- if block.type == 'image' -%}
                 {% render '0-lazy-image', i: b.desktop_image, w: b.desktop_image.width, wm: 375 %}
-                <img src="{{b.desktop_image}}" alt="">
             {%- endif -%}
 
             {%- if block.type == 'video' -%}

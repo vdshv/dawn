@@ -19,12 +19,16 @@
 .slider__item {
   scroll-snap-align: start;
 }
+.slider__item img {
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .slider__arrow {
   position: absolute;
   left: 0;
   cursor: pointer;
   z-index: 2;
-  background: #fff;
   width: var(--slider-arrow-size-lg);
   height: var(--slider-arrow-size-lg);
 }

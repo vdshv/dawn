@@ -18,6 +18,11 @@
 
     &__item {
         scroll-snap-align: start;  
+
+        img {
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
     }
 
     &__arrow {
@@ -26,7 +31,6 @@
         cursor: pointer;
         z-index: 2;
 
-        background: #fff;
         width: var(--slider-arrow-size-lg);
         height: var(--slider-arrow-size-lg);
         
