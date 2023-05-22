@@ -1,5 +1,110 @@
 {
   "sections": {
+    "bca97944-3910-4a8a-b855-8d9d54369e03": {
+      "type": "0-banner",
+      "blocks": {
+        "e5e52b9b-6e49-4530-a2e2-cd5685c2e868": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/1.jpg"
+          }
+        },
+        "2789a970-807f-4460-9d7d-c8abf7ab7e4e": {
+          "type": "title",
+          "settings": {
+            "text": "<p>Lorem ipsum sit dolor amet net actuat<\/p>",
+            "type": "h1"
+          }
+        },
+        "6f6c5004-46ea-43de-a06f-0f0c1d989856": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt praesentium cum blanditiis sed quis adipisci eveniet veniam accusamus. Laborum fugit rerum alias cum dolore amet? Rem totam eveniet omnis eius.<\/p>",
+            "type": "text--lg"
+          }
+        }
+      },
+      "block_order": [
+        "e5e52b9b-6e49-4530-a2e2-cd5685c2e868",
+        "2789a970-807f-4460-9d7d-c8abf7ab7e4e",
+        "6f6c5004-46ea-43de-a06f-0f0c1d989856"
+      ],
+      "settings": {
+        "container": "cont--lg",
+        "spacing": "space--md",
+        "desktop_layout": "lg-2"
+      }
+    },
+    "bdf915a0-c34b-4d0d-92b8-b22926ece2d5": {
+      "type": "0-banner",
+      "blocks": {
+        "12ff2c97-3b9d-47ba-930e-e8207b612737": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/1.jpg"
+          }
+        },
+        "fc8519df-d686-471f-930c-032292da6c66": {
+          "type": "title",
+          "settings": {
+            "text": "<p>Lorem ipsum sit dolor amet net actuat<\/p>",
+            "type": "h1"
+          }
+        },
+        "514bf01c-6784-4d80-8217-dfb9ae2a082f": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt praesentium cum blanditiis sed quis adipisci eveniet veniam accusamus. Laborum fugit rerum alias cum dolore amet? Rem totam eveniet omnis eius.<\/p>",
+            "type": "text--lg"
+          }
+        }
+      },
+      "block_order": [
+        "12ff2c97-3b9d-47ba-930e-e8207b612737",
+        "fc8519df-d686-471f-930c-032292da6c66",
+        "514bf01c-6784-4d80-8217-dfb9ae2a082f"
+      ],
+      "settings": {
+        "container": "cont--lg",
+        "spacing": "space--md",
+        "desktop_layout": "lg-2 --reverse"
+      }
+    },
+    "ede1d2d3-17e4-42d1-a9f9-5f2c89b46eba": {
+      "type": "0-banner",
+      "blocks": {
+        "ce47d9d3-a692-464a-8645-5c03fa124f3a": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/1.jpg"
+          }
+        },
+        "00b70210-b048-4199-aebb-2cc6d0d3e7c2": {
+          "type": "title",
+          "settings": {
+            "text": "<p>Lorem ipsum sit dolor amet net actuat<\/p>",
+            "type": "h1"
+          }
+        },
+        "ac253ad7-ef8a-4e30-9d18-2a9b49018148": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt praesentium cum blanditiis sed quis adipisci eveniet veniam accusamus. Laborum fugit rerum alias cum dolore amet? Rem totam eveniet omnis eius.<\/p>",
+            "type": "text--lg"
+          }
+        }
+      },
+      "block_order": [
+        "ce47d9d3-a692-464a-8645-5c03fa124f3a",
+        "00b70210-b048-4199-aebb-2cc6d0d3e7c2",
+        "ac253ad7-ef8a-4e30-9d18-2a9b49018148"
+      ],
+      "settings": {
+        "container": "cont--lg",
+        "spacing": "space--md",
+        "desktop_layout": "lg-1"
+      }
+    },
     "c0be55f5-0947-4410-988a-367e912ad36a": {
       "type": "0-grid",
       "blocks": {
@@ -110,6 +215,9 @@
     }
   },
   "order": [
+    "bca97944-3910-4a8a-b855-8d9d54369e03",
+    "bdf915a0-c34b-4d0d-92b8-b22926ece2d5",
+    "ede1d2d3-17e4-42d1-a9f9-5f2c89b46eba",
     "c0be55f5-0947-4410-988a-367e912ad36a",
     "77dea5ac-8672-4a87-abfb-b690dc20ed3a",
     "78dc6bfa-1860-41bc-85db-d8800c1d81d4"
