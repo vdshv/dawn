@@ -9,7 +9,15 @@
         
     }
     @media screen and (min-width: 1181px) {
-       
+        .banner-{{section.id}} {
+            grid-gap: {{s.x_gap_desktop}}px;
+            padding-top: {{s.y_padding_desktop}}px;
+            padding-bottom: {{s.y_padding_desktop}}px;
+            min-height: {{s.min_height_desktop}}px;
+        }
+        .banner-{{section.id}} .banner__content {
+            max-width: {{s.max_width_desktop}}px;
+        }
     }
 </style>
 
@@ -19,7 +27,7 @@
     
 %}
 
-<div class="banner rel cont {{s.container}} {{s.spacing}} grid
+<div class="banner banner-{{section.id}} rel cont {{s.container}} {{s.spacing}} grid
     {{s.desktop_layout}}
    
 ">
@@ -162,6 +170,42 @@
             }
         ],
         "default": "lg-2"
+    },
+    {
+        "type": "range",
+        "id": "x_gap_desktop",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "label": "Gap between columns",
+        "default": 40
+    },
+    {
+        "type": "range",
+        "id": "y_padding_desktop",
+        "min": 0,
+        "max": 300,
+        "step": 5,
+        "label": "Vertical section spacing",
+        "default": 40
+    },
+    {
+        "type": "range",
+        "id": "min_height_desktop",
+        "min": 100,
+        "max": 1000,
+        "step": 10,
+        "label": "Banner min height",
+        "default": 400
+    },
+    {
+        "type": "range",
+        "id": "max_width_desktop",
+        "min": 200,
+        "max": 1200,
+        "step": 10,
+        "label": "Banner content max width",
+        "default": 400
     },
     {
         "type": "header",

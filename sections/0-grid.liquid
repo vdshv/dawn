@@ -1,6 +1,6 @@
 {%- assign s = section.settings -%}
 
-<style>
+{%- style -%}
     @media screen and (max-width: 767px) {
         .grid-{{section.id}} {
             row-gap: {{s.y_gap_mobile}}px;
@@ -41,7 +41,7 @@
             min-width: calc((100% - {{s.x_gap_desktop}}px * {{cols | minus: 1}}) / {{cols}});
         }
     }
-</style>
+{%- endstyle -%}
 
 <link rel="stylesheet" type="text/css" href="{{ '0-grid.css' | asset_url}}"/>
 {% comment %} <link rel="stylesheet" type="text/css" href="{{ 'component-card.css' | asset_url}}"/> {% endcomment %}

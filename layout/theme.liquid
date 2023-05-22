@@ -30,7 +30,7 @@
     {% render '0-fonts' %}
     {% render '0-css-variables' %}
 
-    {% comment %} {{ 'base.css' | asset_url | stylesheet_tag }} {% endcomment %}
+    {{ 'base.css' | asset_url | stylesheet_tag }} 
     {{ 'common.css' | asset_url | stylesheet_tag }}
 
     {%- if settings.predictive_search_enabled -%}
