@@ -71,14 +71,14 @@
         {%- endif -%}
     </div>
     
-    {% render 'header-search', input_id: 'Search-In-Modal' %}
+    {% comment %} {% render 'header-search', input_id: 'Search-In-Modal' %} {% endcomment %}
 
       {%- if shop.customer_accounts_enabled -%}
         <a 
           href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" 
           class=""
         >
-          {% render 'icon-account' %}
+          {% comment %} {% render 'icon-account' %} {% endcomment %}
           
           <span class="visually-hidden">
             {%- if customer -%} {{'customer.account_fallback' | t}} {%- else -%} {{'customer.log_in' | t}} {%- endif -%}
