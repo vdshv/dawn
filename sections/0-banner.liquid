@@ -11,11 +11,14 @@
     @media screen and (min-width: 1181px) {
         .banner-{{section.id}} {
             grid-gap: {{s.x_gap_desktop}}px;
-            padding-top: {{s.y_padding_desktop}}px;
-            padding-bottom: {{s.y_padding_desktop}}px;
             min-height: {{s.min_height_desktop}}px;
+
+            {%- unless force_default_spacing == true %}
+                padding-top: {{s.y_padding_desktop}}px;
+                padding-bottom: {{s.y_padding_desktop}}px;
+            {% endunless -%}
         }
-        .banner-{{section.id}} .banner__content {
+        .banner-{{section.id}} .banner__content-inner {
             max-width: {{s.max_width_desktop}}px;
         }
     }
@@ -31,18 +34,20 @@
     {{s.desktop_layout}}
    
 ">
-    <div class="banner__content">
-        {%- for block in section.blocks -%}
-            {%- assign b = block.settings -%}
+    <div class="banner__content flex {{s.align_content}}">
+        <div class="banner__content-inner">
+            {%- for block in section.blocks -%}
+                {%- assign b = block.settings -%}
 
-            {%- if block.type == 'title' -%}
-                <h2 class="banner__title {{b.type}}">{{b.text}}</h2>
-            {%- endif -%}
+                {%- if block.type == 'title' -%}
+                    <h2 class="banner__title {{b.type}}">{{b.text}}</h2>
+                {%- endif -%}
 
-            {%- if block.type == 'text' -%}
-                <div class="banner__text {{b.type}}">{{b.text}}</div>
-            {%- endif -%}
-        {%- endfor -%}
+                {%- if block.type == 'text' -%}
+                    <div class="banner__text {{b.type}}">{{b.text}}</div>
+                {%- endif -%}
+            {%- endfor -%}
+        </div>
     </div>
 
     <div class="banner__media ar-1">
@@ -148,13 +153,20 @@
         "default": "space--lg"
     },
     {
+        "type": "checkbox",
+        "id": "force_default_spacing",
+        "label": "Force spacing from 'Styles -> Section Spacing TYPE' setting",
+        "default": false,
+        "info": "if you want to use custom spacing for section, disable this option, and use 'Vertical Spacing' setting below"
+    },
+    {
         "type": "header",
         "content": "DESKTOP - Layout"
     },
     {
         "type": "select",
         "id": "desktop_layout",
-        "label": "Layout",
+        "label": "Banner Layout",
         "options": [
             {
                 "value": "lg-1",
@@ -206,6 +218,69 @@
         "step": 10,
         "label": "Banner content max width",
         "default": 400
+    },
+    {
+        "type": "select",
+        "id": "align_content",
+        "label": "Align banner text content (vertically & horizontally)",
+        "options": [
+            {
+                "value": "",
+                "label": "Top Left"
+            },
+            {
+                "value": "jcc",
+                "label": "Top Left"
+            },
+            {
+                "value": "jcfe",
+                "label": "Top Right"
+            },
+            {
+                "value": "aic",
+                "label": "Center Left"
+            },
+            {
+                "value": "aic jcc",
+                "label": "Center Center"
+            },
+            {
+                "value": "aic jcfe",
+                "label": "Center Right"
+            },
+            {
+                "value": "aife",
+                "label": "Bottom Left"
+            },
+            {
+                "value": "aife jcc",
+                "label": "Bottom Center"
+            },
+            {
+                "value": "aife jcfe",
+                "label": "Bottom Right"
+            }
+        ]
+    },
+    {
+        "type": "select",
+        "id": "justify_content",
+        "label": "Align content vertically",
+        "options": [
+            {
+                "value": "lg-1",
+                "label": "Background Media"
+            },
+            {
+                "value": "lg-2",
+                "label": "Left Content - Right Media"
+            },
+            {
+                "value": "lg-2 --reverse",
+                "label": "Left Media - Right Content"
+            }
+        ],
+        "default": "lg-2"
     },
     {
         "type": "header",
