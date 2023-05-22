@@ -7,14 +7,6 @@
         {% endfor %}
     }
 
-    .cont {
-      background: #eee;
-        width: 100%;
-        margin: 20px auto;
-    }
-     .cont .cont {
-      background: #aaa;
-    }
     {% for block in section.blocks %}
         .{{ block.type }} {
             max-width: var(--{{ block.type }}_max_width);
