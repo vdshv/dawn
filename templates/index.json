@@ -15,20 +15,49 @@
             "text": "<p>DÉCOUVREZ NOTRE NOUVELLE COLLECTION<\/p>",
             "type": "h1"
           }
+        },
+        "a807c15e-67c5-499d-a7a2-16acdcb5354c": {
+          "type": "subtitle",
+          "settings": {
+            "text": "<p>Banner title<\/p>",
+            "type": "h5"
+          }
+        },
+        "398fad69-a4e5-4bae-9ce3-825e9b6ddb30": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt praesentium cum blanditiis sed quis adipisci eveniet veniam accusamus. Laborum fugit rerum alias cum dolore amet? Rem totam eveniet omnis eius.<\/p>",
+            "type": "text--md"
+          }
+        },
+        "9c7fde7e-8d8c-4366-bccf-c04757476da7": {
+          "type": "button",
+          "settings": {
+            "typography": "btn--md",
+            "style": "",
+            "button": "<p>Button text<\/p>",
+            "url": "shopify:\/\/collections\/frontpage"
+          }
         }
       },
       "block_order": [
         "e5e52b9b-6e49-4530-a2e2-cd5685c2e868",
-        "2789a970-807f-4460-9d7d-c8abf7ab7e4e"
+        "2789a970-807f-4460-9d7d-c8abf7ab7e4e",
+        "a807c15e-67c5-499d-a7a2-16acdcb5354c",
+        "398fad69-a4e5-4bae-9ce3-825e9b6ddb30",
+        "9c7fde7e-8d8c-4366-bccf-c04757476da7"
       ],
       "settings": {
         "container": "cont--lg",
         "spacing": "space--md",
+        "force_default_spacing": false,
         "desktop_layout": "lg-2",
         "x_gap_desktop": 40,
         "y_padding_desktop": 0,
         "min_height_desktop": 100,
-        "max_width_desktop": 500
+        "max_width_desktop": 500,
+        "align_content": "",
+        "justify_content": "lg-2"
       }
     },
     "bdf915a0-c34b-4d0d-92b8-b22926ece2d5": {
@@ -63,11 +92,14 @@
       "settings": {
         "container": "cont--lg",
         "spacing": "space--md",
+        "force_default_spacing": false,
         "desktop_layout": "lg-2 --reverse",
         "x_gap_desktop": 40,
         "y_padding_desktop": 40,
         "min_height_desktop": 100,
-        "max_width_desktop": 1200
+        "max_width_desktop": 1200,
+        "align_content": "",
+        "justify_content": "lg-2"
       }
     },
     "ede1d2d3-17e4-42d1-a9f9-5f2c89b46eba": {
@@ -102,11 +134,14 @@
       "settings": {
         "container": "cont--lg",
         "spacing": "space--md",
+        "force_default_spacing": false,
         "desktop_layout": "lg-1",
         "x_gap_desktop": 40,
         "y_padding_desktop": 40,
         "min_height_desktop": 700,
-        "max_width_desktop": 630
+        "max_width_desktop": 630,
+        "align_content": "",
+        "justify_content": "lg-2"
       }
     },
     "c0be55f5-0947-4410-988a-367e912ad36a": {
