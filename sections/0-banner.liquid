@@ -42,9 +42,22 @@
                     <h2 class="banner__title {{b.type}}">{{b.text}}</h2>
                 {%- endif -%}
 
+                {%- if block.type == 'subtitle' -%}
+                    <div>
+                        <span class="banner__subtitle {{b.type}}">{{b.text}}</span>
+                    </div>
+                {%- endif -%}
+
                 {%- if block.type == 'text' -%}
                     <div class="banner__text {{b.type}}">{{b.text}}</div>
                 {%- endif -%}
+
+                {%- if block.type == 'button' -%}
+                    <a href="{{b.url}}" class="btn {{b.typography}} {{b.style}}">
+                        {{b.button}}
+                    </a>
+                {%- endif -%}
+
             {%- endfor -%}
         </div>
     </div>
@@ -478,12 +491,6 @@
         "name": "Banner content - Button",
         "settings": [
             {
-                "type": "richtext",
-                "id": "button",
-                "label": "Button text",
-                "default": "<p>Button text</p>"
-            },
-            {
                 "type": "select",
                 "id": "typography",
                 "label": "Styles -> Typography TYPE",
@@ -530,6 +537,17 @@
                     }
                 ],
                 "default": ""
+            },
+            {
+                "type": "richtext",
+                "id": "button",
+                "label": "Button text",
+                "default": "<p>Button text</p>"
+            },
+            {
+                "type": "url",
+                "id": "url",
+                "label": "Button URL"
             }
         ]
     }  
