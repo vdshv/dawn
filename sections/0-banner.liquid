@@ -19,7 +19,7 @@
     
 %}
 
-<div class="rel cont {{s.container}} {{s.spacing}} grid
+<div class="banner rel cont {{s.container}} {{s.spacing}} grid
     {{s.desktop_layout}}
    
 ">
@@ -38,7 +38,40 @@
     </div>
 
     <div class="banner__media">
+        {%- for block in section.blocks -%}
+            {%- assign b = block.settings -%}
 
+            {%- if block.type == 'image' -%}
+                {% render '0-lazy-image', i: b.desktop_image, w: b.desktop_image.width, wm: 375 %}
+                <img src="{{b.desktop_image}}" alt="">
+            {%- endif -%}
+
+            {%- if block.type == 'video' -%}
+                <div class="banner__video">
+                    {%- if b.video_url != blank -%}
+                        <div class="video-wrapper">
+                            <div class="video-wrapper__inner">
+                                <div class="video-wrapper__content">
+                                    <iframe src="{{b.video_url}}" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    {%- endif -%}
+
+                    {%- if b.video_url != blank -%}
+                        <div class="video-wrapper">
+                            <div class="video-wrapper__inner">
+                                <div class="video-wrapper__content">
+                                    <video autoplay loop muted playsinline>
+                                        <source src="{{b.video | media_url}}" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    {%- endif -%}
+                </div>
+            {%- endif -%}
+        {%- endfor -%}
     </div>
 </div>
 
@@ -62,7 +95,6 @@
 {
   "name": "Banner",
   "tag": "section",
-  "class": "banner",
   "settings": [
     {
         "type": "header",
