@@ -48,14 +48,14 @@
           "type": "title",
           "settings": {
             "text": "<p>Lorem ipsum sit dolor amet net actuat<\/p>",
-            "type": "h1"
+            "type": "h2"
           }
         },
         "514bf01c-6784-4d80-8217-dfb9ae2a082f": {
           "type": "text",
           "settings": {
             "text": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt praesentium cum blanditiis sed quis adipisci eveniet veniam accusamus. Laborum fugit rerum alias cum dolore amet? Rem totam eveniet omnis eius.<\/p>",
-            "type": "text--lg"
+            "type": "text--md"
           }
         }
       },
@@ -83,7 +83,7 @@
           "type": "title",
           "settings": {
             "text": "<p>Lorem ipsum sit dolor amet net actuat<\/p>",
-            "type": "h1"
+            "type": "h3"
           }
         },
         "ac253ad7-ef8a-4e30-9d18-2a9b49018148": {
