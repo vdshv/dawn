@@ -17,7 +17,7 @@
       },
       {
         "type": "range",
-        "id": "slider_arrow_svg_size_desktop",
+        "id": "slider_arrow_size_desktop",
         "min": 10,
         "max": 100,
         "step": 1,
@@ -27,7 +27,7 @@
       },
       {
         "type": "range",
-        "id": "slider_arrow_svg_size_mobile",
+        "id": "slider_arrow_size_mobile",
         "min": 10,
         "max": 100,
         "step": 1,
