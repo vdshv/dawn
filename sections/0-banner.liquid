@@ -32,7 +32,6 @@
 
 <div class="banner banner-{{section.id}} rel cont {{s.container}} {{s.spacing}} grid
     {{s.desktop_layout}}
-   
 ">
     <div class="banner__content flex {{s.align_content}}">
         <div class="banner__content-inner">
@@ -50,7 +49,7 @@
         </div>
     </div>
 
-    <div class="banner__media ar-1">
+    <div class="banner__media">
         {%- for block in section.blocks -%}
             {%- assign b = block.settings -%}
 
@@ -86,22 +85,6 @@
         {%- endfor -%}
     </div>
 </div>
-
-{% comment %} {
-                "type": "richtext",
-                "id": "text",
-                "label": "Text",
-                "default": "<p>Banner text</p>",
-                "info": "Leave blank to hide"
-            },
-            {
-                "type": "richtext",
-                "id": "button",
-                "label": "Link",
-                "default": "<p>Banner link</p>",
-                "info": "Leave blank to hide"
-            } {% endcomment %}
-
 
 {% schema %}
 {
@@ -375,6 +358,74 @@
         ]
     },
     {
+        "type": "subtitle",
+        "name": "Banner content - Subtitle",
+        "settings": [
+            {
+                "type": "richtext",
+                "id": "text",
+                "label": "Title",
+                "default": "<p>Banner title</p>"
+            },
+            {
+                "type": "select",
+                "id": "type",
+                "label": "Styles -> Typography TYPE",
+                "options": [
+                    {
+                        "value": "h1",
+                        "label": "Heading - level 1"
+                    },
+                    {
+                        "value": "h2",
+                        "label": "Heading - level 2"
+                    },
+                    {
+                        "value": "h3",
+                        "label": "Heading - level 3"
+                    },
+                    {
+                        "value": "h4",
+                        "label": "Heading - level 4"
+                    },
+                    {
+                        "value": "h5",
+                        "label": "Heading - level 5"
+                    },
+                    {
+                        "value": "h6",
+                        "label": "Heading - level 6"
+                    },
+                    {
+                        "value": "text--lg",
+                        "label": "Larger content text"
+                    },
+                    {
+                        "value": "text--md",
+                        "label": "Regular content text"
+                    },
+                    {
+                        "value": "text--sm",
+                        "label": "Smaller content text"
+                    },
+                    {
+                        "value": "label--lg",
+                        "label": "Larger label"
+                    },
+                    {
+                        "value": "label--md",
+                        "label": "Regular label"
+                    }, 
+                    {
+                        "value": "label--sm",
+                        "label": "Smaller label"
+                    }
+                ],
+                "default": "h5"
+            }
+        ]
+    },
+    {
         "type": "text",
         "name": "Banner content - Text",
         "settings": [
@@ -419,6 +470,66 @@
                     }
                 ],
                 "default": "text--lg"
+            }
+        ]
+    },  
+    {
+        "type": "button",
+        "name": "Banner content - Button",
+        "settings": [
+            {
+                "type": "richtext",
+                "id": "button",
+                "label": "Button text",
+                "default": "<p>Button text</p>"
+            },
+            {
+                "type": "select",
+                "id": "typography",
+                "label": "Styles -> Typography TYPE",
+                "options": [
+                    {
+                        "value": "btn--lg",
+                        "label": "Larger button"
+                    },
+                    {
+                        "value": "btn--md",
+                        "label": "Regular button"
+                    },
+                    {
+                        "value": "btn--sm",
+                        "label": "Smaller button"
+                    }
+                ],
+                "default": "btn--md"
+            },
+            {
+                "type": "select",
+                "id": "style",
+                "label": "Styles -> Button styles TYPE",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "Global button"
+                    },
+                    {
+                        "value": "btn--alt",
+                        "label": "Alternative button"
+                    },
+                    {
+                        "value": "btn--alt-2",
+                        "label": "Alternative button 2"
+                    },
+                    {
+                        "value": "btn--alt-3",
+                        "label": "Alternative button 3"
+                    },
+                    {
+                        "value": "btn--disabled",
+                        "label": "Disabled button"
+                    }
+                ],
+                "default": ""
             }
         ]
     }  
