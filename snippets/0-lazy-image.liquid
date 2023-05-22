@@ -1,0 +1,67 @@
+{% comment %} 
+lazy-img – OPTIONS
+
+required:
+i        image object
+w        width
+wm       width mobile
+
+optional:
+h        height 
+hm       height mobile
+im       different image object for mobile
+
+c        custom classes
+pc       picture class
+attr     custom attributes
+blurry   show low resolution image before the original image is lazyloaded
+
+{% endcomment %}
+
+{% liquid 
+    assign dw = w | times: 1.5 | ceil
+    assign mw = wm | times: 1.5 | ceil
+
+    if blurry == true
+        assign w_blurry = w | divided_by: 20 | ceil
+        assign blurry_src = i | image_url: width: w_blurry    
+    endif
+
+    if h != null
+        assign dh = h | times: 1.5 | ceil
+        assign src = i | image_url: width: dw, height: dh, crop: 'center'
+        assign height = h
+    else
+        assign src = i | image_url: width: dw
+        assign height = 'auto'
+    endif
+
+    assign mob_img = i
+    if im != null
+        assign mob_img = im
+    endif
+
+    if hm != blank
+        assign mh = hm | times: 1.5 | ceil
+        assign src_mob = mob_img | image_url: width: mw, height: mh, crop: 'center'
+    else
+        assign src_mob = mob_img | image_url: width: mw
+    endif
+%}
+
+<picture class="{{pc}}" width="{{ w }}" height="{{ height }}">
+    <source 
+        media="(max-width: 767px)"
+        srcset="{{ blurry_src }}"
+        data-srcset="{{ src_mob }}"
+    />
+
+    <img {{ attr }} 
+        class="lazyload {{ c }}" 
+        width="{{ w }}"
+        height="{{ height }}"
+        src="{{ blurry_src }}"
+        data-src="{{ src }}"
+        alt=""
+    />
+</picture>

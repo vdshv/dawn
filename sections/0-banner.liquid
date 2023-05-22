@@ -1,0 +1,282 @@
+{%- assign s = section.settings -%}
+
+<style>
+    @media screen and (max-width: 767px) {
+
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1180px) {
+        
+    }
+    @media screen and (min-width: 1181px) {
+       
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="{{ '0-banner.css' | asset_url}}"/>
+
+{% liquid 
+    
+%}
+
+<div class="rel cont {{s.container}} {{s.spacing}} grid
+    {{s.desktop_layout}}
+   
+">
+    <div class="banner__content">
+        {%- for block in section.blocks -%}
+            {%- assign b = block.settings -%}
+
+            {%- if block.type == 'title' -%}
+                <h2 class="banner__title {{b.type}}">{{b.text}}</h2>
+            {%- endif -%}
+            
+            {%- if block.type == 'text' -%}
+                <div class="banner__text {{b.type}}">{{b.text}}</div>
+            {%- endif -%}
+        {%- endfor -%}
+    </div>
+
+    <div class="banner__media">
+
+    </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Banner",
+  "tag": "section",
+  "class": "banner",
+  "settings": [
+    {
+        "type": "header",
+        "content": "GLOBAL - Layout"
+    },
+    {
+        "type": "select",
+        "id": "container",
+        "label": "Styles -> Containers TYPE",
+        "options": [
+            {
+                "value": "cont--sm",
+                "label": "Small"
+            },
+            {
+                "value": "cont--md",
+                "label": "Medium"
+            },
+            {
+                "value": "cont--lg",
+                "label": "Large"
+            }
+        ],
+        "default": "cont--lg"
+    },
+    {
+        "type": "select",
+        "id": "spacing",
+        "label": "Styles -> Section Spacing TYPE",
+        "options": [
+            {
+                "value": "space--sm",
+                "label": "Small"
+            },
+            {
+                "value": "space--md",
+                "label": "Medium"
+            },
+            {
+                "value": "space--lg",
+                "label": "Large"
+            }
+        ],
+        "default": "space--lg"
+    },
+    {
+        "type": "header",
+        "content": "DESKTOP - Layout"
+    },
+    {
+        "type": "select",
+        "id": "desktop_layout",
+        "label": "Layout",
+        "options": [
+            {
+                "value": "lg-1",
+                "label": "Background Media"
+            },
+            {
+                "value": "lg-2",
+                "label": "Left Content - Right Media"
+            },
+            {
+                "value": "lg-2 --reverse",
+                "label": "Left Media - Right Content"
+            }
+        ],
+        "default": "lg-2"
+    },
+    {
+        "type": "header",
+        "content": "TABLET - Layout"
+    },
+    {
+        "type": "header",
+        "content": "MOBILE - Layout"
+    }
+  ],
+  "blocks": [
+    {
+        "type": "image",
+        "name": "Banner media - Image",
+        "limit": 1,
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "desktop_image",
+                "label": "Desktop banner Image"
+            },
+            {
+                "type": "image_picker",
+                "id": "mobile_image",
+                "label": "Mobile banner Image",
+                "info": "Leave blank to use desktop image on mobile"
+            }
+        ]
+    },
+    {
+        "type": "video",
+        "name": "Banner media - Video",
+        "limit": 1,
+        "settings": [
+            {
+                "type": "video",
+                "id": "video",
+                "label": "A Shopify-hosted video",
+                "info": "Leave blank to use a video URL (Youtube or vimeo hosted)"
+            },
+            {
+                "type": "video_url",
+                "id": "video_url",
+                "label": "Video URL (Youtube or vimeo hosted)",
+                "accept": ["youtube", "vimeo"],
+                "info": "Leave blank to use Shopify-hosted video"
+            }
+        ]
+    },
+    {
+        "type": "title",
+        "name": "Banner content - Title",
+        "settings": [
+            {
+                "type": "richtext",
+                "id": "text",
+                "label": "Title",
+                "default": "<p>Banner title</p>"
+            },
+            {
+                "type": "select",
+                "id": "type",
+                "label": "Styles -> Typography TYPE",
+                "options": [
+                    {
+                        "value": "h1",
+                        "label": "Heading - level 1"
+                    },
+                    {
+                        "value": "h2",
+                        "label": "Heading - level 2"
+                    },
+                    {
+                        "value": "h3",
+                        "label": "Heading - level 3"
+                    },
+                    {
+                        "value": "h4",
+                        "label": "Heading - level 4"
+                    },
+                    {
+                        "value": "h5",
+                        "label": "Heading - level 5"
+                    },
+                    {
+                        "value": "h6",
+                        "label": "Heading - level 6"
+                    }
+                ],
+                "default": "h1"
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "name": "Banner content - Text",
+        "settings": [
+            {
+                "type": "richtext",
+                "id": "text",
+                "label": "Text",
+                "default": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt praesentium cum blanditiis sed quis adipisci eveniet veniam accusamus. Laborum fugit rerum alias cum dolore amet? Rem totam eveniet omnis eius.</p>"
+            },
+            {
+                "type": "select",
+                "id": "type",
+                "label": "Styles -> Typography TYPE",
+                "options": [
+                    {
+                        "value": "text--lg",
+                        "label": "Larger content text"
+                    },
+                    {
+                        "value": "text--md",
+                        "label": "Regular content text"
+                    },
+                    {
+                        "value": "text--sm",
+                        "label": "Smaller content text"
+                    },
+                    {
+                        "value": "label--lg",
+                        "label": "Larger label"
+                    },
+                    {
+                        "value": "label--md",
+                        "label": "Regular label"
+                    }, 
+                    {
+                        "value": "label--sm",
+                        "label": "Smaller label"
+                    },
+                    {
+                        "value": "blockquote",
+                        "label": "Blockquote"
+                    }
+                ],
+                "default": "text--lg"
+            }
+        ]
+    }  
+  ],
+  "presets": [
+    {
+      "name": "Banner"
+    }
+  ]
+}
+{% endschema %}
+
+{% comment %} {
+                "type": "richtext",
+                "id": "text",
+                "label": "Text",
+                "default": "<p>Banner text</p>",
+                "info": "Leave blank to hide"
+            },
+            {
+                "type": "richtext",
+                "id": "button",
+                "label": "Link",
+                "default": "<p>Banner link</p>",
+                "info": "Leave blank to hide"
+            } {% endcomment %}
