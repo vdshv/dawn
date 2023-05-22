@@ -224,7 +224,7 @@
             }
           },
           "731e891d-e67e-40e7-b3f2-6ff5e1a3e2ef": {
-            "type": "btn",
+            "type": "btn--md",
             "settings": {
               "padding_x": 40,
               "padding_y": 6,
@@ -271,7 +271,7 @@
             }
           },
           "1a7199a6-4f20-41fc-bf4e-cdfd6c0a898f": {
-            "type": "body",
+            "type": "text--md",
             "settings": {
               "font_size": 14,
               "line_height": 130,

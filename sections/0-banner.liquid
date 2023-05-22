@@ -30,7 +30,7 @@
             {%- if block.type == 'title' -%}
                 <h2 class="banner__title {{b.type}}">{{b.text}}</h2>
             {%- endif -%}
-            
+
             {%- if block.type == 'text' -%}
                 <div class="banner__text {{b.type}}">{{b.text}}</div>
             {%- endif -%}
@@ -41,6 +41,21 @@
 
     </div>
 </div>
+
+{% comment %} {
+                "type": "richtext",
+                "id": "text",
+                "label": "Text",
+                "default": "<p>Banner text</p>",
+                "info": "Leave blank to hide"
+            },
+            {
+                "type": "richtext",
+                "id": "button",
+                "label": "Link",
+                "default": "<p>Banner link</p>",
+                "info": "Leave blank to hide"
+            } {% endcomment %}
 
 
 {% schema %}
@@ -265,18 +280,3 @@
   ]
 }
 {% endschema %}
-
-{% comment %} {
-                "type": "richtext",
-                "id": "text",
-                "label": "Text",
-                "default": "<p>Banner text</p>",
-                "info": "Leave blank to hide"
-            },
-            {
-                "type": "richtext",
-                "id": "button",
-                "label": "Link",
-                "default": "<p>Banner link</p>",
-                "info": "Leave blank to hide"
-            } {% endcomment %}
