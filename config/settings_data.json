@@ -1,8 +1,8 @@
 {
   "current": {
     "slider_arrow_svg": "shopify:\/\/shop_images\/arrow-slider.svg",
-    "slider_arrow_svg_size_desktop": 30,
-    "slider_arrow_svg_size_mobile": 28,
+    "slider_arrow_size_desktop": 30,
+    "slider_arrow_size_mobile": 30,
     "logo_width": 90,
     "colors_solid_button_labels": "#ffffff",
     "colors_accent_1": "#121212",
@@ -47,6 +47,8 @@
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "",
+    "slider_arrow_svg_size_desktop": 30,
+    "slider_arrow_svg_size_mobile": 28,
     "page_width": 1200,
     "spacing_sections": 0,
     "buttons_border_thickness": 1,
