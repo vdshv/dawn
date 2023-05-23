@@ -268,6 +268,10 @@ img.abs-full {
 // }
 .btn {
 	text-align: center;
+
+	* {
+		display: inline-block;
+	}
 //     &.loading {
 //         color: transparent;
 
