@@ -160,6 +160,7 @@ img.abs-full {
 
 .btn {
   text-align: center;
+  display: inline-block;
 }
 .btn * {
   display: inline-block;
