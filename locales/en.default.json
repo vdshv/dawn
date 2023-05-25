@@ -472,6 +472,9 @@
     "filters": {
       "price": {
         "label": "Prix"
+      },
+      "product_type": {
+        "label": "Produits"
       }
     }
   }
