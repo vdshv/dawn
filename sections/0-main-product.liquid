@@ -1,9 +1,9 @@
 <section
   id="MainProduct-{{ section.id }}"
-  class="page-width section-{{ section.id }}-padding"
+  {% comment %} class="page-width section-{{ section.id }}-padding" {% endcomment %}
   data-section="{{ section.id }}"
 >
-  {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+  {% comment %} {{ 'section-main-product.css' | asset_url | stylesheet_tag }} {% endcomment %}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
@@ -11,6 +11,7 @@
   {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
   {{ '0-main-product.css' | asset_url | stylesheet_tag }}
+  {{ '0-grid.css' | asset_url | stylesheet_tag }}
 
   {%- style -%}
     .section-{{ section.id }}-padding {
@@ -60,13 +61,19 @@
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
-  <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+  <div class="">
     {% comment %} Product Photo {% endcomment %}
-    <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
-      {% render 'product-media-gallery', variant_images: variant_images %}
+    <div class="">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+     
+          {%- when 'gallery' -%}
+            {% render '0-grid', settings: block.settings %}
+        {% endcase %}
+      {% endfor %}
     </div>
     {% comment %} Product discription {% endcomment %}
-    <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
+    <div class="product__info-wrapper ">
       <product-info
         id="ProductInfo-{{ section.id }}"
         data-section="{{ section.id }}"
@@ -79,6 +86,7 @@
           {%- case block.type -%}
             {%- when '@app' -%}
               {% render block %}
+            
             {%- when 'text' -%}
               <p
                 class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -94,7 +102,7 @@
               </div>
             {%- when 'price' -%}
               <div
-                class="no-js-hidden"
+                class="no-js-hidden"shopify_attributes
                 id="price-{{ section.id }}"
                 role="status"
                 {{ block.shopify_attributes }}
@@ -704,6 +712,250 @@
   "blocks": [
     {
       "type": "@app"
+    },
+
+    {
+      "type": "gallery",
+      "name": "gallery",
+      "settings": [
+        {
+          "type": "header",
+          "content": "GLOBAL - Layout"
+        },
+        {
+          "type": "select",
+          "id": "container",
+          "label": "Styles -> Containers TYPE",
+          "options": [
+            {
+              "value": "cont--sm",
+              "label": "Small"
+            },
+            {
+              "value": "cont--md",
+              "label": "Medium"
+            },
+            {
+              "value": "cont--lg",
+              "label": "Large"
+            }
+          ],
+          "default": "cont--lg"
+        },
+        {
+          "type": "select",
+          "id": "spacing",
+          "label": "Styles -> Section Spacing TYPE",
+          "options": [
+            {
+              "value": "space--sm",
+              "label": "Small"
+            },
+            {
+              "value": "space--md",
+              "label": "Medium"
+            },
+            {
+              "value": "space--lg",
+              "label": "Large"
+            }
+          ],
+          "default": "space--lg"
+        },
+        {
+          "type": "header",
+          "content": "DESKTOP - Layout"
+        },
+        {
+          "type": "range",
+          "id": "column_amount_desktop",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "label": "Columns amount",
+          "default": 4
+        },
+        {
+          "type": "checkbox",
+          "id": "slider_desktop",
+          "label": "Enable slider",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "arrows_desktop",
+          "label": "Enable slider arrows",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "arrows_position_desktop",
+          "label": "Slider arrows position",
+          "options": [
+            {
+              "value": "lg-arrows--under",
+              "label": "Under the slider"
+            },
+            {
+              "value": "lg-arrows--over",
+              "label": "Over the slider - centered vertically"
+            },
+            {
+              "value": "lg-arrows--sides",
+              "label": "On sides of the slider - centered vertically"
+            }
+          ],
+          "default": "lg-arrows--over"
+        },
+        {
+          "type": "range",
+          "id": "x_gap_desktop",
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "label": "Gap between columns",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "y_gap_desktop",
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "label": "Gap between rows",
+          "default": 20
+        },
+        {
+          "type": "header",
+          "content": "TABLET - Layout"
+        },
+        {
+          "type": "range",
+          "id": "column_amount_tablet",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "label": "Columns amount",
+          "default": 3
+        },
+        {
+          "type": "checkbox",
+          "id": "slider_tablet",
+          "label": "Enable slider",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "arrows_tablet",
+          "label": "Enable slider arrows",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "arrows_position_tablet",
+          "label": "Slider arrows position",
+          "options": [
+            {
+              "value": "md-arrows--under",
+              "label": "Under the slider"
+            },
+            {
+              "value": "md-arrows--over",
+              "label": "Over the slider - centered vertically"
+            },
+            {
+              "value": "md-arrows--sides",
+              "label": "On sides of the slider - centered vertically"
+            }
+          ],
+          "default": "md-arrows--over"
+        },
+        {
+          "type": "range",
+          "id": "x_gap_tablet",
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "label": "Gap between columns",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "y_gap_tablet",
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "label": "Gap between rows",
+          "default": 20
+        },
+        {
+          "type": "header",
+          "content": "MOBILE - Layout"
+        },
+        {
+          "type": "range",
+          "id": "column_amount_mobile",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "label": "Columns amount",
+          "default": 2
+        },
+        {
+          "type": "checkbox",
+          "id": "slider_mobile",
+          "label": "Enable slider",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "arrows_mobile",
+          "label": "Enable slider arrows",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "arrows_position_mobile",
+          "label": "Slider arrows position",
+          "options": [
+            {
+              "value": "sm-arrows--under",
+              "label": "Under the slider"
+            },
+            {
+              "value": "sm-arrows--over",
+              "label": "Over the slider - centered vertically"
+            },
+            {
+              "value": "sm-arrows--sides",
+              "label": "On sides of the slider - centered vertically"
+            }
+          ],
+          "default": "sm-arrows--over"
+        },
+        {
+          "type": "range",
+          "id": "x_gap_mobile",
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "label": "Gap between columns",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "y_gap_mobile",
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "label": "Gap between rows",
+          "default": 20
+        },
+        {
+          "type": "header",
+          "content": "General"
+        }
+      ]
     },
     {
       "type": "text",

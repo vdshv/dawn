@@ -146,24 +146,10 @@
     "6dbbe9d0-e5ce-4794-af01-b8e380f64f34": {
       "type": "0-main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
             "type": "h4"
-          }
-        },
-        "caption": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.metafields.descriptors.subtitle.value }}",
-            "text_style": "subtitle"
           }
         },
         "price": {
@@ -177,27 +163,45 @@
             "picker_type": "button"
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": false
           }
+        },
+        "339b1c3f-eb23-4d07-b33c-1f2b5f9b4cf8": {
+          "type": "gallery",
+          "settings": {
+            "container": "cont--lg",
+            "spacing": "space--lg",
+            "column_amount_desktop": 1,
+            "slider_desktop": false,
+            "arrows_desktop": false,
+            "arrows_position_desktop": "lg-arrows--over",
+            "x_gap_desktop": 48,
+            "y_gap_desktop": 20,
+            "column_amount_tablet": 3,
+            "slider_tablet": false,
+            "arrows_tablet": false,
+            "arrows_position_tablet": "md-arrows--over",
+            "x_gap_tablet": 45,
+            "y_gap_tablet": 20,
+            "column_amount_mobile": 1,
+            "slider_mobile": true,
+            "arrows_mobile": true,
+            "arrows_position_mobile": "sm-arrows--over",
+            "x_gap_mobile": 20,
+            "y_gap_mobile": 20
+          }
         }
       },
       "block_order": [
-        "vendor",
         "title",
-        "caption",
         "price",
         "variant_picker",
-        "quantity_selector",
-        "buy_buttons"
+        "buy_buttons",
+        "339b1c3f-eb23-4d07-b33c-1f2b5f9b4cf8"
       ],
       "settings": {
         "enable_sticky_info": true,
