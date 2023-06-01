@@ -6,3 +6,15 @@
     margin-bottom: 22px;
   }
 }
+
+.size {
+      
+  &__label {
+    display: inline-block;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 144.827px;
+    width: 40px;
+    padding: 3px 0;
+  }
+}

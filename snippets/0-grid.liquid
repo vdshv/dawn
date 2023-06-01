@@ -1,4 +1,4 @@
-{%- assign s = settings -%}
+{%- assign s = block_settings -%}
 
 {%- style -%}
   @media screen and (max-width: 767px) {
@@ -80,7 +80,7 @@
       "
     >
       {%- for media in product.media -%}
-       {{ media | image_url: width: 500 | image_tag }}
+        {{ media | image_url: width: 500 | image_tag }}
       {%- endfor -%}
     </div>
 
