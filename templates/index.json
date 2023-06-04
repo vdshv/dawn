@@ -150,7 +150,7 @@
         "9f9e78df-8ab4-4b6b-9ca9-3bc5b86f737a": {
           "type": "product_list",
           "settings": {
-            "collection": "frontpage"
+            "collection": "collection-1-t-shirt-short-print"
           }
         }
       },
@@ -186,7 +186,7 @@
         "28b87e1a-667c-4937-9ea2-1fbd3894c500": {
           "type": "product_list",
           "settings": {
-            "collection": "frontpage"
+            "collection": "pants-jacket-hoodie"
           }
         }
       },
@@ -222,7 +222,7 @@
         "29829d86-10b5-4c8e-9f3e-547a957adc67": {
           "type": "product_list",
           "settings": {
-            "collection": "frontpage"
+            "collection": "foulard-crewneck-chemise"
           }
         }
       },
