@@ -23,8 +23,10 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": false
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false,
+            "type": "btn--alt",
+            "text": "btn--md"
           }
         },
         "339b1c3f-eb23-4d07-b33c-1f2b5f9b4cf8": {
@@ -58,6 +60,54 @@
             "icon": "shopify:\/\/shop_images\/product_delivey.svg",
             "text": "<p>Livraison gratuite au dessus de 20$<\/p>"
           }
+        },
+        "9aa3ed63-1958-4319-ab93-e3ba209268c2": {
+          "type": "icon-with-text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/product_delivery_time.svg",
+            "text": "<p>Chez vous à partir du Lundi 22 Mai<\/p>"
+          }
+        },
+        "25decc66-3d6b-4075-b0f6-34ae1fc3a556": {
+          "type": "icon-with-text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/product_return.svg",
+            "text": "<p>Retour offert<\/p>"
+          }
+        },
+        "275a9f84-4edb-4942-96d4-6c27f419ffad": {
+          "type": "text",
+          "settings": {
+            "text": "Nous versons 10% de royalties sur chaque vente aux artistes avec qui nous travaillons.",
+            "type": "text--md"
+          }
+        },
+        "1fd2dfc7-5a1a-47ab-9b9e-cd24c2961515": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "a7a09bfe-ca8e-4f0e-892a-b46626e114fc": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "SIZE & Fit",
+            "icon": "check_mark",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.<\/p>",
+            "page": "",
+            "text": "text--sm",
+            "title": "h4"
+          }
+        },
+        "17fb25e8-6339-4216-b9b8-9e823c402c82": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Composition",
+            "icon": "check_mark",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.<\/p>",
+            "page": "",
+            "text": "text--md",
+            "title": "h4"
+          }
         }
       },
       "block_order": [
@@ -66,7 +116,13 @@
         "variant_picker",
         "buy_buttons",
         "339b1c3f-eb23-4d07-b33c-1f2b5f9b4cf8",
-        "e54d12ff-76d6-42f5-9d67-f4173e4b9dda"
+        "e54d12ff-76d6-42f5-9d67-f4173e4b9dda",
+        "9aa3ed63-1958-4319-ab93-e3ba209268c2",
+        "25decc66-3d6b-4075-b0f6-34ae1fc3a556",
+        "275a9f84-4edb-4942-96d4-6c27f419ffad",
+        "1fd2dfc7-5a1a-47ab-9b9e-cd24c2961515",
+        "a7a09bfe-ca8e-4f0e-892a-b46626e114fc",
+        "17fb25e8-6339-4216-b9b8-9e823c402c82"
       ],
       "settings": {
         "enable_sticky_info": true,

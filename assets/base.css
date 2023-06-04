@@ -1328,9 +1328,9 @@ deferred-media {
 }
 
 /* component-button */
-/* Button - default */
 
-.button,
+
+/* .button,
 .shopify-challenge__button,
 .customer button,
 button.shopify-payment-button__button--unbranded,
@@ -1343,7 +1343,7 @@ button.shopify-payment-button__button--unbranded,
   --shadow-opacity: var(--buttons-shadow-opacity);
   --shadow-visible: var(--buttons-shadow-visible);
   --border-offset: var(--buttons-border-offset); /* reduce radius edge artifacts */
-  --border-opacity: calc(1 - var(--buttons-border-opacity));
+  /* --border-opacity: calc(1 - var(--buttons-border-opacity));
   border-radius: var(--buttons-radius-outset);
   position: relative;
 }
@@ -1354,17 +1354,17 @@ button.shopify-payment-button__button--unbranded,
 button.shopify-payment-button__button--unbranded {
   min-width: calc(12rem + var(--buttons-border-width) * 2);
   min-height: calc(4.5rem + var(--buttons-border-width) * 2);
-}
+} */ 
 
-.shopify-payment-button__button--branded {
+/* .shopify-payment-button__button--branded {
   z-index: auto;
 }
 
 .cart__dynamic-checkout-buttons iframe {
   box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset) var(--shadow-blur-radius) rgba(var(--color-base-text), var(--shadow-opacity));
-}
+} */
 
-.button,
+/* .button,
 .shopify-challenge__button,
 .customer button {
   display: inline-flex;
@@ -1477,7 +1477,7 @@ button.shopify-payment-button__button--unbranded {
 
 /* Button - other */
 
-.button:disabled,
+/* .button:disabled,
 .button[aria-disabled='true'],
 .button.disabled,
 .customer button:disabled,
@@ -1486,12 +1486,12 @@ button.shopify-payment-button__button--unbranded {
 .quantity__button.disabled {
   cursor: not-allowed;
   opacity: 0.5;
-}
+} */ 
 
-.button--full-width {
+/* .button--full-width {
   display: flex;
   width: 100%;
-}
+} */
 
 .button.loading {
   color: transparent;

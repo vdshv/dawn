@@ -4,7 +4,21 @@
 .product__title {
   margin-bottom: 22px;
 }
+.product-form__buttons {
+  margin-bottom: 24px;
+}
+.product-form__input {
+  border: none;
+  margin-top: 22px;
+}
+.product__text {
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
 
+.size__wrapper {
+  margin-bottom: 24px;
+}
 .size__label {
   display: inline-block;
   border: 1px solid black;
@@ -12,4 +26,28 @@
   border-radius: 144.827px;
   width: 40px;
   padding: 3px 0;
+}
+.size__label:hover, .size__label:focus {
+  background: #000;
+  color: #fff;
+}
+
+.icon--text {
+  margin-bottom: 6px;
+}
+.icon--text img {
+  width: 13px;
+  height: 15px;
+}
+summary {
+  padding: 7px;
+  border-bottom: 1px solid #000;
+}
+
+.summary--description {
+  border-top: 1px solid #000;
+}
+
+details[open] {
+  border-bottom: 1px solid #000;
 }

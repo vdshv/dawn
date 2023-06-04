@@ -5,10 +5,23 @@
   &__title {
     margin-bottom: 22px;
   }
+  &-form__buttons {
+    margin-bottom: 24px;
+  }
+  &-form__input {
+    border: none;
+    margin-top: 22px;
+  }
+  &__text {
+    margin-top: 24px;
+    margin-bottom: 40px;
+  }
 }
 
 .size {
-      
+  &__wrapper {
+    margin-bottom: 24px;
+  }
   &__label {
     display: inline-block;
     border: 1px solid black;
@@ -17,4 +30,37 @@
     width: 40px;
     padding: 3px 0;
   }
+  &__label:hover,
+  &__label:focus {
+    background: #000;
+    color: #fff;
+  }
+}
+
+.icon--text {
+  margin-bottom: 6px;
+
+  & img {
+    width: 13px;
+    height: 15px;
+  }
+  &__wrapper {
+  }
+}
+
+summary {
+  padding: 7px;
+
+  border-bottom: 1px solid #000;
+}
+.summary--description {
+  border-top: 1px solid #000;
+}
+
+// details[open] {
+//   padding: 0.5em;
+// }
+
+details[open]  {
+  border-bottom: 1px solid #000;
 }

@@ -89,7 +89,7 @@
             
             {%- when 'text' -%}
               <p
-                class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
+                class="{{block.settings.type}} product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                 {{ block.shopify_attributes }}
               >
                 {{- block.settings.text -}}
@@ -178,12 +178,16 @@
               </p>
             {%- when 'description' -%}
               {%- if product.description != blank -%}
-                <div
+                <details>
+                  <summary class="summary--description">Description</summary>
+                  {{ product.description }}
+                </details>
+                {% comment %} <div
                   class="product__description rte quick-add-hidden"
                   {{ block.shopify_attributes }}
                 >
                   {{ product.description }}
-                </div>
+                </div> {% endcomment %}
               {%- endif -%}
             {%- when 'sku' -%}
               <p
@@ -204,16 +208,16 @@
               >
                 <details id="Details-{{ block.id }}-{{ section.id }}">
                   <summary>
-                    <div class="summary__title">
+                    <div class="{{block.settings.title}} summary__title ">
                       {% comment %} {% render 'icon-accordion', icon: block.settings.icon %} {% endcomment %}
-                      <h2 class="h4 accordion__title inline-richtext">
+                      <h2 class=" accordion__title inline-richtext">
                         {{ block.settings.heading | default: block.settings.page.title }}
                       </h2>
                     </div>
                     {% comment %} {% render 'icon-caret' %} {% endcomment %}
                   </summary>
                   <div
-                    class="accordion__content rte"
+                    class="{{block.settings.text}} accordion__content rte"
                     id="ProductAccordion-{{ block.id }}-{{ section.id }}"
                   >
                     {{ block.settings.content }}
@@ -544,28 +548,26 @@
                 {%- endif -%}
               </product-recommendations>
             {%- when 'icon-with-text' -%}
-              
-              <div class="icon--text flex aic">
-                <img src="{{block.settings.icon | image_url}}" alt="">
-                <div>
-                  {{block.settings.text}}
+                <div class="icon--text flex aic gap-2">
+                  <img src="{{block.settings.icon | image_url}}" alt="">
+                  <div>
+                    {{block.settings.text}}
+                  </div>
                 </div>
-              </div>
                 {% comment %} {% render 'icon-with-text',
                   block: block
-                %}  {% endcomment %}
-              
+                %}  {% endcomment %} 
           {%- endcase -%}
         {%- endfor -%}
         
-        <a
+        {% comment %} <a
           href="{{ product.url }}"
           class="link product__view-details animate-arrow"
         >
           
           {{ 'products.product.view_full_details' | t }}
           {% comment %} {% render 'icon-arrow' %} {% endcomment %}
-        </a>
+        </a> {% endcomment %}
       </product-info>
     </div>
     
@@ -577,7 +579,7 @@
     {%- endif -%}
   </div>
 
-  {% render 'product-media-modal', variant_images: variant_images %}
+  {% comment %} {% render 'product-media-modal', variant_images: variant_images %} {% endcomment %}
 
   {% assign popups = section.blocks | where: 'type', 'popup' %}
   {%- for block in popups -%}
@@ -967,23 +969,23 @@
         },
         {
           "type": "select",
-          "id": "text_style",
+          "id": "type",
+          "label": "Styles -> TEXT TYPE",
           "options": [
             {
-              "value": "body",
-              "label": "t:sections.main-product.blocks.text.settings.text_style.options__1.label"
+              "value": "text--lg",
+              "label": "Larger content text"
             },
             {
-              "value": "subtitle",
-              "label": "t:sections.main-product.blocks.text.settings.text_style.options__2.label"
+              "value": "text--md",
+              "label": "Regular content text "
             },
             {
-              "value": "uppercase",
-              "label": "t:sections.main-product.blocks.text.settings.text_style.options__3.label"
+              "value": "text--sm",
+              "label": "Smaller content text"
             }
           ],
-          "default": "body",
-          "label": "t:sections.main-product.blocks.text.settings.text_style.label"
+          "default": "text--md"
         }
       ]
     },
@@ -1147,6 +1149,42 @@
           "default": false,
           "label": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.label",
           "info": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.info"
+        },
+        {
+          "type": "select",
+          "id": "type",
+          "label": "Styles -> Button TYPE",
+          "options": [
+            {
+            "value": "btn",
+            "label": "Global button styling"
+            },
+            {
+            "value": "btn--alt",
+            "label": "Alternative button"
+            }
+          ],
+          "default": "btn"
+        },
+        {
+          "type": "select",
+          "id": "text",
+          "label": "Styles -> Button TEXT",
+          "options": [
+            {
+            "value": "btn--sm",
+            "label": "Smaller button text"
+            },
+            {
+            "value": "btn--md",
+            "label": "Regular button text"
+            },
+            {
+            "value": "btn--lg",
+            "label": "Larger button text"
+            }
+          ],
+          "default": "btn--sm"
         }
       ]
     },
@@ -1392,6 +1430,58 @@
           "type": "page",
           "id": "page",
           "label": "t:sections.main-product.blocks.collapsible_tab.settings.page.label"
+        },
+        {
+          "type": "select",
+          "id": "text",
+          "label": "Styles -> TEXT TYPE",
+          "options": [
+            {
+              "value": "text--lg",
+              "label": "Larger content text"
+            },
+            {
+              "value": "text--md",
+              "label": "Regular content text "
+            },
+            {
+              "value": "text--sm",
+              "label": "Smaller content text"
+            }
+          ],
+          "default": "text--md"
+        },
+        {
+          "type": "select",
+          "id": "title",
+          "label": "Styles -> Typography TYPE",
+          "options": [
+            {
+              "value": "h1",
+              "label": "Heading - level 1"
+            },
+            {
+              "value": "h2",
+              "label": "Heading - level 2"
+            },
+            {
+              "value": "h3",
+              "label": "Heading - level 3"
+            },
+            {
+              "value": "h4",
+              "label": "Heading - level 4"
+            },
+            {
+              "value": "h5",
+              "label": "Heading - level 5"
+            },
+            {
+              "value": "h6",
+              "label": "Heading - level 6"
+            }
+          ],
+          "default": "h1"
         }
       ]
     },
