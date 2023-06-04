@@ -2,11 +2,11 @@ class FacetFiltersForm extends HTMLElement {
   constructor() {
     super();
     this.onActiveFilterClick = this.onActiveFilterClick.bind(this);
-
+    
     this.debouncedOnSubmit = debounce((event) => {
       this.onSubmitHandler(event);
     }, 500);
-
+    
     const facetForm = this.querySelector('form');
     facetForm.addEventListener('input', this.debouncedOnSubmit.bind(this));
 
@@ -91,6 +91,8 @@ class FacetFiltersForm extends HTMLElement {
     }
   }
 
+  
+
   static renderFilters(html, event) {
     const parsedHTML = new DOMParser().parseFromString(html, 'text/html');
 
@@ -111,7 +113,8 @@ class FacetFiltersForm extends HTMLElement {
     FacetFiltersForm.renderAdditionalElements(parsedHTML);
 
     if (countsToRender) FacetFiltersForm.renderCounts(countsToRender, event.target.closest('.js-filter'));
-  }
+    
+}
 
   static renderActiveFacets(html) {
     const activeFacetElementSelectors = ['.active-facets-mobile', '.active-facets-desktop'];
