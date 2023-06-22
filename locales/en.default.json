@@ -106,7 +106,7 @@
   },
   "products": {
     "product": {
-      "afterpay" : "ou 4 paiements de {{afterpay_price}} with afterpay",
+      "afterpay": "ou 4 paiements de {{afterpay_price}} with afterpay",
       "add_to_cart": "Add to cart",
       "choose_options": "Choose options",
       "choose_product_options": "Choose options for {{ product_name }}",
@@ -467,16 +467,6 @@
       "message_label": "Message (optional)",
       "message": "Message",
       "max_characters": "{{ max_chars }} characters max"
-    }
-  },
-  "shopify": {
-    "filters": {
-      "price": {
-        "label": "Prix"
-      },
-      "product_type": {
-        "label": "Produits"
-      }
     }
   }
 }
